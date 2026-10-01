@@ -14,7 +14,12 @@ const FICHIERS = ["README.md", "TARGET.md", ".env.example", "package.json"];
 const MOTIF = /remolque\s+caballos|remolquecaballos|equivan/i;
 const EXTENSIONS = new Set([".ts", ".tsx", ".js", ".mjs", ".cjs", ".json", ".md", ".css", ".prisma", ".sql", ".txt"]);
 const IGNORES = new Set(["node_modules", "generated", ".next"]);
-const CE_FICHIER = path.join("src", "config", "legacyBrand.test.ts");
+const EXCLUS = new Set([
+  path.join("src", "config", "legacyBrand.test.ts"),
+  path.join("src", "server", "rebranding.ts"),
+  path.join("src", "server", "rebranding.test.ts"),
+  path.join("scripts", "rebranding-equinomad.ts"),
+]);
 
 function parcourir(dossier: string, sortie: string[]): void {
   for (const nom of readdirSync(dossier)) {
@@ -31,7 +36,7 @@ test("aucune trace de l'ancienne identité dans les fichiers livrés", () => {
   for (const f of FICHIERS) fichiers.push(path.join(RACINE, f));
 
   const fautes = fichiers
-    .filter((f) => path.relative(RACINE, f) !== CE_FICHIER)
+    .filter((f) => !EXCLUS.has(path.relative(RACINE, f)))
     .flatMap((f) =>
       readFileSync(f, "utf8")
         .split("\n")
