@@ -206,7 +206,6 @@ export function ProductForm({
           <label className="text-sm">
             <span className="mb-1 block font-semibold text-foreground">Marque</span>
             <input
-              required
               value={brand}
               onChange={(event) => setBrand(event.target.value)}
               className="w-full rounded-sm border border-border px-3 py-2 outline-none focus:border-primary"

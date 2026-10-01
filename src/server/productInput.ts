@@ -60,10 +60,11 @@ export function parseProductInput(raw: unknown, mode: "create" | "update"): Prod
     else values.categoryId = categoryId;
   }
 
+  // Marque facultative : « aucune marque » s'écrit chaîne vide (occasions dont le
+  // fabricant est inconnu). Le flux Merchant bloque déjà un article neuf sans marque.
   const brand = asTrimmedString(body.brand);
   if (mode === "create" || has("brand")) {
-    if (!brand) errors.push("Marque (brand) manquante.");
-    else values.brand = brand;
+    values.brand = brand ?? "";
   }
 
   const name = asTrimmedString(body.name);
@@ -290,11 +291,11 @@ export function parseProductInput(raw: unknown, mode: "create" | "update"): Prod
 
 /** Assemble les valeurs validées en un enregistrement complet pour createProduct(). */
 export function toCreateInput(values: ProductInput): Omit<ProductRecord, "id"> | undefined {
-  if (!values.categoryId || !values.brand || !values.name || !values.price) return undefined;
+  if (!values.categoryId || !values.name || !values.price) return undefined;
   return {
     ...values,
     categoryId: values.categoryId,
-    brand: values.brand,
+    brand: values.brand ?? "",
     name: values.name,
     price: values.price,
     bullets: values.bullets ?? [],
