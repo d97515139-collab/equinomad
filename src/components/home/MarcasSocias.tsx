@@ -32,7 +32,7 @@ import { prisma } from "@/server/prisma";
  * l’autorisation écrite.
  *
  * Une marque absente de cette table n’est pas une erreur : sa tuile porte
- * alors son nom composé en Fraunces. C’est le cas de Westfalia, dont les
+ * alors son nom composé dans la police des titres. C’est le cas de Westfalia, dont les
  * quatre remorques du catalogue sont d’anciens modèles des Westfalia-Werke ;
  * le seul logotype disponible aujourd’hui est celui de Westfalia-Automotive,
  * société distincte qui fabrique des attelages et non des vans. Poser sa
@@ -117,7 +117,7 @@ export async function MarcasSocias() {
                     className="h-9 w-auto object-contain sm:h-10"
                   />
                 ) : (
-                  <span className="font-serif text-lg leading-tight font-bold text-foreground sm:text-xl">
+                  <span className="font-heading text-lg leading-tight font-bold text-foreground sm:text-xl">
                     {marca.nombre}
                   </span>
                 )}

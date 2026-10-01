@@ -1,27 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import "./globals.css";
 import { BRAND } from "@/config/brand";
 
-// Inter porte toute l'interface : navigation, fiches, chiffres techniques.
-// Sa chasse tabulaire (voir « .dato » dans globals.css) aligne les MMA et les
-// charges utiles en colonne, ce qui est la seule façon honnête de laisser
-// comparer deux remorques.
-const inter = Inter({
+// Montserrat porte tout le site, titres et interface : une seule famille, en
+// police variable (toutes les graisses dans un fichier). Ses chiffres
+// tabulaires (voir « .dato » dans globals.css) alignent les MMA et les charges
+// utiles en colonne. latin-ext couvre les langues des huit marchés (å, ø, ç…).
+const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-// Fraunces ne sert qu'aux titres et au nom de marque. C'est un serif à axes
-// variables : « opsz » adapte le dessin au corps, « SOFT » arrondit les angles,
-// « WONK » libère les lettres à empattement penché. Trois axes chargés, pas un
-// de plus — chacun pèse dans le fichier téléchargé.
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
-  variable: "--font-fraunces",
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -48,7 +37,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${montserrat.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col font-sans">{children}</body>

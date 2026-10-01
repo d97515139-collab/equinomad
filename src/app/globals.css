@@ -7,14 +7,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Deux familles, deux fonctions. Fraunces, serif à graisse variable, ne sert
-     qu'aux titres et au nom de marque : c'est elle qui porte le registre
-     sellerie — cuir, laiton, écurie. Inter tient tout le reste, y compris les
-     chiffres techniques, où sa chasse fixe optionnelle aligne les colonnes.
-     Mélanger les deux rôles ferait perdre aux titres leur singularité. */
-  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
-  --font-mono: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
-  --font-heading: var(--font-fraunces), "Fraunces Fallback", Georgia, serif;
+  /* Une seule famille, Montserrat, pour les titres comme pour l'interface. Les
+     titres s'en distinguent par la graisse, pas par une seconde police. */
+  --font-sans: var(--font-montserrat), "Montserrat Fallback", system-ui, sans-serif;
+  --font-mono: var(--font-montserrat), "Montserrat Fallback", system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), "Montserrat Fallback", system-ui, sans-serif;
   /* Couleurs propres à la marque, disponibles en utilitaires
      (bg-tinta, text-rojo, bg-nieve…) */
   --color-rojo: var(--rojo);
@@ -179,17 +176,12 @@
   }
 
   /* Les titres sont posés ici pour ne pas répéter font-heading sur chacun.
-     Fraunces est une police à axes variables : « SOFT » arrondit les angles,
-     « WONK » libère les lettres à empattement penché (g, y). Les deux sont
-     poussés juste assez pour que le titre respire sans devenir décoratif.
-     L'interlettrage négatif serre le gros corps, où l'empattement écarte. */
+     Montserrat est large : un interlettrage légèrement négatif resserre les
+     gros corps sans gêner la lecture. */
   h1,
   h2,
   h3 {
     font-family: var(--font-heading);
-    font-variation-settings:
-      "SOFT" 30,
-      "WONK" 1;
     letter-spacing: -0.02em;
   }
 }
