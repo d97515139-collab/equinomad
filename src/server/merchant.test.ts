@@ -12,7 +12,7 @@ import {
 function produit(surcharge: Partial<MerchantProduct> = {}): MerchantProduct {
   return {
     id: "p1",
-    brand: "Remolque Caballos",
+    brand: "Böckmann",
     name: "Hêtre 25 cm",
     slug: "hetre-25-cm",
     sku: "MLCBOISHET",
@@ -109,4 +109,29 @@ test("le message d'audit sur une description trop courte ne contient aucun mot a
     );
   }
   assert.ok(probleme!.message.includes("97"), probleme!.message);
+});
+
+test("une occasion sans marque reste diffusable, sans attribut brand", () => {
+  const p = produit({ brand: "", condition: "used", name: "Van para dos caballos" });
+  const record = buildMerchantRecord(p);
+  assert.equal(record.brand, undefined);
+  assert.equal(record.identifierExists, "no");
+  assert.equal(record.title, "Van para dos caballos");
+  const audit = auditMerchantProduct(p);
+  assert.equal(audit.ready, true);
+  assert.ok(audit.issues.some((i) => i.attribute === "brand" && i.level === "warning"));
+});
+
+test("un produit neuf sans marque reste bloqué", () => {
+  const audit = auditMerchantProduct(produit({ brand: "", condition: "new" }));
+  assert.equal(audit.ready, false);
+  assert.ok(audit.issues.some((i) => i.attribute === "brand" && i.level === "error"));
+});
+
+test("la description de repli ne laisse pas de marque vide", () => {
+  const texte = merchantDescription(
+    produit({ brand: "", condition: "used", description: "", shortDescription: "" }),
+  );
+  assert.ok(!texte.startsWith(" "));
+  assert.ok(!texte.includes(" par ."));
 });

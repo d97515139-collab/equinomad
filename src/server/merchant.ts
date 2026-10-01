@@ -10,6 +10,9 @@ import {
   GOOGLE_CATEGORY_BY_SLUG,
 } from "@/lib/googleTaxonomy";
 import { isValidGtin } from "@/lib/gtin";
+import { BRAND, publicSiteUrl } from "@/config/brand";
+import { COMPANY } from "@/config/company";
+import { withBrand } from "@/lib/brandName";
 
 export { GOOGLE_CATEGORY_BY_SLUG, googleCategoryPath } from "@/lib/googleTaxonomy";
 export type { GoogleCategory } from "@/lib/googleTaxonomy";
@@ -39,18 +42,17 @@ export const MERCHANT_LANGUAGE = "es";
  */
 export const MERCHANT_VAT_RATE = 0.21;
 
-// Doivent rester alignés sur COMPANY (src/content/legal/es.ts), qui fait
-// autorité pour les mentions légales et la facture PDF.
-export const SHOP_NAME = "Remolque Caballos";
-export const SHOP_PHONE = "+34 955 000 000";
+// Alignés sur la configuration centrale (src/config), qui fait autorité pour
+// les mentions légales, la facture PDF et ce flux.
+export const SHOP_NAME = BRAND.name;
+export const SHOP_PHONE = COMPANY.phone;
 
 /**
  * URL publique de la boutique. Toutes les URL du flux doivent être absolues et
  * pointer vers le domaine vérifié dans Merchant Center.
  */
 export function siteUrl(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.remolquecaballos.com";
-  return raw.replace(/\/+$/, "");
+  return publicSiteUrl();
 }
 
 /** Transforme un chemin interne ("/images/x.jpg") en URL absolue. */
@@ -324,7 +326,7 @@ export function merchantAdditionalImageUrls(product: MerchantProduct): string[] 
 
 /** Titre du flux — doit correspondre au titre affiché sur la page produit. */
 export function merchantTitle(product: MerchantProduct): string {
-  return plainText(`${product.brand} ${product.name}`).slice(0, 150);
+  return plainText(withBrand(product.brand, product.name)).slice(0, 150);
 }
 
 /**
@@ -338,7 +340,9 @@ export function merchantDescription(product: MerchantProduct): string {
 
   const bullets = parseBullets(product.bullets);
   const parts = [
-    `${product.brand} ${product.name} — ${product.category.label} par ${product.brand}.`,
+    product.brand.trim()
+      ? `${withBrand(product.brand, product.name)} — ${product.category.label} par ${product.brand.trim()}.`
+      : `${product.name} — ${product.category.label}.`,
     plainText(product.category.description),
     bullets.length > 0 ? `Caractéristiques : ${bullets.join(", ")}.` : "",
     conditionFor(product.condition) === "new" ? "État : neuf, jamais utilisé." : "",
@@ -419,7 +423,7 @@ export interface MerchantRecord {
    * quand la remise vient d'une campagne, qui seule connaît ses dates.
    */
   salePriceEffectiveDate?: string;
-  brand: string;
+  brand?: string;
   gtin?: string;
   mpn?: string;
   /** "no" seulement lorsque ni GTIN ni MPN ne sont disponibles. */
@@ -494,7 +498,7 @@ export function buildMerchantRecord(product: MerchantProduct): MerchantRecord {
     salePriceEffectiveDate: onSale
       ? salePriceWindow(priceCuttingPromotion(product))
       : undefined,
-    brand: product.brand.slice(0, 70),
+    brand: product.brand.trim() ? product.brand.trim().slice(0, 70) : undefined,
     gtin,
     mpn: mpn?.slice(0, 70),
     identifierExists: !gtin && !mpn ? "no" : undefined,
@@ -623,11 +627,20 @@ export function auditMerchantProduct(
   }
 
   if (!product.brand.trim()) {
-    issues.push({
-      level: "error",
-      attribute: "brand",
-      message: "Marque manquante — c'est un attribut obligatoire pour les articles neufs.",
-    });
+    if (conditionFor(product.condition) === "new") {
+      issues.push({
+        level: "error",
+        attribute: "brand",
+        message: "Marque manquante — c'est un attribut obligatoire pour les articles neufs.",
+      });
+    } else {
+      issues.push({
+        level: "warning",
+        attribute: "brand",
+        message:
+          "Occasion sans marque connue : le flux omet g:brand et déclare identifier_exists=no, comme Google l'admet pour un article d'occasion.",
+      });
+    }
   }
 
   // -- Identifiants uniques --

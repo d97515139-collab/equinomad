@@ -12,7 +12,7 @@ import {
 // officielle. Seuls les produits actifs y figurent.
 //
 // À déclarer dans Merchant Center comme source de données planifiée :
-//   https://remolquecaballos.com/feed/google
+//   https://equinomad.com/feed/google
 
 export const dynamic = "force-dynamic";
 
@@ -113,7 +113,7 @@ export async function GET(): Promise<Response> {
     tag("link", base, "  ") +
     tag(
       "description",
-      "Flux produits complet pour Google Merchant Center : bois de chauffage, bûches densifiées, granulés et allume-feu.",
+      `Remorques et vans pour chevaux — ${SHOP_NAME}`,
       "  ",
     ) +
     tag("language", MERCHANT_LANGUAGE, "  ");
