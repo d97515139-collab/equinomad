@@ -20,6 +20,8 @@ import { formatCents } from "@/lib/cart";
 import type { MailMessage } from "@/lib/mailer";
 import type { ShippingMethodKey } from "@/lib/cart";
 import type { OrderAddress, OrderRecord } from "@/server/orders";
+import { BRAND } from "@/config/brand";
+import { LOGO_FULL } from "@/components/brand/logoDimensions";
 // Import de type seul : ce module reste pur (aucune ouverture de base), pour
 // que les tests le chargent sans DATABASE_URL. Les coordonnées lui sont passées
 // en argument, jamais lues ici.
@@ -32,8 +34,7 @@ const BANK_TRANSFER_KEY = "banque";
 export type OrderEmailLocale = "es" | "en";
 
 const LOGO_WIDTH = 220;
-// Rapport d'origine du fichier : 747 × 162
-const LOGO_HEIGHT = Math.round((LOGO_WIDTH * 162) / 747);
+const LOGO_HEIGHT = Math.round((LOGO_WIDTH * LOGO_FULL.height) / LOGO_FULL.width);
 
 function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, "");
@@ -114,7 +115,7 @@ function layout(input: LayoutInput): string {
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%; background-color:#ffffff; border:1px solid #e0e2e6; border-radius:6px;">
             <tr>
               <td align="center" style="background-color:#ffffff; padding:32px 24px 24px 24px; border-radius:6px 6px 0 0;">
-                <img src="${logo}" alt="Remolque Caballos" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
+                <img src="${logo}" alt="${BRAND.name}" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
               </td>
             </tr>
             <tr>
@@ -403,8 +404,8 @@ export function buildOrderConfirmationEmail(
     action: { label: es ? "Ver mi pedido" : "View order", url: orderUrl },
     footnote: escapeHtml(footnote),
     footer: es
-      ? "Remolque Caballos — mensaje automático relativo a su pedido."
-      : "Remolque Caballos — automated message about your order.",
+      ? `${BRAND.name} — mensaje automático relativo a su pedido.`
+      : `${BRAND.name} — automated message about your order.`,
   });
 
   const bankText = bankOrder
@@ -521,7 +522,7 @@ export function buildOrderNotificationEmail(order: OrderRecord): Omit<MailMessag
     action: { label: "Abrir en el back-office", url: adminUrl },
     footnote:
       "Las existencias ya se reservaron al registrarse el pedido. El pago sigue pendiente: confírmelo en el back-office en cuanto lo reciba.",
-    footer: "Remolque Caballos — notificación automática del back-office.",
+    footer: `${BRAND.name} — notificación automática del back-office.`,
   });
 
   const text = [

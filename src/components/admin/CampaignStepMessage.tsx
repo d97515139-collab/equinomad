@@ -19,6 +19,7 @@ import {
   type MessageField,
 } from "@/components/admin/campaignDraft";
 import type { CampaignProductOption } from "@/server/campaignAdmin";
+import { COMPANY } from "@/config/company";
 
 /** Les huit champs de texte du brouillon, espagnol et anglais confondus. */
 type MessageKey =
@@ -298,7 +299,7 @@ export function CampaignStepMessage({ draft, products, onChange }: CampaignStepM
               </div>
 
               <p className="mt-3 text-center text-[10px] leading-4 text-muted-foreground">
-                EQUIVAN · 27 Grande Rue · 21700 Villebichot
+                {COMPANY.name} · {COMPANY.street} · {COMPANY.city}
                 <br />
                 Mentions légales · Confidentialité · lien de désinscription
               </p>

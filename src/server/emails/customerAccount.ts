@@ -10,12 +10,13 @@
  */
 
 import type { MailMessage } from "@/lib/mailer";
+import { BRAND } from "@/config/brand";
+import { LOGO_FULL } from "@/components/brand/logoDimensions";
 
 export type EmailLocale = "es" | "en";
 
 const LOGO_WIDTH = 220;
-// Rapport d'origine du fichier : 747 × 162
-const LOGO_HEIGHT = Math.round((LOGO_WIDTH * 162) / 747);
+const LOGO_HEIGHT = Math.round((LOGO_WIDTH * LOGO_FULL.height) / LOGO_FULL.width);
 
 export function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, "");
@@ -45,8 +46,8 @@ function layout(input: LayoutInput): string {
   const lang = input.locale;
   const footer =
     lang === "en"
-      ? "Remolque Caballos — automated message, please do not reply."
-      : "Remolque Caballos — message automatique, merci de ne pas y répondre.";
+      ? `${BRAND.name} — automated message, please do not reply.`
+      : `${BRAND.name} — message automatique, merci de ne pas y répondre.`;
 
   const body = input.paragraphs
     .map(
@@ -88,7 +89,7 @@ function layout(input: LayoutInput): string {
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%; background-color:#ffffff; border:1px solid #e0e2e6; border-radius:6px;">
             <tr>
               <td align="center" style="background-color:#ffffff; padding:32px 24px 24px 24px; border-radius:6px 6px 0 0;">
-                <img src="${logo}" alt="Remolque Caballos" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
+                <img src="${logo}" alt="${BRAND.name}" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
               </td>
             </tr>
             <tr>
@@ -200,11 +201,11 @@ export function buildWelcomeEmail(input: WelcomeEmailInput): Omit<MailMessage, "
   const paragraphs = es
     ? [
         `Hola, ${name}:`,
-        "su cuenta de cliente de Remolque Caballos ya está creada. Puede entrar ahora mismo para consultar sus pedidos y gestionar sus direcciones.",
+        `su cuenta de cliente de ${BRAND.name} ya está creada. Puede entrar ahora mismo para consultar sus pedidos y gestionar sus direcciones.`,
       ]
     : [
         `Hello ${name},`,
-        "your Remolque Caballos customer account has been created. You can sign in right away to review your orders and manage your addresses.",
+        `your ${BRAND.name} customer account has been created. You can sign in right away to review your orders and manage your addresses.`,
       ];
 
   const footnote = es

@@ -16,7 +16,7 @@ import { describe, it } from "node:test";
 import type { OrderRecord } from "@/server/orders";
 import { buildOrderConfirmationEmail, buildOrderNotificationEmail } from "./order";
 
-const SITE = "https://remolquecaballos.com";
+const SITE = "https://equinomad.com";
 process.env.NEXT_PUBLIC_SITE_URL = SITE;
 
 function order(overrides: Partial<OrderRecord> = {}): OrderRecord {
@@ -68,7 +68,7 @@ function order(overrides: Partial<OrderRecord> = {}): OrderRecord {
     items: [
       {
         id: "item_1",
-        brand: "Remolque Caballos",
+        brand: "Böckmann",
         name: "Hêtre 33 cm — palette 2 MAP",
         variantLabel: "",
         sku: "HET-33-P2",

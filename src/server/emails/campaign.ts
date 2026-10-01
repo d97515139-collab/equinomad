@@ -29,27 +29,12 @@ import {
   type TemplateVariable,
 } from "@/lib/campaigns";
 import { siteUrl } from "@/server/emails/customerAccount";
+import { BRAND } from "@/config/brand";
+import { COMPANY } from "@/config/company";
+import { LOGO_FULL } from "@/components/brand/logoDimensions";
 
 const LOGO_WIDTH = 220;
-// Rapport d'origine du fichier : 747 × 162
-const LOGO_HEIGHT = Math.round((LOGO_WIDTH * 162) / 747);
-
-/**
- * Identification du fournisseur reprise de src/content/legal/fr.ts.
- *
- * Recopiée ici et non importée : ce module ne doit dépendre d'aucun contenu de
- * page. Toute modification doit donc être répercutée ici EN MÊME TEMPS que dans
- * les pages légales — voir docs/LEGAL.md.
- */
-const IMPRESSUM = {
-  name: "EQUIVAN",
-  street: "27 Grande Rue",
-  city: "21700 Villebichot",
-  country: "France",
-  managingDirector: "Prénom Nom (à compléter)",
-  register: "RCS Dijon 990 527 871",
-  vatId: "FR71990527871",
-} as const;
+const LOGO_HEIGHT = Math.round((LOGO_WIDTH * LOGO_FULL.height) / LOGO_FULL.width);
 
 // ---- Entrées ----
 
@@ -361,17 +346,17 @@ function renderHtml(input: RenderInput & { paragraphs: string[]; token: string }
   const cards = input.products.map((product) => productCardHtml(product, input.token)).join("\n                ");
 
   const identity = [
-    IMPRESSUM.name,
-    IMPRESSUM.street,
-    IMPRESSUM.city,
-    IMPRESSUM.country,
+    COMPANY.name,
+    COMPANY.street,
+    COMPANY.city,
+    COMPANY.country,
   ].join(" &middot; ");
   const identityDetail = [
     isEnglish
-      ? `Managing director: ${IMPRESSUM.managingDirector}`
-      : `Président : ${IMPRESSUM.managingDirector}`,
-    IMPRESSUM.register,
-    isEnglish ? `VAT ID: ${IMPRESSUM.vatId}` : `TVA intracommunautaire : ${IMPRESSUM.vatId}`,
+      ? `Managing director: ${COMPANY.managingDirector}`
+      : `Président : ${COMPANY.managingDirector}`,
+    COMPANY.register,
+    isEnglish ? `VAT ID: ${COMPANY.vatId}` : `TVA intracommunautaire : ${COMPANY.vatId}`,
   ].join(" &middot; ");
 
   const optOutLabel = isEnglish
@@ -396,7 +381,7 @@ function renderHtml(input: RenderInput & { paragraphs: string[]; token: string }
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%; background-color:#ffffff; border:1px solid #e0e2e6; border-radius:6px;">
             <tr>
               <td align="center" style="background-color:#ffffff; padding:32px 24px 24px 24px; border-radius:6px 6px 0 0;">
-                <img src="${logo}" alt="Remolque Caballos" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
+                <img src="${logo}" alt="${BRAND.name}" width="${LOGO_WIDTH}" height="${LOGO_HEIGHT}" style="display:block; width:${LOGO_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;" />
               </td>
             </tr>
             <tr>
@@ -463,10 +448,10 @@ function renderText(input: RenderInput & { bodyText: string }): string {
   lines.push(
     "",
     "---",
-    `${IMPRESSUM.name}, ${IMPRESSUM.street}, ${IMPRESSUM.city}, ${IMPRESSUM.country}`,
+    `${COMPANY.name}, ${COMPANY.street}, ${COMPANY.city}, ${COMPANY.country}`,
     isEnglish
-      ? `Managing director: ${IMPRESSUM.managingDirector} — ${IMPRESSUM.register} — VAT ID: ${IMPRESSUM.vatId}`
-      : `Président : ${IMPRESSUM.managingDirector} — ${IMPRESSUM.register} — TVA intracommunautaire : ${IMPRESSUM.vatId}`,
+      ? `Managing director: ${COMPANY.managingDirector} — ${COMPANY.register} — VAT ID: ${COMPANY.vatId}`
+      : `Président : ${COMPANY.managingDirector} — ${COMPANY.register} — TVA intracommunautaire : ${COMPANY.vatId}`,
     `${isEnglish ? "Legal notice" : "Mentions légales"} : ${input.legalUrl}`,
     `${isEnglish ? "Privacy policy" : "Politique de confidentialité"} : ${input.privacyUrl}`,
     "",
