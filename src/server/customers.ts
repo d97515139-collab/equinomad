@@ -42,6 +42,7 @@ import { getOrderByNumber, type OrderRecord } from "@/server/orders";
 import { isOrderStatus, isPaymentStatus } from "@/lib/orderStatus";
 import type { OrderStatus, PaymentStatus } from "@/lib/orderStatus";
 import { COUNTRY_CODES, DEFAULT_COUNTRY, isValidPostalCode } from "@/lib/countries";
+import { BRAND } from "@/config/brand";
 
 // ---- Constantes ----
 
@@ -740,7 +741,7 @@ export async function exportCustomerData(customerId: string): Promise<Record<str
   return {
     hinweis:
       "Droit d'accès au titre de l'article 15 du RGPD et portabilité au titre de l'article 20. " +
-      "Ce fichier contient toutes les données personnelles que Remolque Caballos a enregistrées pour " +
+      `Ce fichier contient toutes les données personnelles que ${BRAND.name} a enregistrées pour ` +
       "votre compte client. Votre mot de passe n'y figure pas : il est stocké uniquement sous " +
       "forme d'empreinte non réversible.",
     erstelltAm: new Date().toISOString(),

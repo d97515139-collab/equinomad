@@ -7,6 +7,7 @@ import { ImageUploadField } from "@/components/admin/ImageUploadField";
 import { PreviewPanel } from "@/components/admin/PreviewPanel";
 import { slugify } from "@/lib/slugify";
 import type { CategoryGuideSection, CategoryRecord } from "@/server/types";
+import { BRAND } from "@/config/brand";
 
 /** Liste des univers produits — vient de la base de données, plus codée en dur. */
 export interface GroupOption {
@@ -299,7 +300,7 @@ export function CategoryForm({ mode, groups, initialData }: CategoryFormProps) {
         </button>
       </form>
 
-      <PreviewPanel url={`remolquecaballos.com/${group || "univers"}/${slug || "categorie"}`}>
+      <PreviewPanel url={`${BRAND.domain}/${group || "univers"}/${slug || "categorie"}`}>
         <CategoryPreview
           groupSlug={group}
           groupLabel={groupLabel}

@@ -1,3 +1,5 @@
+import { BRAND } from "@/config/brand";
+
 /**
  * Page d'attente servie pendant la maintenance.
  *
@@ -18,7 +20,7 @@ export const PAGE_MAINTENANCE = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Maintenance en cours — Remolque Caballos</title>
+<title>Maintenance en cours — ${BRAND.name}</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   body {
@@ -86,7 +88,7 @@ export const PAGE_MAINTENANCE = `<!doctype html>
     <p>Merci de votre patience.</p>
     <p class="contact">
       Une question ? Écrivez-nous à
-      <a href="mailto:contacto@remolquecaballos.com">contacto@remolquecaballos.com</a>
+      <a href="mailto:${BRAND.email}">${BRAND.email}</a>
     </p>
   </main>
 </body>

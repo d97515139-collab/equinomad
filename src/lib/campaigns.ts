@@ -1,3 +1,5 @@
+import { BRAND } from "@/config/brand";
+
 /**
  * Socle commun des campagnes marketing.
  *
@@ -344,7 +346,7 @@ export const CAMPAIGN_TYPES: readonly CampaignTypeDefinition[] = [
     suggestedHours: 336,
     fr: {
       subject: "Nouveau au catalogue : {produit}",
-      headline: "Nouveau chez Remolque Caballos",
+      headline: `Nouveau chez ${BRAND.name}`,
       bodyText:
         "Bonjour {prenom},\n\n" +
         "{marque} {produit} est disponible dès maintenant, au prix de {prix}.\n\n" +
@@ -354,7 +356,7 @@ export const CAMPAIGN_TYPES: readonly CampaignTypeDefinition[] = [
     },
     en: {
       subject: "New in our range: {produit}",
-      headline: "New at Remolque Caballos",
+      headline: `New at ${BRAND.name}`,
       bodyText:
         "Hello {prenom},\n\n" +
         "the {marque} {produit} is now available from us, priced at {prix}.\n\n" +

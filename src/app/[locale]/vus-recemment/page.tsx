@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { RecentlyViewedView } from "@/components/RecentlyViewedView";
+import { BRAND } from "@/config/brand";
 
 type PageParams = Promise<{ locale: string }>;
 
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   const t = await getTranslations({ locale, namespace: "recentlyViewed" });
 
   return {
-    title: `${t("title")} | Remolque Caballos`,
+    title: `${t("title")} | ${BRAND.name}`,
     description: t("emptyText"),
     // La liste vit dans sessionStorage : rien à indexer.
     robots: { index: false, follow: true },

@@ -42,8 +42,8 @@ const CSV_HEADER =
 function buildExample(categoryId: string): string {
   return [
     CSV_HEADER,
-    `${categoryId};Remolque Caballos;Hêtre 33 cm — palette 2 MAP;649,00 €;799,00 €;-18%;Humidité < 18 %|Séché en séchoir|Fendu prêt à brûler;Palette de hêtre séché en séchoir, livrée avec son relevé de mesure.;12`,
-    `${categoryId};Remolque Caballos;Chêne 50 cm — vrac 3 MAP;579,00 €;;Nouveau;Braises longue durée|Humidité < 18 %|Livré en vrac;Chêne séché en séchoir pour poêle de masse et feu continu.;6`,
+    `${categoryId};Böckmann;Portax Esprit 2 caballos;9.450,00 €;;Nuevo;Suelo de aluminio|Rampa trasera|Tempo 100;Remolque de dos caballos con suelo de aluminio y rampa trasera amortiguada.;3`,
+    `${categoryId};Cheval Liberté;Gold Origins 2 caballos;7.380,00 €;7.900,00 €;-7%;Poliéster|Puerta lateral|Freno de inercia;Van de dos caballos en poliéster con puerta lateral de salida.;2`,
   ].join("\n");
 }
 

@@ -12,6 +12,7 @@ import { PreviewPanel } from "@/components/admin/PreviewPanel";
 import { ProductPreview, type ProductPreviewView } from "@/components/admin/ProductPreview";
 import { slugify } from "@/lib/slugify";
 import type { CategoryRecord, ProductRecord } from "@/server/types";
+import { BRAND } from "@/config/brand";
 
 interface ProductFormProps {
   mode: "new" | "edit";
@@ -481,7 +482,7 @@ export function ProductForm({
 
       {showPreview && (
         <PreviewPanel
-          url={`remolquecaballos.com/${categoryId || "univers/categorie"}/${productSlug}`}
+          url={`${BRAND.domain}/${categoryId || "univers/categorie"}/${productSlug}`}
           actions={
             <div className="flex rounded-sm border border-border bg-white text-xs font-bold">
               <button

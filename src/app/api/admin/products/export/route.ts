@@ -3,6 +3,7 @@ import { requireAdminApi } from "@/lib/adminApi";
 import { listCategories, listProducts } from "@/server/store";
 import { filterAndSortProducts, isSortValue } from "@/server/productListing";
 import type { ProductRecord } from "@/server/types";
+import { BRAND } from "@/config/brand";
 
 /**
  * Export de la liste des produits, au format tableur (CSV) ou imprimable (PDF).
@@ -194,7 +195,7 @@ async function buildPdf(rows: ExportRow[], subtitle: string): Promise<Uint8Array
     doc,
     font: await doc.embedFont(StandardFonts.Helvetica),
     bold: await doc.embedFont(StandardFonts.HelveticaBold),
-    title: "Remolque Caballos — Catalogue produits",
+    title: `${BRAND.name} — Catalogue produits`,
     subtitle,
   };
 

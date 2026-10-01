@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import "./globals.css";
+import { BRAND } from "@/config/brand";
 
 // Inter porte toute l'interface : navigation, fiches, chiffres techniques.
 // Sa chasse tabulaire (voir « .dato » dans globals.css) aligne les MMA et les
@@ -25,7 +26,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Remolque Caballos | Remolques para caballos — venta, matriculación y entrega a domicilio",
+  title: `${BRAND.name} | Remolques para caballos — venta, matriculación y entrega a domicilio`,
   description:
     "Remolques y vans para 1, 2, 3 y 4 caballos: Cheval Liberté, Böckmann, Ifor Williams, Humbaur y Fautras. Homologados, matriculados y entregados en su domicilio.",
 };

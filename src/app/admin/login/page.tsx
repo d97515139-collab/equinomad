@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/brand/Logo";
+import { BRAND } from "@/config/brand";
 
 interface Challenge {
   challengeId: string;
@@ -299,7 +300,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          Remolque Caballos — administration
+          {BRAND.name} — administration
         </p>
       </div>
     </div>

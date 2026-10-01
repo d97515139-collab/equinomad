@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import type { BankTransferSettings } from "@/server/bankTransfer";
+import { BRAND } from "@/config/brand";
 
 /**
  * Coordonnées du virement bancaire. Ce que le commerçant saisit ici s'affiche à
@@ -50,7 +51,7 @@ export function BankTransferForm({ initial }: { initial: BankTransferSettings })
           <input
             value={holder}
             onChange={(event) => setHolder(event.target.value)}
-            placeholder="ex. Remolque Caballos"
+            placeholder={`ex. ${BRAND.name}, S.L.`}
             className="w-full rounded-sm border border-border px-3 py-2 outline-none focus:border-primary"
           />
         </label>

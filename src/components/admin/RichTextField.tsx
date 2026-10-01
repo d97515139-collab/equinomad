@@ -5,6 +5,7 @@ import { Bold, Italic, Link2 } from "lucide-react";
 import { RichText } from "@/components/RichText";
 import { isSafeHref, paragraphsOf } from "@/lib/richText";
 import { cn } from "@/lib/utils";
+import { BRAND } from "@/config/brand";
 
 /**
  * Champ de texte avec mise en forme, pour les pages légales.
@@ -62,7 +63,7 @@ export function RichTextField({
 
     if (mark === "link") {
       const href = window.prompt(
-        "Adresse du lien\n\nExemples : /cgv, https://exemple.fr, mailto:contacto@remolquecaballos.com",
+        `Adresse du lien\n\nExemples : /cgv, https://exemple.fr, mailto:${BRAND.email}`,
         "https://",
       );
       if (href === null) return;

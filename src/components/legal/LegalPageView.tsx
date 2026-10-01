@@ -8,6 +8,7 @@ import { findLegalPage } from "@/server/legalPages";
 import { paragraphsOf, stripMarks } from "@/lib/richText";
 import type { LegalPage, LegalSection, LegalSlug } from "@/content/legal/types";
 import { publicSiteUrl } from "@/config/brand";
+import { BRAND } from "@/config/brand";
 
 const SITE_URL = publicSiteUrl();
 
@@ -30,7 +31,7 @@ export async function buildLegalMetadata(slug: LegalSlug, locale: string): Promi
   const first = stripMarks(page.intro ?? page.sections[0]?.body ?? "");
 
   return {
-    title: `${page.title} | Remolque Caballos`,
+    title: `${page.title} | ${BRAND.name}`,
     description: first.slice(0, 155),
     alternates: {
       canonical: `${SITE_URL}${path}`,

@@ -24,6 +24,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/brand/Logo";
 import { LogoutButton } from "@/components/admin/LogoutButton";
+import { BRAND } from "@/config/brand";
 
 interface NavEntry {
   label: string;
@@ -106,7 +107,7 @@ export function AdminSidebar({
           href="/admin"
           onClick={() => setMobileOpen(false)}
           className="block"
-          aria-label="Remolque Caballos — administration"
+          aria-label={`${BRAND.name} — administration`}
         >
           {/* Fond sombre : c'est la variante claire du logo qui s'impose. */}
           <Logo tone="light" className="h-8 w-auto" />
@@ -187,7 +188,7 @@ export function AdminSidebar({
 
       {/* Barre mobile : la même navigation, ouverte par-dessus le contenu */}
       <div className="sticky top-0 z-40 flex items-center justify-between border-b border-border bg-secondary px-4 py-3 text-secondary-foreground lg:hidden">
-        <Link href="/admin" aria-label="Remolque Caballos — administration">
+        <Link href="/admin" aria-label={`${BRAND.name} — administration`}>
           <Logo tone="light" className="h-7 w-auto sm:h-7" />
         </Link>
         <button
