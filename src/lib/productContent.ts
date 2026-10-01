@@ -1,4 +1,5 @@
 import { isValidGtin } from "./gtin";
+import { BRAND } from "@/config/brand";
 
 /**
  * Contenu rédigé pour un produit, appliqué en base par son slug.
@@ -1061,59 +1062,59 @@ export function buildNewProductCopy(source: NewCatalogCopySource): ProductConten
   };
 
   const shortDescription = compactSpaces(
-    `En Remolque Caballos, el ${productName} se presenta como ${descriptor.es}${weights.payload ? ` con ${weights.payload} kg de carga útil` : ""}${primaryFeature ? ` y ${inlineFact(primaryFeature.es, "es")}` : ""}.`,
+    `En ${BRAND.name}, el ${productName} se presenta como ${descriptor.es}${weights.payload ? ` con ${weights.payload} kg de carga útil` : ""}${primaryFeature ? ` y ${inlineFact(primaryFeature.es, "es")}` : ""}.`,
   );
   const shortDescriptionEn = compactSpaces(
-    `At Remolque Caballos, the ${productName} is presented as a ${descriptor.en}${weights.payload ? ` with a ${weights.payload} kg payload` : ""}${primaryFeature ? ` and ${inlineFact(primaryFeature.en, "en")}` : ""}.`,
+    `At ${BRAND.name}, the ${productName} is presented as a ${descriptor.en}${weights.payload ? ` with a ${weights.payload} kg payload` : ""}${primaryFeature ? ` and ${inlineFact(primaryFeature.en, "en")}` : ""}.`,
   );
   const shortDescriptionFr = compactSpaces(
-    `Chez Remolque Caballos, le ${productName} est présenté comme une ${descriptor.fr}${weights.payload ? ` avec ${weights.payload} kg de charge utile` : ""}${primaryFeature ? ` et ${inlineFact(primaryFeature.fr, "fr")}` : ""}.`,
+    `Chez ${BRAND.name}, le ${productName} est présenté comme une ${descriptor.fr}${weights.payload ? ` avec ${weights.payload} kg de charge utile` : ""}${primaryFeature ? ` et ${inlineFact(primaryFeature.fr, "fr")}` : ""}.`,
   );
   const shortDescriptionDe = compactSpaces(
-    `Bei Remolque Caballos wird der ${productName} als ${descriptor.de}${weights.payload ? ` mit ${weights.payload} kg Nutzlast` : ""}${primaryFeature ? ` und ${inlineFact(primaryFeature.de, "de")}` : ""} vorgestellt.`,
+    `Bei ${BRAND.name} wird der ${productName} als ${descriptor.de}${weights.payload ? ` mit ${weights.payload} kg Nutzlast` : ""}${primaryFeature ? ` und ${inlineFact(primaryFeature.de, "de")}` : ""} vorgestellt.`,
   );
   const shortDescriptionIt = compactSpaces(
-    `Da Remolque Caballos, il ${productName} è presentato come ${descriptor.it}${weights.payload ? ` con ${weights.payload} kg di portata utile` : ""}${primaryFeature ? ` e ${inlineFact(primaryFeature.it, "it")}` : ""}.`,
+    `Da ${BRAND.name}, il ${productName} è presentato come ${descriptor.it}${weights.payload ? ` con ${weights.payload} kg di portata utile` : ""}${primaryFeature ? ` e ${inlineFact(primaryFeature.it, "it")}` : ""}.`,
   );
 
   const description = [
-    `En Remolque Caballos incorporamos el ${productName} dentro de la categoría ${categoryLabel.es.toLowerCase()}. Lo tratamos como una ficha editorial propia del catálogo nuevo, con una lectura pensada para comparar masas homologadas, espacio interior, solución constructiva y uso real sin depender de un texto de fabricante pegado sin contexto.`,
+    `En ${BRAND.name} incorporamos el ${productName} dentro de la categoría ${categoryLabel.es.toLowerCase()}. Lo tratamos como una ficha editorial propia del catálogo nuevo, con una lectura pensada para comparar masas homologadas, espacio interior, solución constructiva y uso real sin depender de un texto de fabricante pegado sin contexto.`,
     `${capacitySentence.es} ${weightSentence.es} ${dimensionSentence.es}`,
     `${featureSentence.es} ${permitSentence.es}`,
     `Por planteamiento, este ${descriptor.es} encaja bien en ${usage.es}. La lógica de nuestra ficha no es inflar el discurso comercial, sino dejar ordenados los datos que de verdad cambian la decisión: cuánto puede cargar, qué espacio ofrece, qué material soporta el uso continuo y qué tipo de conjunto tractor exige.`,
-    `En Remolque Caballos dejamos esta unidad nueva como una referencia lista para presupuesto, comparación técnica y preparación de entrega. Antes del cierre conviene confirmar configuración exacta, accesorios elegidos y vehículo tractor previsto, pero la base de lectura del producto ya queda estructurada aquí con un tono propio y estable para toda la gama.`,
+    `En ${BRAND.name} dejamos esta unidad nueva como una referencia lista para presupuesto, comparación técnica y preparación de entrega. Antes del cierre conviene confirmar configuración exacta, accesorios elegidos y vehículo tractor previsto, pero la base de lectura del producto ya queda estructurada aquí con un tono propio y estable para toda la gama.`,
   ].join("\n\n");
 
   const descriptionEn = [
-    `At Remolque Caballos, the ${productName} sits in the ${categoryLabel.en.toLowerCase()} category. We present it as part of our own new-stock catalogue so the buyer can compare homologated weights, interior room, build solution and real use without relying on pasted manufacturer wording.`,
+    `At ${BRAND.name}, the ${productName} sits in the ${categoryLabel.en.toLowerCase()} category. We present it as part of our own new-stock catalogue so the buyer can compare homologated weights, interior room, build solution and real use without relying on pasted manufacturer wording.`,
     `${capacitySentence.en} ${weightSentence.en} ${dimensionSentence.en}`,
     `${featureSentence.en} ${permitSentence.en}`,
     `In practical terms, this ${descriptor.en} fits ${usage.en}. The point of our copy is not to inflate the sales language, but to keep the facts that truly change the buying decision in clear order: how much it carries, how much room it gives, what construction supports repeated use and what kind of towing combination it requires.`,
-    `At Remolque Caballos, this new unit is left ready for quotation, technical comparison and delivery preparation. Before the order is closed, the exact configuration, chosen accessories and intended towing vehicle still need to be confirmed, but the product reading base is already structured here with stable in-house wording across the range.`,
+    `At ${BRAND.name}, this new unit is left ready for quotation, technical comparison and delivery preparation. Before the order is closed, the exact configuration, chosen accessories and intended towing vehicle still need to be confirmed, but the product reading base is already structured here with stable in-house wording across the range.`,
   ].join("\n\n");
 
   const descriptionFr = [
-    `Chez Remolque Caballos, le ${productName} prend place dans la catégorie ${categoryLabel.fr.toLowerCase()}. Nous le présentons comme une fiche éditoriale propre à notre catalogue neuf, afin que l'acheteur compare les masses homologuées, l'espace intérieur, la solution constructive et l'usage réel sans dépendre d'un texte fabricant repris tel quel.`,
+    `Chez ${BRAND.name}, le ${productName} prend place dans la catégorie ${categoryLabel.fr.toLowerCase()}. Nous le présentons comme une fiche éditoriale propre à notre catalogue neuf, afin que l'acheteur compare les masses homologuées, l'espace intérieur, la solution constructive et l'usage réel sans dépendre d'un texte fabricant repris tel quel.`,
     `${capacitySentence.fr} ${weightSentence.fr} ${dimensionSentence.fr}`,
     `${featureSentence.fr} ${permitSentence.fr}`,
     `Dans son usage concret, cette ${descriptor.fr} convient bien à ${usage.fr}. La logique de notre rédaction n'est pas de gonfler le discours commercial, mais d'ordonner les points qui font vraiment bouger la décision : ce que la remorque peut charger, l'espace qu'elle offre, le matériau qui tient dans le temps et le type de véhicule tracteur qu'elle appelle.`,
-    `Chez Remolque Caballos, cette unité neuve est laissée prête pour devis, comparaison technique et préparation de livraison. Avant la validation finale, il reste utile de confirmer la configuration exacte, les équipements retenus et le véhicule tracteur prévu, mais la base de lecture du produit est déjà structurée ici avec un ton propre et stable pour l'ensemble de la gamme.`,
+    `Chez ${BRAND.name}, cette unité neuve est laissée prête pour devis, comparaison technique et préparation de livraison. Avant la validation finale, il reste utile de confirmer la configuration exacte, les équipements retenus et le véhicule tracteur prévu, mais la base de lecture du produit est déjà structurée ici avec un ton propre et stable pour l'ensemble de la gamme.`,
   ].join("\n\n");
 
   const descriptionDe = [
-    `Bei Remolque Caballos gehört der ${productName} zur Kategorie ${categoryLabel.de.toLowerCase()}. Wir stellen ihn als eigene redaktionelle Seite unseres Neufahrzeug-Katalogs dar, damit Käufer zGG, Innenraum, Konstruktionslösung und reale Nutzung vergleichen können, ohne auf unverändert eingefügten Herstellertext angewiesen zu sein.`,
+    `Bei ${BRAND.name} gehört der ${productName} zur Kategorie ${categoryLabel.de.toLowerCase()}. Wir stellen ihn als eigene redaktionelle Seite unseres Neufahrzeug-Katalogs dar, damit Käufer zGG, Innenraum, Konstruktionslösung und reale Nutzung vergleichen können, ohne auf unverändert eingefügten Herstellertext angewiesen zu sein.`,
     `${capacitySentence.de} ${weightSentence.de} ${dimensionSentence.de}`,
     `${featureSentence.de} ${permitSentence.de}`,
     `In der Praxis passt dieser ${descriptor.de} gut zu ${usage.de}. Unsere Beschreibung soll keine Verkaufssprache aufblasen, sondern genau die Punkte sauber ordnen, die die Entscheidung verändern: welche Nutzlast möglich ist, wie viel Raum zur Verfügung steht, welche Bauweise den wiederholten Einsatz trägt und welches Zugfahrzeug sinnvoll dazu passt.`,
-    `Bei Remolque Caballos bleibt diese neue Einheit damit bereit für Angebot, technischen Vergleich und Lieferplanung. Vor dem Abschluss sollten exakte Konfiguration, gewählte Ausstattung und vorgesehenes Zugfahrzeug noch bestätigt werden, doch die Produktbasis ist hier bereits mit einer eigenen und stabilen Sprache für das gesamte Sortiment strukturiert.`,
+    `Bei ${BRAND.name} bleibt diese neue Einheit damit bereit für Angebot, technischen Vergleich und Lieferplanung. Vor dem Abschluss sollten exakte Konfiguration, gewählte Ausstattung und vorgesehenes Zugfahrzeug noch bestätigt werden, doch die Produktbasis ist hier bereits mit einer eigenen und stabilen Sprache für das gesamte Sortiment strukturiert.`,
   ].join("\n\n");
 
   const descriptionIt = [
-    `Da Remolque Caballos, il ${productName} rientra nella categoria ${categoryLabel.it.toLowerCase()}. Lo presentiamo come una scheda editoriale propria del nostro catalogo nuovo, così l'acquirente può confrontare masse omologate, spazio interno, soluzione costruttiva e uso reale senza dipendere da un testo di produttore incollato senza contesto.`,
+    `Da ${BRAND.name}, il ${productName} rientra nella categoria ${categoryLabel.it.toLowerCase()}. Lo presentiamo come una scheda editoriale propria del nostro catalogo nuovo, così l'acquirente può confrontare masse omologate, spazio interno, soluzione costruttiva e uso reale senza dipendere da un testo di produttore incollato senza contesto.`,
     `${capacitySentence.it} ${weightSentence.it} ${dimensionSentence.it}`,
     `${featureSentence.it} ${permitSentence.it}`,
     `Nell'uso concreto, questo ${descriptor.it} si adatta bene a ${usage.it}. La logica della nostra redazione non è gonfiare il linguaggio commerciale, ma ordinare con chiarezza i punti che cambiano davvero la scelta: quanto può caricare, quale spazio offre, quale materiale sostiene l'uso continuo e quale combinazione di traino richiede.`,
-    `Da Remolque Caballos, questa unità nuova resta pronta per preventivo, confronto tecnico e preparazione della consegna. Prima della conferma finale conviene verificare configurazione esatta, accessori scelti e veicolo trainante previsto, ma la base di lettura del prodotto è già strutturata qui con un tono proprietario e stabile per tutta la gamma.`,
+    `Da ${BRAND.name}, questa unità nuova resta pronta per preventivo, confronto tecnico e preparazione della consegna. Prima della conferma finale conviene verificare configurazione esatta, accessori scelti e veicolo trainante previsto, ma la base di lettura del prodotto è già strutturata qui con un tono proprietario e stabile per tutta la gamma.`,
   ].join("\n\n");
 
   return {
@@ -1287,59 +1288,59 @@ export function buildOccasionCopy(source: OccasionCopySource): ProductContent {
   };
 
   const shortDescription = compactSpaces(
-    `En Remolque Caballos incorporamos este ${identity.es} con ${sourceData.es}, reescrito como ficha propia de ocasión para una lectura directa y limpia.`,
+    `En ${BRAND.name} incorporamos este ${identity.es} con ${sourceData.es}, reescrito como ficha propia de ocasión para una lectura directa y limpia.`,
   );
   const shortDescriptionEn = compactSpaces(
-    `At Remolque Caballos, this ${identity.en} is presented with ${sourceData.en}, rewritten as our own used-stock listing for a clear and tidy reading.`,
+    `At ${BRAND.name}, this ${identity.en} is presented with ${sourceData.en}, rewritten as our own used-stock listing for a clear and tidy reading.`,
   );
   const shortDescriptionFr = compactSpaces(
-    `Chez Remolque Caballos, cette ${identity.fr} est présentée avec ${sourceData.fr}, réécrite comme fiche d'occasion de notre propre catalogue pour une lecture claire et directe.`,
+    `Chez ${BRAND.name}, cette ${identity.fr} est présentée avec ${sourceData.fr}, réécrite comme fiche d'occasion de notre propre catalogue pour une lecture claire et directe.`,
   );
   const shortDescriptionDe = compactSpaces(
-    `Bei Remolque Caballos wird dieser ${identity.de} mit ${sourceData.de} als eigene Gebrauchtfahrzeug-Seite unseres Katalogs präsentiert, klar neu formuliert und ohne Fremdverweise.`,
+    `Bei ${BRAND.name} wird dieser ${identity.de} mit ${sourceData.de} als eigene Gebrauchtfahrzeug-Seite unseres Katalogs präsentiert, klar neu formuliert und ohne Fremdverweise.`,
   );
   const shortDescriptionIt = compactSpaces(
-    `Da Remolque Caballos, questo ${identity.it} è presentato con ${sourceData.it}, riscritto come scheda usato del nostro catalogo per una lettura chiara e ordinata.`,
+    `Da ${BRAND.name}, questo ${identity.it} è presentato con ${sourceData.it}, riscritto come scheda usato del nostro catalogo per una lettura chiara e ordinata.`,
   );
 
   const description = [
-    `En Remolque Caballos presentamos este ${identity.es} dentro de la categoría ${categoryLabel.es.toLowerCase()}. La ficha se ha reconstruido con un criterio editorial propio para que el comprador vea el producto como parte de nuestra selección de ocasión, sin teléfonos, enlaces ni referencias visibles a portales externos.`,
-    `La información útil que retenemos para la decisión de compra se concentra en lo que realmente impacta en el uso diario: ${sourceData.es}. Cuando una unidad usada publica menos detalle que un modelo nuevo, en Remolque Caballos priorizamos precisamente estos puntos porque son los que permiten comparar varias opciones sobre una base homogénea y comprensible.`,
+    `En ${BRAND.name} presentamos este ${identity.es} dentro de la categoría ${categoryLabel.es.toLowerCase()}. La ficha se ha reconstruido con un criterio editorial propio para que el comprador vea el producto como parte de nuestra selección de ocasión, sin teléfonos, enlaces ni referencias visibles a portales externos.`,
+    `La información útil que retenemos para la decisión de compra se concentra en lo que realmente impacta en el uso diario: ${sourceData.es}. Cuando una unidad usada publica menos detalle que un modelo nuevo, en ${BRAND.name} priorizamos precisamente estos puntos porque son los que permiten comparar varias opciones sobre una base homogénea y comprensible.`,
     `Por formato, este ${descriptor.es} encaja bien para transporte particular, salidas de club, entrenamientos y desplazamientos regulares donde se valora un acceso sencillo, una implantación pensada para dos plazas y una lectura rápida del equipamiento disponible. La lógica de la ocasión aquí no es copiar un anuncio ajeno, sino convertir la información dispersa en una ficha comercial coherente y usable para el catálogo.`,
-    `Nuestro trabajo en Remolque Caballos consiste en dejar cada unidad de ocasión con un lenguaje estable y profesional. Si la ficha original menciona inspección al día, elementos renovados o equipamiento práctico, esos datos se integran aquí dentro de una redacción limpia, sin llamadas a terceros y sin expresiones improvisadas propias de un anuncio clasificado.`,
-    `Esta unidad se publica como parte de la selección de ocasión de Remolque Caballos${source.province?.trim() ? `, con referencia en la zona de ${source.province.trim()}` : ""}. Antes del cierre de venta, la verificación final debe centrarse en el estado general, la documentación disponible y el equipamiento efectivamente entregado, pero la base de lectura ya queda ordenada desde esta ficha propia de catálogo.`,
+    `Nuestro trabajo en ${BRAND.name} consiste en dejar cada unidad de ocasión con un lenguaje estable y profesional. Si la ficha original menciona inspección al día, elementos renovados o equipamiento práctico, esos datos se integran aquí dentro de una redacción limpia, sin llamadas a terceros y sin expresiones improvisadas propias de un anuncio clasificado.`,
+    `Esta unidad se publica como parte de la selección de ocasión de ${BRAND.name}${source.province?.trim() ? `, con referencia en la zona de ${source.province.trim()}` : ""}. Antes del cierre de venta, la verificación final debe centrarse en el estado general, la documentación disponible y el equipamiento efectivamente entregado, pero la base de lectura ya queda ordenada desde esta ficha propia de catálogo.`,
   ].join("\n\n");
 
   const descriptionEn = [
-    `At Remolque Caballos, this ${identity.en} is published in the ${categoryLabel.en.toLowerCase()} category. The listing has been rebuilt with our own editorial standard so the buyer reads it as part of our used selection, with no phone numbers, links or visible references to outside classified platforms.`,
-    `The useful information kept for the buying decision is centred on what matters in day-to-day use: ${sourceData.en}. When a used unit carries less detail than a new model, Remolque Caballos deliberately gives priority to these points because they are the ones that let a buyer compare several trailers on a consistent and readable basis.`,
+    `At ${BRAND.name}, this ${identity.en} is published in the ${categoryLabel.en.toLowerCase()} category. The listing has been rebuilt with our own editorial standard so the buyer reads it as part of our used selection, with no phone numbers, links or visible references to outside classified platforms.`,
+    `The useful information kept for the buying decision is centred on what matters in day-to-day use: ${sourceData.en}. When a used unit carries less detail than a new model, ${BRAND.name} deliberately gives priority to these points because they are the ones that let a buyer compare several trailers on a consistent and readable basis.`,
     `By format, this ${descriptor.en} suits private transport, club outings, training trips and regular journeys where straightforward access, a practical two-horse layout and a clear reading of the available equipment matter more than decorative wording. The point of the used range here is not to mirror somebody else's advert, but to turn scattered source data into a coherent catalogue entry.`,
-    `Our role at Remolque Caballos is to leave each used unit with stable, professional copy. If the original listing mentions current inspection status, renewed running gear or day-to-day equipment, those facts are folded into clean wording here, without third-party calls to action and without the rough phrasing typical of a classifieds post.`,
-    `This unit is published as part of the Remolque Caballos used selection${source.province?.trim() ? `, referenced in the ${source.province.trim()} area` : ""}. Before the purchase is completed, the final check should still focus on general condition, available paperwork and the equipment actually delivered, but the reading base is already organised here as a proper catalogue page.`,
+    `Our role at ${BRAND.name} is to leave each used unit with stable, professional copy. If the original listing mentions current inspection status, renewed running gear or day-to-day equipment, those facts are folded into clean wording here, without third-party calls to action and without the rough phrasing typical of a classifieds post.`,
+    `This unit is published as part of the ${BRAND.name} used selection${source.province?.trim() ? `, referenced in the ${source.province.trim()} area` : ""}. Before the purchase is completed, the final check should still focus on general condition, available paperwork and the equipment actually delivered, but the reading base is already organised here as a proper catalogue page.`,
   ].join("\n\n");
 
   const descriptionFr = [
-    `Chez Remolque Caballos, cette ${identity.fr} est publiée dans la catégorie ${categoryLabel.fr.toLowerCase()}. La fiche a été reconstruite selon notre propre ligne éditoriale afin que l'acheteur la lise comme un produit de notre sélection d'occasion, sans numéros, liens ni références visibles à des plateformes externes.`,
-    `Les informations utiles conservées pour la décision d'achat se concentrent sur ce qui compte réellement à l'usage quotidien : ${sourceData.fr}. Lorsqu'une unité d'occasion fournit moins de détails qu'un modèle neuf, Remolque Caballos met volontairement l'accent sur ces points, car ce sont eux qui permettent de comparer plusieurs remorques sur une base homogène et lisible.`,
+    `Chez ${BRAND.name}, cette ${identity.fr} est publiée dans la catégorie ${categoryLabel.fr.toLowerCase()}. La fiche a été reconstruite selon notre propre ligne éditoriale afin que l'acheteur la lise comme un produit de notre sélection d'occasion, sans numéros, liens ni références visibles à des plateformes externes.`,
+    `Les informations utiles conservées pour la décision d'achat se concentrent sur ce qui compte réellement à l'usage quotidien : ${sourceData.fr}. Lorsqu'une unité d'occasion fournit moins de détails qu'un modèle neuf, ${BRAND.name} met volontairement l'accent sur ces points, car ce sont eux qui permettent de comparer plusieurs remorques sur une base homogène et lisible.`,
     `Par son format, cette ${descriptor.fr} convient bien au transport privé, aux sorties de club, aux entraînements et aux déplacements réguliers où l'on recherche un accès simple, une implantation pratique pour deux places et une lecture rapide de l'équipement disponible. La logique de l'occasion ici n'est pas de recopier une annonce tierce, mais de transformer des informations dispersées en une fiche catalogue cohérente et exploitable.`,
-    `Notre rôle chez Remolque Caballos consiste à publier chaque unité d'occasion avec un texte stable et professionnel. Si la fiche d'origine mentionne un contrôle technique à jour, des éléments remis en état ou un équipement utile au quotidien, ces données sont intégrées ici dans une rédaction propre, sans appel à un tiers ni formules improvisées typiques d'une petite annonce.`,
-    `Cette unité est présentée comme faisant partie de la sélection d'occasion de Remolque Caballos${source.province?.trim() ? `, avec une référence dans la zone de ${source.province.trim()}` : ""}. Avant la conclusion de la vente, la vérification finale doit toujours porter sur l'état général, les documents disponibles et l'équipement effectivement livré, mais la base de lecture est déjà ordonnée ici comme sur une véritable fiche catalogue.`,
+    `Notre rôle chez ${BRAND.name} consiste à publier chaque unité d'occasion avec un texte stable et professionnel. Si la fiche d'origine mentionne un contrôle technique à jour, des éléments remis en état ou un équipement utile au quotidien, ces données sont intégrées ici dans une rédaction propre, sans appel à un tiers ni formules improvisées typiques d'une petite annonce.`,
+    `Cette unité est présentée comme faisant partie de la sélection d'occasion de ${BRAND.name}${source.province?.trim() ? `, avec une référence dans la zone de ${source.province.trim()}` : ""}. Avant la conclusion de la vente, la vérification finale doit toujours porter sur l'état général, les documents disponibles et l'équipement effectivement livré, mais la base de lecture est déjà ordonnée ici comme sur une véritable fiche catalogue.`,
   ].join("\n\n");
 
   const descriptionDe = [
-    `Bei Remolque Caballos wird dieser ${identity.de} in der Kategorie ${categoryLabel.de.toLowerCase()} geführt. Die Seite wurde nach unserem eigenen redaktionellen Standard neu aufgebaut, damit der Käufer das Produkt als Teil unserer Gebraucht-Auswahl liest, ohne Telefonnummern, Links oder sichtbare Hinweise auf fremde Kleinanzeigenportale.`,
-    `Für die Kaufentscheidung behalten wir nur die Informationen bei, die im Alltag wirklich relevant sind: ${sourceData.de}. Wenn eine gebrauchte Einheit weniger Details liefert als ein Neumodell, legt Remolque Caballos genau auf diese Punkte Wert, weil sie einen sauberen und verständlichen Vergleich mehrerer Anhänger ermöglichen.`,
+    `Bei ${BRAND.name} wird dieser ${identity.de} in der Kategorie ${categoryLabel.de.toLowerCase()} geführt. Die Seite wurde nach unserem eigenen redaktionellen Standard neu aufgebaut, damit der Käufer das Produkt als Teil unserer Gebraucht-Auswahl liest, ohne Telefonnummern, Links oder sichtbare Hinweise auf fremde Kleinanzeigenportale.`,
+    `Für die Kaufentscheidung behalten wir nur die Informationen bei, die im Alltag wirklich relevant sind: ${sourceData.de}. Wenn eine gebrauchte Einheit weniger Details liefert als ein Neumodell, legt ${BRAND.name} genau auf diese Punkte Wert, weil sie einen sauberen und verständlichen Vergleich mehrerer Anhänger ermöglichen.`,
     `Vom Format her passt dieser ${descriptor.de} gut zu privatem Transport, Vereinsfahrten, Trainingsterminen und regelmäßigen Strecken, bei denen ein einfacher Zugang, eine praxistaugliche Zwei-Pferde-Aufteilung und eine schnelle Übersicht über die Ausstattung wichtiger sind als dekorative Formulierungen. Der Sinn der Gebrauchtkategorie besteht hier nicht darin, ein fremdes Inserat zu spiegeln, sondern verstreute Angaben in einen stimmigen Katalogeintrag zu verwandeln.`,
-    `Unsere Aufgabe bei Remolque Caballos ist es, jede Gebraucht-Einheit mit einer stabilen und professionellen Beschreibung zu versehen. Wenn das Ausgangsinserat eine gültige Prüfung, erneuerte Komponenten oder nützliche Ausstattung erwähnt, werden diese Fakten hier in klare Formulierungen überführt, ohne Fremdaufrufe und ohne die improvisierte Sprache typischer Kleinanzeigen.`,
-    `Diese Einheit wird als Teil der Gebraucht-Auswahl von Remolque Caballos veröffentlicht${source.province?.trim() ? `, mit Bezug auf die Region ${source.province.trim()}` : ""}. Vor dem Verkaufsabschluss sollte die endgültige Kontrolle weiterhin auf Allgemeinzustand, vorhandene Unterlagen und tatsächlich mitgelieferte Ausstattung gerichtet sein, doch die Lesebasis ist hier bereits wie auf einer sauberen Katalogseite geordnet.`,
+    `Unsere Aufgabe bei ${BRAND.name} ist es, jede Gebraucht-Einheit mit einer stabilen und professionellen Beschreibung zu versehen. Wenn das Ausgangsinserat eine gültige Prüfung, erneuerte Komponenten oder nützliche Ausstattung erwähnt, werden diese Fakten hier in klare Formulierungen überführt, ohne Fremdaufrufe und ohne die improvisierte Sprache typischer Kleinanzeigen.`,
+    `Diese Einheit wird als Teil der Gebraucht-Auswahl von ${BRAND.name} veröffentlicht${source.province?.trim() ? `, mit Bezug auf die Region ${source.province.trim()}` : ""}. Vor dem Verkaufsabschluss sollte die endgültige Kontrolle weiterhin auf Allgemeinzustand, vorhandene Unterlagen und tatsächlich mitgelieferte Ausstattung gerichtet sein, doch die Lesebasis ist hier bereits wie auf einer sauberen Katalogseite geordnet.`,
   ].join("\n\n");
 
   const descriptionIt = [
-    `Da Remolque Caballos, questo ${identity.it} è pubblicato nella categoria ${categoryLabel.it.toLowerCase()}. La scheda è stata ricostruita secondo il nostro standard editoriale in modo che l'acquirente la legga come parte della nostra selezione usato, senza numeri di telefono, link o riferimenti visibili a portali esterni di annunci.`,
-    `Le informazioni utili che manteniamo per la decisione d'acquisto si concentrano su ciò che conta davvero nell'uso quotidiano: ${sourceData.it}. Quando un'unità usata offre meno dettagli di un modello nuovo, Remolque Caballos dà volontariamente priorità a questi punti perché sono quelli che permettono di confrontare più rimorchi su una base coerente e leggibile.`,
+    `Da ${BRAND.name}, questo ${identity.it} è pubblicato nella categoria ${categoryLabel.it.toLowerCase()}. La scheda è stata ricostruita secondo il nostro standard editoriale in modo che l'acquirente la legga come parte della nostra selezione usato, senza numeri di telefono, link o riferimenti visibili a portali esterni di annunci.`,
+    `Le informazioni utili che manteniamo per la decisione d'acquisto si concentrano su ciò che conta davvero nell'uso quotidiano: ${sourceData.it}. Quando un'unità usata offre meno dettagli di un modello nuovo, ${BRAND.name} dà volontariamente priorità a questi punti perché sono quelli che permettono di confrontare più rimorchi su una base coerente e leggibile.`,
     `Per formato, questo ${descriptor.it} si adatta bene al trasporto privato, alle uscite di circolo, agli allenamenti e agli spostamenti regolari in cui contano un accesso semplice, una disposizione pratica per due posti e una lettura rapida dell'attrezzatura disponibile. La logica dell'usato qui non è copiare un annuncio di terzi, ma trasformare dati dispersi in una scheda catalogo coerente e utilizzabile.`,
-    `Il nostro lavoro in Remolque Caballos consiste nel pubblicare ogni unità usata con un testo stabile e professionale. Se la scheda originale cita revisione valida, componenti rinnovati o dotazioni utili nell'uso quotidiano, questi dati vengono integrati qui in una redazione pulita, senza richiami a terzi e senza il linguaggio improvvisato tipico degli annunci classificati.`,
-    `Questa unità viene pubblicata come parte della selezione usato di Remolque Caballos${source.province?.trim() ? `, con riferimento alla zona di ${source.province.trim()}` : ""}. Prima della chiusura della vendita, la verifica finale deve comunque concentrarsi sulle condizioni generali, sui documenti disponibili e sulle dotazioni effettivamente consegnate, ma la base di lettura è già ordinata qui come in una vera scheda catalogo.`,
+    `Il nostro lavoro in ${BRAND.name} consiste nel pubblicare ogni unità usata con un testo stabile e professionale. Se la scheda originale cita revisione valida, componenti rinnovati o dotazioni utili nell'uso quotidiano, questi dati vengono integrati qui in una redazione pulita, senza richiami a terzi e senza il linguaggio improvvisato tipico degli annunci classificati.`,
+    `Questa unità viene pubblicata come parte della selezione usato di ${BRAND.name}${source.province?.trim() ? `, con riferimento alla zona di ${source.province.trim()}` : ""}. Prima della chiusura della vendita, la verifica finale deve comunque concentrarsi sulle condizioni generali, sui documenti disponibili e sulle dotazioni effettivamente consegnate, ma la base di lettura è già ordinata qui come in una vera scheda catalogo.`,
   ].join("\n\n");
 
   return {

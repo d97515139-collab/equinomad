@@ -218,14 +218,14 @@ test("buildOccasionCopy réécrit une fiche d'occasion sans fuite vers la source
   });
 
   assert.equal(entry.slug, "oc-ma-562496955");
-  assert.match(entry.shortDescription, /Remolque Caballos/);
-  assert.match(entry.description, /Remolque Caballos/);
+  assert.match(entry.shortDescription, /Equinomad/);
+  assert.match(entry.description, /Equinomad/);
   assert.match(entry.description, /matrícula roja/i);
   assert.match(entry.description, /luz interior/i);
   assert.doesNotMatch(entry.shortDescription, /www\.|https?:\/\/|Tlf|637538110|Milanuncios/i);
   assert.doesNotMatch(entry.description, /www\.|https?:\/\/|Tlf|637538110|Milanuncios/i);
-  assert.match(entry.shortDescriptionEn, /Remolque Caballos/);
-  assert.match(entry.descriptionEn, /Remolque Caballos/);
+  assert.match(entry.shortDescriptionEn, /Equinomad/);
+  assert.match(entry.descriptionEn, /Equinomad/);
   assert.match(entry.descriptionEn, /interior light|camera/i);
   assert.ok(entry.bullets?.some((bullet) => /Matrícula: Roja/i.test(bullet)));
   assert.ok(entry.bulletsEn?.some((bullet) => /Registration: Red plate/i.test(bullet)));
@@ -286,22 +286,22 @@ test("buildOccasionCopy génère aussi les versions fr, de et it", () => {
   assert.equal(typeof shortFr, "string");
   assert.equal(typeof longFr, "string");
   assert.ok(Array.isArray(bulletsFr));
-  assert.match(shortFr as string, /Remolque Caballos/);
-  assert.match(longFr as string, /Remolque Caballos/);
+  assert.match(shortFr as string, /Equinomad/);
+  assert.match(longFr as string, /Equinomad/);
   assert.ok((bulletsFr as string[]).some((bullet) => /Immatriculation : Plaque rouge/i.test(bullet)));
 
   assert.equal(typeof shortDe, "string");
   assert.equal(typeof longDe, "string");
   assert.ok(Array.isArray(bulletsDe));
-  assert.match(shortDe as string, /Remolque Caballos/);
-  assert.match(longDe as string, /Remolque Caballos/);
+  assert.match(shortDe as string, /Equinomad/);
+  assert.match(longDe as string, /Equinomad/);
   assert.ok((bulletsDe as string[]).some((bullet) => /Zulassung: Rotes Kennzeichen/i.test(bullet)));
 
   assert.equal(typeof shortIt, "string");
   assert.equal(typeof longIt, "string");
   assert.ok(Array.isArray(bulletsIt));
-  assert.match(shortIt as string, /Remolque Caballos/);
-  assert.match(longIt as string, /Remolque Caballos/);
+  assert.match(shortIt as string, /Equinomad/);
+  assert.match(longIt as string, /Equinomad/);
   assert.ok((bulletsIt as string[]).some((bullet) => /Immatricolazione: Targa rossa/i.test(bullet)));
 });
 
@@ -328,18 +328,35 @@ test("buildNewProductCopy génère une fiche neuve multilingue propre", () => {
     ],
   }) as ProductContent;
 
-  assert.match(entry.shortDescription, /Remolque Caballos/);
+  assert.match(entry.shortDescription, /Equinomad/);
   assert.match(entry.description, /Uno Esprit/);
   assert.match(entry.description, /896 kg/);
-  assert.match(entry.descriptionEn, /Remolque Caballos/);
+  assert.match(entry.descriptionEn, /Equinomad/);
   assert.match(entry.descriptionEn, /single-horse|payload/i);
-  assert.match(entry.shortDescriptionFr ?? "", /Remolque Caballos/);
+  assert.match(entry.shortDescriptionFr ?? "", /Equinomad/);
   assert.match(entry.descriptionFr ?? "", /896 kg/);
-  assert.match(entry.shortDescriptionDe ?? "", /Remolque Caballos/);
+  assert.match(entry.shortDescriptionDe ?? "", /Equinomad/);
   assert.match(entry.shortDescriptionDe ?? "", /Vollaluminiumboden/);
-  assert.match(entry.shortDescriptionIt ?? "", /Remolque Caballos/);
+  assert.match(entry.shortDescriptionIt ?? "", /Equinomad/);
   assert.ok(entry.bulletsFr?.some((bullet) => /PTAC : 1\.600 kg/i.test(bullet)));
   assert.ok(entry.bulletsDe?.some((bullet) => /zGG: 1\.600 kg/i.test(bullet)));
   assert.ok(entry.bulletsIt?.some((bullet) => /MMA: 1\.600 kg/i.test(bullet)));
   assert.deepEqual(validateProductContent([entry]), []);
+});
+
+test("buildOccasionCopy sans marque ne produit ni marque vide ni ancien nom", () => {
+  const entry = productContentLib.buildOccasionCopy({
+    slug: "oc-sin-marca",
+    name: "Van de ocasión para dos caballos",
+    brand: "",
+    categorySlug: "dos-caballos",
+    categoryLabel: "Remolques de dos caballos de ocasión",
+    categoryLabelEn: "Used two-horse trailers",
+    description: "Van de dos caballos con matrícula roja, luz interior e ITV al día.",
+    bullets: ["Capacidad 2 caballos", "Matrícula roja"],
+  });
+  const tout = JSON.stringify(entry);
+  assert.doesNotMatch(tout, /Remolque Caballos/);
+  assert.doesNotMatch(tout, /de marca\s*[,.]|by\s*[,.]|von\s*[,.]/);
+  assert.match(entry.shortDescription, /Equinomad/);
 });
