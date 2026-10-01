@@ -1,0 +1,180 @@
+[
+  {
+    "id": "cat-un-caballo",
+    "group": "nuevos",
+    "slug": "un-caballo",
+    "label": "Remolques de un caballo",
+    "description": "Remolques monoplaza homologados, ligeros y maniobrables. La mayoría se arrastra con carnet B sin ampliación, lo que los convierte en la primera compra habitual de quien deja de alquilar.",
+    "image": "/images/remolques/cat-un-caballo.svg",
+    "guide": {
+      "intro": "Un remolque de un caballo no es un remolque de dos al que le falta un sitio. Es una categoría propia: más corto, más ligero, y pensado para que el conjunto siga entrando en el permiso de conducir más común.",
+      "sections": [
+        {
+          "heading": "El peso manda antes que el precio",
+          "body": "Con el carnet B corriente puede circular con un conjunto de hasta 3.500 kg sumando la MMA del coche y la del remolque. Un monoplaza de 1.000 a 1.300 kg de MMA deja margen a casi cualquier todocamino.\n\nCompruebe la casilla F.1 de la ficha técnica de su vehículo antes de decidir nada. Es el número que decide si puede circular, y ninguna otra cifra lo sustituye."
+        },
+        {
+          "heading": "Un caballo solo viaja distinto",
+          "body": "Sin compañero al lado, el animal se apoya en los laterales para equilibrarse en las curvas. Por eso los monoplazas serios llevan barras de apoyo acolchadas a media altura y un ancho interior mayor del que sugiere la plaza única.\n\nDesconfíe de un monoplaza que sea simplemente estrecho: es donde se paga la diferencia entre un remolque de trabajo y uno de catálogo."
+        },
+        {
+          "heading": "Rampa o escalón",
+          "body": "La rampa completa es más cómoda para el caballo joven y para quien carga solo. El escalón bajo ahorra peso y longitud. Ambos se homologan igual; la elección es de manejo diario, no de seguridad."
+        }
+      ],
+      "closing": "Todos los modelos de esta categoría se entregan matriculados, con la ITV pasada y la placa de matrícula puesta. Usted recibe el remolque listo para enganchar."
+    }
+  },
+  {
+    "id": "cat-dos-caballos",
+    "group": "nuevos",
+    "slug": "dos-caballos",
+    "label": "Remolques de dos caballos",
+    "description": "El formato más vendido de España. Poliéster, aluminio o mixto, con MMA de 2.000 a 2.700 kg y carga útil suficiente para dos caballos de silla con su equipo.",
+    "image": "/images/remolques/cat-dos-caballos.svg",
+    "guide": {
+      "intro": "Nueve de cada diez remolques que salen de nuestro almacén llevan dos plazas. Es el formato que resuelve el club, la competición del fin de semana y el traslado al veterinario sin obligar a cambiar de vehículo tractor.",
+      "sections": [
+        {
+          "heading": "Carga útil, no MMA",
+          "body": "La MMA es lo que pesa el conjunto lleno; la carga útil es lo que puede meter dentro. Dos caballos de silla de 550 kg suman 1.100 kg, y a eso hay que añadir sillas, mantas, cubos y agua.\n\nBusque 1.300 kg de carga útil como suelo. Por debajo, el remolque se homologa igual pero usted viaja al límite en cada salida, y el límite se paga en la báscula de la Guardia Civil."
+        },
+        {
+          "heading": "Poliéster, aluminio o mixto",
+          "body": "El poliéster aísla mejor del calor y del ruido, y encaja el golpe sin abollarse; pesa más. El aluminio resta entre 80 y 150 kg, que se convierten directamente en carga útil, pero transmite más temperatura en verano.\n\nEl mixto —chasis y estructura en acero galvanizado, paneles en poliéster— es el compromiso que más se vende en la Península, y el que mejor envejece bajo el sol del sur."
+        },
+        {
+          "heading": "Lo que separa un modelo de 8.000 € de uno de 17.000 €",
+          "body": "No es la chapa: es la suspensión, el freno y la ventilación. Los modelos altos llevan suspensión de goma independiente por rueda, freno de inercia con retroceso automático y techo elevado con extractores.\n\nEn trayectos cortos la diferencia apenas se nota. En cuatro horas de autovía en agosto, se nota en el caballo que baja."
+        }
+      ],
+      "closing": "Todos los remolques de dos plazas se entregan con rueda de repuesto, cinchas de amarre y la documentación de homologación europea completa."
+    }
+  },
+  {
+    "id": "cat-tres-cuatro-caballos",
+    "group": "nuevos",
+    "slug": "tres-cuatro-caballos",
+    "label": "Remolques de tres y cuatro caballos",
+    "description": "Doble eje, techo elevado y carga útil por encima de 2.000 kg. Para cuadras, clubes y transportistas que mueven varios caballos en la misma salida.",
+    "image": "/images/remolques/cat-tres-cuatro-caballos.svg",
+    "guide": {
+      "intro": "A partir de tres plazas cambian el permiso, el vehículo tractor y la manera de conducir. No es un remolque más grande: es otra categoría de vehículo.",
+      "sections": [
+        {
+          "heading": "Permiso B+E, sin excepciones",
+          "body": "Estos remolques superan los 3.500 kg de MMA del conjunto en cualquier combinación realista. Necesita el permiso B+E, y el vehículo tractor debe tener una masa remolcable declarada suficiente en su ficha técnica.\n\nEs la primera comprobación que hacemos con usted antes de cerrar un pedido. Vender un remolque que el cliente no puede arrastrar no interesa a nadie."
+        },
+        {
+          "heading": "Carga oblicua o carga recta",
+          "body": "La carga oblicua —los caballos viajan en diagonal— aprovecha mejor la longitud y reparte el peso sobre los dos ejes. Es lo que permite meter cuatro caballos en poco más de seis metros.\n\nLa carga recta es más fácil de aprender para el caballo y más rápida de cargar cuando se va con prisa. Ninguna de las dos es mejor; dependen de sus animales y de quién cargue habitualmente."
+        },
+        {
+          "heading": "Freno y suspensión no son opcionales",
+          "body": "Con dos ejes, la avería más cara es la del freno de inercia mal mantenido. Todos nuestros modelos de esta categoría llevan freno con retroceso automático y ejes con suspensión de goma, sin ballestas.\n\nLa revisión de frenos entra en la primera ITV, que le programamos nosotros."
+        }
+      ],
+      "closing": "Entrega concertada en toda la Península con transporte especializado. Los modelos de esta categoría no viajan en camión abierto."
+    }
+  },
+  {
+    "id": "cat-ocasion-un-caballo",
+    "group": "ocasion",
+    "slug": "un-caballo",
+    "label": "Remolques de un caballo de ocasión",
+    "description": "Monoplazas de segunda mano revisados en taller, con ITV en vigor y documentación al día. La entrada más asequible al transporte propio.",
+    "image": "/images/remolques/cat-un-caballo.svg",
+    "guide": {
+      "intro": "Un monoplaza de ocasión es donde el ahorro es mayor en proporción: son remolques que se usan poco, a menudo para un solo caballo y trayectos cortos, y que llegan al mercado de segunda mano con pocos kilómetros encima.\n\nEso mismo esconde una trampa. Un remolque parado durante años se degrada más que uno que rueda: los neumáticos se cuartean por el sol, los frenos se agarrotan y la humedad trabaja el suelo sin que nadie lo vea.",
+      "sections": [
+        {
+          "heading": "El suelo antes que la chapa",
+          "body": "La carrocería se repinta; el suelo no se disimula. Es la pieza que sostiene 600 kg en movimiento y la primera que se pudre, porque recibe orina y humedad en cada viaje.\n\nSúbase al remolque y camine por todo el suelo, sobre todo en las esquinas y bajo las gomas. Cualquier zona que ceda, suene hueca o esté oscurecida obliga a cambiar el tablero completo."
+        },
+        {
+          "heading": "Frenos y ejes: la revisión que no se ve",
+          "body": "Los ejes de ballesta de goma no se engrasan y duran, pero se cansan: si el remolque se sienta visiblemente hacia un lado o los neumáticos se comen por dentro, el eje está vencido y su sustitución cuesta lo que un tercio del remolque.\n\nEl freno de inercia debe ceder con firmeza y volver solo. Si la lanza entra sin resistencia, el amortiguador está muerto."
+        },
+        {
+          "heading": "Los papeles valen tanto como el remolque",
+          "body": "Un remolque sin ficha técnica ni matrícula no se puede circular ni transferir, y regularizarlo es lento y caro. Exija la ficha técnica, el permiso de circulación y la ITV en vigor antes de ver siquiera el vehículo.\n\nCompruebe que la MMA de la ficha coincide con la placa del fabricante remachada en el chasis. Si no coinciden, el remolque ha sido modificado."
+        }
+      ],
+      "closing": "Cada remolque de ocasión que vendemos pasa por nuestro taller antes de publicarse: suelo, ejes, frenos, instalación eléctrica y neumáticos. Se entrega con la ITV pasada y la transferencia incluida."
+    }
+  },
+  {
+    "id": "cat-ocasion-dos-caballos",
+    "group": "ocasion",
+    "slug": "dos-caballos",
+    "label": "Remolques de dos caballos de ocasión",
+    "description": "Vans de dos plazas de segunda mano, el formato más buscado y el que más se encuentra. Revisados, con ITV en vigor y transferencia incluida.",
+    "image": "/images/remolques/cat-dos-caballos.svg",
+    "guide": {
+      "intro": "El dos plazas es el remolque más vendido, y por tanto el más abundante de ocasión. Esa abundancia es su ventaja: hay dónde elegir, y no hay ninguna razón para aceptar uno con reparaciones pendientes.\n\nEl rango de precio es amplio. Un dos plazas de quince años ronda una cuarta parte de lo que cuesta nuevo; uno de tres o cuatro años, algo más de la mitad. La diferencia se explica casi siempre por el estado del suelo y de los ejes.",
+      "sections": [
+        {
+          "heading": "Mire la separación central y las barras de pecho",
+          "body": "En un dos plazas, la separación central recibe todos los golpes: el caballo se apoya en ella en cada frenada. Compruebe que no está doblada, que sus anclajes al suelo no tienen holgura y que se abate sin forzar.\n\nLas barras de pecho y de grupa deben soltarse con una mano. Si hay que golpearlas, el caballo queda atrapado en caso de incidente."
+        },
+        {
+          "heading": "El peso en vacío decide el permiso",
+          "body": "Un dos plazas de ocasión con carrocería de madera puede pesar 200 kg más que un modelo actual equivalente en aluminio y fibra. Con dos caballos dentro, esa diferencia decide si el conjunto sigue entrando en el carnet B.\n\nSume la tara del remolque, el peso de los dos caballos y la MMA de su coche antes de cerrar la compra. La casilla F.1 de su ficha técnica manda sobre cualquier otra consideración."
+        },
+        {
+          "heading": "Un remolque de concurso no es un remolque de campo",
+          "body": "Un dos plazas que ha hecho temporada de concursos acumula kilómetros pero suele estar bien mantenido y guardado bajo techo. Uno que ha vivido en una finca tiene pocos kilómetros y mucha corrosión.\n\nPregunte dónde ha dormido el remolque. Es más revelante que el año de matriculación."
+        }
+      ],
+      "closing": "Cada remolque de ocasión que vendemos pasa por nuestro taller antes de publicarse: suelo, ejes, frenos, instalación eléctrica y neumáticos. Se entrega con la ITV pasada y la transferencia incluida."
+    }
+  },
+  {
+    "id": "cat-ocasion-tres-cuatro-caballos",
+    "group": "ocasion",
+    "slug": "tres-cuatro-caballos",
+    "label": "Remolques de tres y cuatro caballos de ocasión",
+    "description": "Remolques de gran capacidad de segunda mano para clubes, criadores y transportistas. Requieren permiso B+E y una revisión mecánica seria.",
+    "image": "/images/remolques/cat-tres-cuatro-caballos.svg",
+    "guide": {
+      "intro": "A partir de tres plazas se entra en otra categoría de vehículo: doble eje, más de 2.700 kg de MMA y permiso B+E obligatorio. De ocasión son los remolques que más se ahorran en euros, y también los que más caro salen si se compra mal.\n\nSon vehículos profesionales. Los que llegan al mercado han trabajado, y hay que comprarlos como se compra una furgoneta de ocasión: por su mantenimiento documentado, no por su aspecto.",
+      "sections": [
+        {
+          "heading": "Doble eje quiere decir doble desgaste",
+          "body": "Con dos ejes, los cuatro frenos deben regularse juntos. Un remolque de cuatro plazas que tira de lado en la frenada tiene un freno agarrotado, y eso desgasta un neumático en un solo viaje largo.\n\nPida la última hoja de ITV y mire el apartado de frenado: los desequilibrios quedan registrados ahí, aunque el vendedor no los mencione."
+        },
+        {
+          "heading": "La rampa y su mecanismo",
+          "body": "Una rampa de cuatro plazas pesa lo suficiente para necesitar muelles o pistones de asistencia. Cuando fallan, la rampa se vuelve peligrosa de manejar en solitario y su reparación no es barata.\n\nÁbrala y ciérrela varias veces usted mismo. Debe subir con una mano y quedarse arriba sin sujeción."
+        },
+        {
+          "heading": "Compruebe para qué se ha usado",
+          "body": "Un remolque de cuatro plazas de un criador hace pocos viajes largos al año. El de un transportista hace miles de kilómetros al mes. El segundo puede estar mejor mantenido, pero su chasis ha trabajado diez veces más.\n\nLos números de bastidor y las placas del fabricante dicen el año real de fabricación, que no siempre coincide con el de matriculación."
+        }
+      ],
+      "closing": "Cada remolque de ocasión que vendemos pasa por nuestro taller antes de publicarse: suelo, ejes, frenos, instalación eléctrica y neumáticos. Se entrega con la ITV pasada y la transferencia incluida."
+    }
+  },
+  {
+    "id": "cat-accesorios",
+    "group": "accesorios",
+    "slug": "accesorios",
+    "label": "Accesorios y recambios",
+    "description": "Enganches, ruedas, pilotos, cinchas y antirrobos. Piezas compatibles con las marcas que vendemos, en stock y con envío en 48 horas.",
+    "image": "/images/remolques/cat-accesorios.svg",
+    "guide": {
+      "intro": "Un remolque parado por una pieza de treinta euros cuesta una competición. Mantenemos en almacén lo que se rompe de verdad, no el catálogo completo del fabricante.",
+      "sections": [
+        {
+          "heading": "Lo que conviene llevar siempre",
+          "body": "Rueda de repuesto con la presión comprobada, un juego de bombillas, dos cinchas de amarre de recambio y la llave de las tuercas. Con eso se resuelve en el arcén casi todo lo que puede pasar en un traslado.\n\nLo demás puede esperar al taller."
+        },
+        {
+          "heading": "Compatibilidad",
+          "body": "Cada ficha indica las marcas y modelos a los que corresponde la pieza. Si su remolque no aparece, escríbanos con el número de bastidor: casi siempre existe equivalencia, y preferimos decirlo antes de que compre."
+        }
+      ],
+      "closing": "Envío peninsular en 48 horas para todo lo que figure en stock."
+    }
+  }
+]

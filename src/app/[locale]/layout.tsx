@@ -1,0 +1,62 @@
+import { notFound } from "next/navigation";
+import { hasLocale } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { CartProvider } from "@/components/cart/CartProvider";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+import { PaymentMethodsBar } from "@/components/PaymentMethodsBar";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { ContactBubble } from "@/components/ContactBubble";
+import { SmartsuppChat } from "@/components/SmartsuppChat";
+import { CodeSnippets } from "@/components/CodeSnippets";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // Permet le rendu statique des pages qui utilisent les traductions
+  setRequestLocale(locale);
+
+  // Le panier vit dans localStorage : le fournisseur enveloppe toute la
+  // boutique pour que le Header et les fiches produit y accèdent. Les pages
+  // restent des composants serveur, seul le contexte est côté client.
+  //
+  // Le tiroir est monté ici pour être disponible sur toutes les pages. Les
+  // moyens de paiement lui sont passés déjà rendus : la lecture en base reste
+  // côté serveur, le tiroir n'embarque aucune requête.
+  return (
+    <NextIntlClientProvider>
+      {/* Fragments posés depuis « Scripts & balises ». Placés ici, ils ne
+          touchent que la boutique : /admin ne traverse pas ce layout. */}
+      <CodeSnippets placement="head" />
+      <CodeSnippets placement="bodyStart" />
+      <CartProvider>
+        {children}
+        <CartDrawer paymentSlot={<PaymentMethodsBar variant="inline" />} />
+        {/* Popup de sortie : lit l'historique de consultation de la session,
+            posé une seule fois pour toute la boutique. */}
+        <ExitIntentPopup />
+        {/* Contact flottant en bas à droite : une bulle unique qui déroule
+            WhatsApp et courriel. Le chat Smartsupp ne s'affiche que si sa clé
+            d'environnement est renseignée — il occupe alors le même coin, à
+            décaler le jour où il est activé. */}
+        <ContactBubble />
+        <SmartsuppChat />
+        <CodeSnippets placement="bodyEnd" />
+      </CartProvider>
+    </NextIntlClientProvider>
+  );
+}

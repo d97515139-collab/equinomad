@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <defs>
+    <linearGradient id="caja" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4353f"/>
+      <stop offset="1" stop-color="#e3000e"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.45" r="0.62">
+      <stop offset="0" stop-color="#123a5c"/>
+      <stop offset="1" stop-color="#001424"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#halo)"/>
+  <line x1="0" y1="496" x2="1200" y2="496" stroke="#ffffff" stroke-width="2" opacity="0.16"/>
+  <g transform="translate(316.6 496) scale(1.1590)">
+  <ellipse cx="239" cy="8" rx="329" ry="14" fill="#001424" opacity="0.13"/>
+  <g fill="#6b7280">
+    <path d="M 6 -114 L -150 -74 L -150 -58 L 6 -92 Z"/>
+    <path d="M 6 -88 L -116 -60 L -116 -48 L 6 -76 Z" opacity="0.75"/>
+  </g>
+  <rect x="-180" y="-88" width="38" height="32" rx="9" fill="#001424"/>
+  <rect x="-66" y="-78" width="13" height="56" rx="5" fill="#6b7280"/><circle cx="-59" cy="-16" r="17" fill="#001424"/>
+  <rect x="-6" y="-84" width="490" height="16" rx="4" fill="#001424" opacity="0.85"/>
+  <path d="M 0 -84 L 14 -255.68 Q 22 -325.68 66 -339.68 Q 88 -351.68 112 -351.68 L 460 -351.68 Q 478 -351.68 478 -331.68 L 478 -84 Z" fill="url(#caja)" stroke="#9d000a" stroke-width="3"/>
+  <path d="M 3 -138 L 476 -138 L 476 -84 L 3 -84 Z" fill="#e3000e"/><line x1="3" y1="-138" x2="476" y2="-138" stroke="#001424" stroke-width="2" opacity="0.3"/>
+  <path d="M 76 -365.68 L 490 -365.68 L 490 -345.68 L 62 -343.68 Z" fill="#6f0007"/>
+  <rect x="60" y="-325.68" width="46" height="170" rx="8" fill="#9d000a" opacity="0.45" stroke="#6f0007" stroke-width="2"/><rect x="69" y="-311.68" width="28" height="34" rx="5" fill="#001424" opacity="0.6"/>
+  <rect x="124.0" y="-311.7" width="130.0" height="78.0" rx="11" fill="#001424" opacity="0.74"/><rect x="280.0" y="-311.7" width="130.0" height="78.0" rx="11" fill="#001424" opacity="0.74"/>
+  <g transform="translate(314.2 -307.8) scale(0.733)" fill="#ffffff" opacity="0.5"><path d="M10 44 L14 31 Q19 19 31 15 L33 4 L42 14 L50 3 L55 17 Q67 28 71 47 L84 96 L60 96 L49 60 Q40 51 25 49 Q13 48 10 44 Z"/></g>
+  <path d="M 476 -92 L 653 -8 L 653 12 L 476 -70 Z" fill="#e3000e" stroke="#9d000a" stroke-width="3"/><line x1="494" y1="-80" x2="635" y2="-2" stroke="#6f0007" stroke-width="3" opacity="0.6"/><rect x="631" y="-14" width="24" height="24" rx="6" fill="#e3000e" opacity="0.85"/>
+  <g>
+    <path d="M 180.12 -72 Q 258.12 -138 336.12 -72 Z" fill="#6f0007"/>
+    <circle cx="258" cy="-58" r="58" fill="#001424"/>
+    <circle cx="258" cy="-58" r="39" fill="#6b7280" opacity="0.7"/>
+    <circle cx="258" cy="-58" r="11" fill="#ffffff" opacity="0.85"/>
+  </g>
+  </g>
+  <rect x="0" y="610" width="1200" height="190" fill="#001424" opacity="0.55"/>
+  <text x="64" y="708" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" fill="#ffffff">Dos caballos</text>
+  <rect x="64" y="738" width="126" height="5" rx="2.5" fill="#ffca2b"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img">
+  <defs>
+    <linearGradient id="caisse" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b5563"/>
+      <stop offset="1" stop-color="#374151"/>
+    </linearGradient>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="750" fill="url(#fondo)"/>
+  <line x1="0" y1="622.6800000000001" x2="1000" y2="622.6800000000001" stroke="#e5e7eb" stroke-width="3"/>
+  <g transform="translate(320.0 622.6800000000001) scale(1.5000)">
+  <ellipse cx="202" cy="8" rx="292" ry="14" fill="#001424" opacity="0.13"/>
+  <g fill="#6b7280">
+    <path d="M 6 -114 L -150 -74 L -150 -58 L 6 -92 Z"/>
+    <path d="M 6 -88 L -116 -60 L -116 -48 L 6 -76 Z" opacity="0.75"/>
+  </g>
+  <rect x="-180" y="-88" width="38" height="32" rx="9" fill="#001424"/>
+  <rect x="-66" y="-78" width="13" height="56" rx="5" fill="#6b7280"/><circle cx="-59" cy="-16" r="17" fill="#001424"/>
+  <rect x="-6" y="-84" width="416" height="16" rx="4" fill="#001424" opacity="0.85"/>
+  <path d="M 0 -84 L 14 -214.24 Q 22 -284.24 66 -298.24 Q 88 -310.24 112 -310.24 L 386 -310.24 Q 404 -310.24 404 -290.24 L 404 -84 Z" fill="url(#caisse)" stroke="#1f2937" stroke-width="3"/>
+  <path d="M 3 -138 L 402 -138 L 402 -84 L 3 -84 Z" fill="#e3000e"/><line x1="3" y1="-138" x2="402" y2="-138" stroke="#001424" stroke-width="2" opacity="0.3"/>
+  <path d="M 76 -324.24 L 416 -324.24 L 416 -304.24 L 62 -302.24 Z" fill="#111827"/>
+  <rect x="60" y="-284.24" width="46" height="128" rx="8" fill="#1f2937" opacity="0.45" stroke="#111827" stroke-width="2"/><rect x="69" y="-270.24" width="28" height="34" rx="5" fill="#001424" opacity="0.6"/>
+  <rect x="124.0" y="-270.2" width="212.0" height="67.9" rx="11" fill="#001424" opacity="0.74"/>
+  <g transform="translate(203.2 -266.8) scale(0.638)" fill="#ffffff" opacity="0.5"><path d="M10 44 L14 31 Q19 19 31 15 L33 4 L42 14 L50 3 L55 17 Q67 28 71 47 L84 96 L60 96 L49 60 Q40 51 25 49 Q13 48 10 44 Z"/></g>
+  <line x1="399" y1="-296.24" x2="399" y2="-138" stroke="#111827" stroke-width="4"/><rect x="380" y="-212" width="14" height="30" rx="4" fill="#111827"/>
+  <g>
+    <path d="M 140.16000000000003 -72 Q 218.16000000000003 -138 296.16 -72 Z" fill="#111827"/>
+    <circle cx="218" cy="-58" r="58" fill="#001424"/>
+    <circle cx="218" cy="-58" r="39" fill="#6b7280" opacity="0.7"/>
+    <circle cx="218" cy="-58" r="11" fill="#ffffff" opacity="0.85"/>
+  </g>
+  </g>
+</svg>

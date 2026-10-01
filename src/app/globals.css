@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Deux familles, deux fonctions. Fraunces, serif à graisse variable, ne sert
+     qu'aux titres et au nom de marque : c'est elle qui porte le registre
+     sellerie — cuir, laiton, écurie. Inter tient tout le reste, y compris les
+     chiffres techniques, où sa chasse fixe optionnelle aligne les colonnes.
+     Mélanger les deux rôles ferait perdre aux titres leur singularité. */
+  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
+  --font-mono: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
+  --font-heading: var(--font-fraunces), "Fraunces Fallback", Georgia, serif;
+  /* Couleurs propres à la marque, disponibles en utilitaires
+     (bg-tinta, text-rojo, bg-nieve…) */
+  --color-rojo: var(--rojo);
+  --color-tinta: var(--tinta);
+  --color-grafito: var(--grafito);
+  --color-ambar: var(--ambar);
+  --color-nieve: var(--nieve);
+  --color-sale: var(--sale);
+  --color-sale-foreground: var(--sale-foreground);
+  --color-badge: var(--badge);
+  --color-badge-foreground: var(--badge-foreground);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3);
+}
+
+/* Palette « rouge, blanc, encre ».
+   Valeurs reprises telles quelles de hausgeratepfeffer.de, à la demande du
+   client : rouge #e3000e, encre #001424, jaune d'accent #ffca2b, pied de page
+   #1a1a1a, gris de texte #6b7280. Elles ont été relevées dans le bloc `:root`
+   de leur feuille de style, pas estimées à l'œil.
+
+   UN SEUL ROUGE SUFFIT, et c'est ce qui rend cette charte confortable.
+   #e3000e donne 4,92:1 face au blanc — dans les DEUX sens. Il porte donc du
+   texte blanc quand il sert de fond, et il se lit lui-même sur du blanc quand
+   il sert d'encre. C'est rare : la plupart des rouges vifs échouent d'un côté
+   ou de l'autre, ce qui oblige à en gérer deux (le défaut de la charte orange
+   qui précédait). Ici, un seul jeton couvre les boutons, les prix et les
+   repères.
+
+   Le blanc reste le sol de la page : un catalogue de véhicules se lit en
+   comparant des images et des chiffres, une teinte de fond généralisée les
+   salirait toutes. La couleur vient par blocs. */
+:root {
+  --rojo: #e3000e; /* rouge de marque : boutons, prix, repères — fond comme texte */
+  --tinta: #001424; /* encre : hero, bandeaux, navigation, cartes de catégorie */
+  --grafito: #242424; /* gris profond : blocs secondaires */
+  --ambar: #ffca2b; /* jaune : pastilles, distinctions, troisième repère */
+  --nieve: #f8f8f8; /* blanc cassé : sections alternées */
+
+  --background: #ffffff;
+  --foreground: #001424;
+  --card: #ffffff;
+  --card-foreground: #001424;
+  --popover: #ffffff;
+  --popover-foreground: #001424;
+  /* Fond rouge, texte blanc : 4,92:1, au-delà du seuil AA de 4,5:1. */
+  --primary: #e3000e;
+  --primary-foreground: #ffffff;
+  --secondary: #242424;
+  --secondary-foreground: #ffffff;
+  --muted: #f8f8f8;
+  --muted-foreground: #6b7280;
+  --accent: #ffca2b;
+  --accent-foreground: #242424;
+  --destructive: #e3000e;
+  --sale: #e3000e;
+  --sale-foreground: #ffffff;
+  /* Pastille produit en jaune et non en rouge : elle signale sans concurrencer
+     le bouton d'achat, qui est la seule chose rouge sur laquelle on clique. */
+  --badge: #ffca2b;
+  --badge-foreground: #242424;
+  --footer: #1a1a1a;
+  --footer-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #e3000e;
+  --chart-1: #d4d4d4;
+  --chart-2: #737373;
+  --chart-3: #525252;
+  --chart-4: #404040;
+  --chart-5: #262626;
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* Les titres sont posés ici pour ne pas répéter font-heading sur chacun.
+     Fraunces est une police à axes variables : « SOFT » arrondit les angles,
+     « WONK » libère les lettres à empattement penché (g, y). Les deux sont
+     poussés juste assez pour que le titre respire sans devenir décoratif.
+     L'interlettrage négatif serre le gros corps, où l'empattement écarte. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    font-variation-settings:
+      "SOFT" 30,
+      "WONK" 1;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Donnée technique : chiffres tabulaires, pour que les MMA, les charges
+     utiles et les prix s'alignent en colonne d'une ligne à l'autre. Utilisé
+     partout où l'acheteur compare (kg, cm, €, nº de caballos). C'est le cœur
+     de la lecture d'un catalogue de remorques : on n'achète pas une photo,
+     on achète une charge utile. */
+  .dato {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum", "lnum";
+    letter-spacing: 0.01em;
+  }
+
+  /* Unité accolée à une donnée : « kg », « mm », « m³ ». La casse est
+     respectée — un kilogramme ne s'écrit pas KG. */
+  .unidad {
+    font-size: 0.72em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+  }
+
+  /* Surtitre de section : petite capitale très espacée. Même repère de
+     lecture d'un bout à l'autre de la page. */
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Filet de laiton : sépare deux blocs sans poser une barre grise de plus.
+     Il s'éteint aux deux bouts, ce qui l'empêche de couper la page en deux. */
+  .filete-rojo {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--rojo) 22%,
+      var(--rojo) 78%,
+      transparent
+    );
+    opacity: 0.55;
+  }
+}
+
+/* Le mouvement sert la lecture, jamais la démonstration : coupé net si le
+   visiteur a demandé moins d'animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,645 @@
+[
+  {
+    "id": "p-cl-gold-one-origins",
+    "categoryId": "cat-un-caballo",
+    "brand": "Cheval Liberté",
+    "name": "Gold One Origins",
+    "slug": "cheval-liberte-gold-one-origins",
+    "shortDescription": "Monoplaza ampliado de 615 kg de tara, con MMA a elegir entre 1.100 y 1.600 kg. Altura interior de 2,34 m.",
+    "description": "El Gold One Origins es lo que en el sector se llama un caballo y medio: más ancho que un monoplaza estricto, sin llegar a las dos plazas. Esa medida intermedia resuelve el problema del caballo que viaja solo y necesita apoyarse en las curvas.\n\nSus 615 kg de tara son la cifra que decide la compra. Con una MMA configurable entre 1.100 y 1.600 kg, el conjunto entra en el carnet B con la mayoría de los todocaminos del mercado, sin necesidad de ampliación.\n\nLa altura interior de 2,34 m y la puerta de visita delantera completan un remolque pensado para el caballo que hace trayectos largos: hay sitio para levantar la cabeza y se puede comprobar cómo va sin abrir la parte trasera.",
+    "bullets": [
+      "Un caballo y medio · tara desde 615 kg",
+      "MMA configurable de 1.100 a 1.600 kg",
+      "Altura interior 2,34 m",
+      "Puerta de visita delantera",
+      "Compatible con carnet B en la mayoría de configuraciones"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849300/remorqueb-ckmann/import/41c11fefabca28af28b1e5d8578be1e7.jpg",
+    "price": "7864,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-ifor-williams-hb-403",
+    "categoryId": "cat-un-caballo",
+    "brand": "Ifor Williams",
+    "name": "HB 403",
+    "slug": "ifor-williams-hb-403",
+    "shortDescription": "Monoplaza británico de chasis galvanizado en caliente. MMA 1.400 kg, carga útil 900 kg.",
+    "description": "Ifor Williams galvaniza el chasis en caliente por inmersión, no por pulverización. Es más caro de fabricar y es la razón por la que estos remolques siguen en servicio veinte años después en climas de costa.\n\nEl HB 403 es el monoplaza de la gama: paneles laminados, suelo de madera dura tratada sobre travesaños galvanizados, y acceso frontal para el mozo. La suspensión es de goma independiente por rueda, sin ballestas que engrasar.\n\nGarantía de fábrica de cinco años sobre el chasis.",
+    "bullets": [
+      "1 caballo · MMA 1.400 kg",
+      "Carga útil 900 kg",
+      "Chasis galvanizado en caliente",
+      "Suspensión de goma independiente",
+      "Garantía de chasis 5 años"
+    ],
+    "image": "/images/remolques/ifor-williams-hb-403.svg",
+    "price": "7450,00 €",
+    "rating": 4.8
+  },
+  {
+    "id": "p-cl-touring-country-1",
+    "categoryId": "cat-un-caballo",
+    "brand": "Cheval Liberté",
+    "name": "Touring Country 1",
+    "slug": "cheval-liberte-touring-country-1",
+    "shortDescription": "Monoplaza de poliéster con rampa completa y barra de apoyo acolchada. MMA 1.300 kg, carga útil 870 kg.",
+    "description": "El Touring Country 1 es el remolque con el que la mayoría de nuestros clientes deja de alquilar. Caja de poliéster sobre chasis de acero galvanizado, rampa completa con revestimiento antideslizante y barra lateral acolchada a la altura del costillar, que es donde el caballo busca apoyo cuando viaja solo.\n\nCon 1.300 kg de MMA y 430 kg en vacío, entra sin dificultad en el conjunto de 3.500 kg que permite el carnet B con casi cualquier todocamino. El freno es de inercia con retroceso automático, de modo que puede dar marcha atrás sin bajar a desbloquear nada.\n\nSe entrega matriculado, con ITV pasada, rueda de repuesto y dos cinchas de amarre.",
+    "bullets": [
+      "1 caballo · MMA 1.300 kg",
+      "Carga útil 870 kg",
+      "Poliéster sobre acero galvanizado",
+      "Rampa completa antideslizante",
+      "Carnet B"
+    ],
+    "image": "/images/remolques/cl-touring-country-1.svg",
+    "price": "5980,00 €",
+    "rating": 4.6
+  },
+  {
+    "id": "p-cl-touring-one",
+    "categoryId": "cat-un-caballo",
+    "brand": "Cheval Liberté",
+    "name": "Touring One",
+    "slug": "cheval-liberte-touring-one",
+    "shortDescription": "Un caballo y medio homologado a 1.600 kg con dos ejes KNOTT de 900 kg. Suelo de goma, luz interior y cojines laterales.",
+    "description": "Misma arquitectura que el Touring Country pero con paneles de aluminio: 60 kg menos en vacío, que pasan íntegros a la carga útil. Es la elección de quien arrastra con un vehículo justo de masa remolcable.\n\nEl aluminio transmite más calor que el poliéster, así que este modelo monta de serie dos extractores de techo y rejilla frontal regulable. En trayectos de verano por el interior peninsular la diferencia se nota.\n\nPuerta de servicio delantera para atar y soltar sin rodear el remolque.",
+    "bullets": [
+      "Un caballo y medio · MMA 1.600 kg",
+      "2 ejes KNOTT de 900 kg reforzados",
+      "Suelo de goma · luz interior de serie",
+      "Cojines laterales de apoyo",
+      "Compatible con carnet B"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849307/remorqueb-ckmann/import/0e392384896003ffeb47da4ca788c847.jpg",
+    "price": "9195,00 €",
+    "rating": 4.5
+  },
+  {
+    "id": "p-barbieri-b2-plus",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Barbieri",
+    "name": "B2 Plus",
+    "slug": "barbieri-b2-plus",
+    "shortDescription": "Dos plazas italiano de poliéster con rampa. MMA 2.000 kg, carga útil 1.320 kg.",
+    "description": "Barbieri fabrica en Italia con caja de poliéster de una sola pieza, sin juntas verticales en los laterales. Es la construcción que menos filtraciones da a largo plazo.\n\nEl B2 Plus es un dos plazas honesto y sin adornos: rampa completa, separador fijo, ventilación frontal y techo blanco reflectante. Buena relación entre lo que cuesta y lo que aguanta.\n\nRecomendado para uso de club y desplazamientos de menos de dos horas.",
+    "bullets": [
+      "2 caballos · MMA 2.000 kg",
+      "Carga útil 1.320 kg",
+      "Poliéster de una sola pieza",
+      "Techo blanco reflectante",
+      "Carnet B+E"
+    ],
+    "image": "/images/remolques/barbieri-b2-plus.svg",
+    "price": "8950,00 €",
+    "rating": 4.2
+  },
+  {
+    "id": "p-humbaur-balios-spirit",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Humbaur",
+    "name": "Balios Spirit",
+    "slug": "humbaur-balios-spirit",
+    "shortDescription": "Dos plazas de aluminio de acceso, ligero y bien equipado. MMA 2.000 kg, carga útil 1.380 kg.",
+    "description": "El Balios Spirit es la puerta de entrada a la gama de aluminio de Humbaur. Con 620 kg en vacío es de los dos plazas más ligeros del mercado, lo que permite arrastrarlo con vehículos de masa remolcable modesta.\n\nLa contrapartida está en la carga útil: 1.380 kg son suficientes para dos caballos de silla, pero no para dos caballos de deporte con equipo completo. Conviene hacer la cuenta antes.\n\nSeparador central acolchado, ventilación frontal y puertas traseras batientes.",
+    "bullets": [
+      "2 caballos · MMA 2.000 kg",
+      "Carga útil 1.380 kg",
+      "620 kg en vacío",
+      "Separador central acolchado",
+      "Carnet B+E"
+    ],
+    "image": "/images/remolques/humbaur-balios-spirit.svg",
+    "price": "11.290,00 €",
+    "rating": 4.3
+  },
+  {
+    "id": "p-bockmann-champion-esprit",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Böckmann",
+    "name": "Champion Esprit",
+    "slug": "bockmann-champion-esprit",
+    "shortDescription": "Dos plazas de aluminio con techo elevado y aislamiento térmico. MMA 2.700 kg, carga útil 1.890 kg.",
+    "description": "El Champion Esprit es el remolque de referencia del transporte deportivo alemán, y la razón está en la caja: panel sándwich de aluminio con núcleo aislante, que mantiene el interior varios grados por debajo del exterior en parado bajo el sol.\n\nTecho elevado de serie, dos claraboyas practicables, iluminación interior LED y anillas de amarre en todo el perímetro. La suspensión es de goma con amortiguador hidráulico, lo que se nota en firme bacheado.\n\nCon 1.890 kg de carga útil es de los pocos dos plazas que admite dos caballos de deporte de más de 600 kg con margen real.",
+    "bullets": [
+      "2 caballos · MMA 2.700 kg",
+      "Carga útil 1.890 kg",
+      "Panel sándwich de aluminio aislante",
+      "Suspensión con amortiguador hidráulico",
+      "Carnet B+E"
+    ],
+    "image": "/images/remolques/bockmann-champion-esprit.svg",
+    "price": "14.900,00 €",
+    "rating": 4.9
+  },
+  {
+    "id": "p-cl-gold-3",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Gold 3",
+    "slug": "cheval-liberte-gold-3",
+    "shortDescription": "Dos plazas homologable a 2.000 o 2.600 kg según versión. Puerta de jinete vertical y lona trasera enrollable de plegado automático.",
+    "description": "El Gold 3 se pide en dos homologaciones, 2.000 o 2.600 kg, y la diferencia de precio entre ambas es real. Elegir la baja cuando se transportan dos caballos adultos deja sin margen de carga útil; elegir la alta sin necesitarlo encarece el remolque y puede sacarlo del carnet B.\n\nLa puerta de jinete es de acceso completamente vertical, que es la diferencia entre entrar de lado y entrar de frente cuando se lleva material en la mano. La luz interior va de serie.\n\nLa lona trasera enrollable con plegado automático es el detalle que se agradece en viaje largo o con lluvia: cierra la parte de atrás sin bajar del coche ni manipular herrajes.",
+    "bullets": [
+      "2 caballos · homologable a 2.000 o 2.600 kg",
+      "Puerta de jinete de acceso vertical",
+      "Lona trasera enrollable de plegado automático",
+      "Luz interior de serie",
+      "Separaciones interiores para dos caballos"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849307/remorqueb-ckmann/import/4657ad257fb688e200bae411b125e258.jpg",
+    "price": "9800,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-cl-gold-hippomobile",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Gold Hippomobile",
+    "slug": "cheval-liberte-gold-hippomobile",
+    "shortDescription": "Dos plazas homologado a 2.600 kg con dos ejes PULLMAN 2 de 1.300 kg. Techo de fibra, paredes de aluminio y claraboya regulable.",
+    "description": "El Gold Hippomobile es el dos plazas de la gama Gold que sube a 2.600 kg de MMA sin cambiar de formato. Los dos ejes PULLMAN 2 de 1.300 kg reparten la carga entre ellos en lugar de apoyarla en la bola, que es lo que se nota en frenada larga y en carretera de montaña.\n\nLa combinación de techo de fibra y paredes de aluminio es la que mejor se comporta bajo el sol de meseta: la fibra no transmite el calor como la chapa, y el aluminio no se pudre como la madera cuando el remolque duerme a la intemperie.\n\nArriba lleva una claraboya regulable y dos ventanas delanteras con apertura. Con las tres abiertas se establece una corriente de aire de delante hacia atrás, que es como se ventila un van parado en el aparcamiento de un concurso en julio.",
+    "bullets": [
+      "2 caballos · MMA 2.600 kg",
+      "2 ejes PULLMAN 2 de 1.300 kg con freno",
+      "Techo de fibra y paredes de aluminio",
+      "Claraboya regulable en el techo",
+      "Dos ventanas delanteras con apertura"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849580/remorqueb-ckmann/import/585205b74b818d58f375a1c14646a1d0.jpg",
+    "price": "10.768,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-cl-gold-marathon",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Gold Marathon",
+    "slug": "cheval-liberte-gold-marathon",
+    "shortDescription": "Dos plazas con rampa completa y separador abatible. MMA 2.400 kg, carga útil 1.560 kg.",
+    "description": "El Gold Marathon es el remolque que más sale de este almacén, y no por precio: por el separador central abatible, que permite convertir las dos plazas en una sola bien ancha cuando se viaja con un caballo grande o con una yegua con potro.\n\nCaja de poliéster con techo elevado, rampa completa con laterales altos y puerta de servicio delantera. Freno de inercia con retroceso automático y suspensión de goma independiente por rueda.\n\nCon 1.560 kg de carga útil admite dos caballos de silla y el equipo completo sin acercarse al límite. Se entrega matriculado y con ITV pasada.",
+    "bullets": [
+      "2 caballos · MMA 2.400 kg",
+      "Carga útil 1.560 kg",
+      "Separador central abatible",
+      "Techo elevado con extractores",
+      "Carnet B+E"
+    ],
+    "image": "/images/remolques/cl-gold-marathon.svg",
+    "price": "9280,00 €",
+    "rating": 4.7
+  },
+  {
+    "id": "p-cl-gold-origins",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Gold Origins",
+    "slug": "cheval-liberte-gold-origins",
+    "shortDescription": "Dos plazas de 760 kg de tara, con MMA a elegir entre 1.100 y 2.000 kg. Techo y morro de fibra, dos ejes frenados de 1.000 kg.",
+    "description": "El Gold Origins sustituye a los dos modelos que más se han visto en los patios españoles durante quince años, el Gold First y el Gold II. Conserva la silueta reconocible de la marca y actualiza lo que había envejecido: la ventilación, el espacio de cabeza y el peso.\n\nCon 760 kg de tara y una MMA a elegir entre 1.100 y 2.000 kg, es de los pocos dos plazas que un vehículo compacto puede arrastrar sin cambiar de permiso. El techo y el morro son de fibra; las paredes, de aluminio o de madera según la versión.\n\nLas ventanas correderas son de cristal de seguridad, con deflector de aire y persiana enrollable ventilada. La separación interior va acolchada y los cojines laterales apoyan al caballo en las curvas. Este modelo requiere matrícula roja.",
+    "bullets": [
+      "2 caballos · tara 760 kg",
+      "MMA configurable de 1.100 a 2.000 kg",
+      "2 ejes de 1.000 kg con freno",
+      "Techo y morro de fibra, paredes de aluminio o madera",
+      "Ventanas de cristal de seguridad con deflector y persiana"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849300/remorqueb-ckmann/import/5715b4ebca7162271ea7d5626d3bb2b0.jpg",
+    "price": "7380,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-ifor-williams-hb-506",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Ifor Williams",
+    "name": "HB 506",
+    "slug": "ifor-williams-hb-506",
+    "shortDescription": "Dos plazas de aluminio con rampa y techo elevado. MMA 2.700 kg, carga útil 1.840 kg.",
+    "description": "El HB 506 es el dos plazas más vendido del fabricante británico y el que más se ve en los concursos de salto de la Península.\n\nChasis galvanizado en caliente por inmersión, paneles de aluminio remachados, suelo de madera dura tratada y rampa completa con revestimiento de caucho. La ventilación es frontal y de techo, regulable desde fuera.\n\nGarantía de fábrica de cinco años sobre el chasis, tres sobre el resto del vehículo.",
+    "bullets": [
+      "2 caballos · MMA 2.700 kg",
+      "Carga útil 1.840 kg",
+      "Chasis galvanizado en caliente",
+      "Ventilación frontal y de techo regulable",
+      "Garantía de chasis 5 años"
+    ],
+    "image": "/images/remolques/ifor-williams-hb-506.svg",
+    "price": "13.750,00 €",
+    "rating": 4.8
+  },
+  {
+    "id": "p-cl-maxi-2-duomax",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Maxi 2 Duomax",
+    "slug": "cheval-liberte-maxi-2-duomax",
+    "shortDescription": "Dos plazas equipado homologado a 3.000 kg. Dos soportes de silla sobre riel, barra de recámara de ancho completo y tabiques regulables.",
+    "description": "El Duomax es el Maxi 2 en versión equipada, y la diferencia está toda dentro. Dos soportes de silla de montar sobre riel deslizante, dos soportes de brida, red para documentos, espejo y luz: es un remolque que sale de fábrica con el guadarnés resuelto.\n\nLos tabiques son regulables sobre riel deslizante, no fijos. Un remolque con separaciones fijas obliga a que los dos caballos midan lo mismo; uno con tabiques sobre riel se adapta a la pareja que se lleve ese día.\n\nHomologado a 3.000 kg sobre dos ejes KNOTT de 1.500 kg reforzados. La ventilación se resuelve con una ventana corredera con barras de acero inoxidable y una segunda ventana deslizante en el lado izquierdo.",
+    "bullets": [
+      "2 caballos · MMA 3.000 kg",
+      "2 ejes KNOTT de 1.500 kg reforzados",
+      "2 soportes de silla sobre riel deslizante y 2 de brida",
+      "Tabiques regulables sobre riel · barra de recámara de ancho completo",
+      "Ventana corredera con barras de acero inoxidable"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849580/remorqueb-ckmann/import/c486174909c1e6c51b86734e9797c817.jpg",
+    "price": "13.430,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-cl-multimax",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Multimax",
+    "slug": "cheval-liberte-multimax",
+    "shortDescription": "Dos plazas homologado a 3.000 kg con dos ejes KNOTT de 1.500 kg. Puerta rampa de 110 cm y cinco colores de carrocería.",
+    "description": "El Multimax lleva la homologación a 3.000 kg sobre dos plazas, lo que deja una carga útil que ningún dos caballos de gama media alcanza. A cambio exige carnet B+E: por encima de 3.500 kg de conjunto no hay ampliación que valga.\n\nLos dos ejes KNOTT de 1.500 kg reforzados reparten el peso entre ellos en lugar de cargarlo sobre la bola del vehículo tractor. Es la razón por la que un remolque de este porte se conduce mejor cargado que vacío.\n\nSe ofrece en cinco colores. Merece la pena saber que el blanco puede reducir la temperatura interior más de un 40 % respecto a un color oscuro: en un viaje de agosto por el interior peninsular, eso es la diferencia entre un caballo que llega descansado y uno que llega sudado.",
+    "bullets": [
+      "2 caballos · MMA 3.000 kg",
+      "2 ejes KNOTT de 1.500 kg reforzados",
+      "Puerta rampa de 110 cm de largo",
+      "Cinco colores de carrocería",
+      "Requiere carnet B+E"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849300/remorqueb-ckmann/import/d9f88a77e6fbeeff58933b4be209c4c4.jpg",
+    "price": "12.825,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-bockmann-portax-k",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Böckmann",
+    "name": "Portax K",
+    "slug": "bockmann-portax-k",
+    "shortDescription": "Dos plazas mixto con rampa y puerta de servicio doble. MMA 2.500 kg, carga útil 1.720 kg.",
+    "description": "El Portax K combina estructura de aluminio con paneles laminados, lo que baja el precio respecto al Champion sin renunciar al aislamiento ni a la carga útil.\n\nLleva puerta de servicio a ambos lados, detalle poco común en esta gama y muy útil cuando se carga solo: se ata desde el lado que quede libre, sin rodear el remolque en la cuneta.\n\nRampa completa con muelles de asistencia; se levanta con una mano.",
+    "bullets": [
+      "2 caballos · MMA 2.500 kg",
+      "Carga útil 1.720 kg",
+      "Puerta de servicio a ambos lados",
+      "Rampa con muelles de asistencia",
+      "Carnet B+E"
+    ],
+    "image": "/images/remolques/bockmann-portax-k.svg",
+    "price": "12.480,00 €",
+    "rating": 4.7
+  },
+  {
+    "id": "p-cl-touring-country-2",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Touring Country 2",
+    "slug": "cheval-liberte-touring-country-2",
+    "shortDescription": "Dos plazas homologado a 2.000 kg con dos ejes KNOTT de 1.000 kg. Suelo de aluminio con goma de 8 mm y puerta rampa de 110 cm.",
+    "description": "El Touring Country 2 es el dos plazas más ligero de la gama Touring, y ahí está todo su interés. Con 2.000 kg de MMA sobre dos ejes KNOTT de 1.000 kg, es de los pocos remolques de dos caballos que un conjunto con carnet B puede arrastrar sin ampliación.\n\nEse límite tiene una contrapartida que conviene calcular antes de comprar: con dos caballos adultos de 550 kg cada uno, la carga útil se agota. Es un remolque para dos animales de talla media, o para uno grande y material.\n\nEl sistema de ejes PULLMAN V2 lleva freno de inercia y suspensión amortiguada. El suelo es de aluminio con goma de 8 mm, la puerta rampa mide 110 cm, y el interior incorpora luz y cojines laterales de apoyo.",
+    "bullets": [
+      "2 caballos · MMA 2.000 kg",
+      "2 ejes KNOTT de 1.000 kg reforzados",
+      "Ejes PULLMAN V2 con freno de inercia y amortiguación",
+      "Suelo de aluminio con goma de 8 mm",
+      "Puerta rampa de 110 cm · luz interior y cojines laterales"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849305/remorqueb-ckmann/import/c8a5178a7a819a92f19d48faf7e687cf.jpg",
+    "price": "10.405,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-cl-touring-jumping",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Touring Jumping",
+    "slug": "cheval-liberte-touring-jumping",
+    "shortDescription": "Dos plazas homologado a 2.600 kg con dos ejes KNOTT de 1.300 kg. Suelo de aluminio con goma y ruedas de 185/65 R14.",
+    "description": "La versión con puertas batientes ahorra los 50 kg de la rampa y acorta el remolque medio metro, lo que se agradece en patios estrechos y en aparcamientos de concurso.\n\nEl acceso se hace por escalón bajo con peldaño antideslizante. Para caballos ya hechos al transporte es más rápido que una rampa; para un potro joven, menos.\n\nMismo chasis, mismo freno y misma suspensión que el Gold Marathon.",
+    "bullets": [
+      "2 caballos · MMA 2.600 kg",
+      "2 ejes KNOTT de 1.300 kg reforzados",
+      "Ejes PULLMAN V2 con freno de inercia y amortiguación",
+      "Suelo de aluminio con goma · luz interior",
+      "Ruedas 185/65 R14 sin cámara"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849344/remorqueb-ckmann/import/cc22b62385b4473c9d4faa9177cca087.jpg",
+    "price": "10.042,00 €",
+    "rating": 4.4
+  },
+  {
+    "id": "p-cl-touring-xl",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Touring XL",
+    "slug": "cheval-liberte-touring-xl",
+    "shortDescription": "Dos plazas de gran volumen homologado a 2.600 kg. Ejes PULLMAN V2 con freno de inercia, suelo de aluminio y goma, barras antipánico.",
+    "description": "El Touring XL es el dos plazas de la gama Touring para caballos grandes. Los 2.600 kg de MMA salen de dos ejes KNOTT de 1.300 kg reforzados, que son los mismos que monta el Hippomobile pero sobre una caja más larga.\n\nEl sistema de ejes PULLMAN V2 lleva freno de inercia y suspensión con amortiguación. La diferencia respecto a una suspensión sin amortiguar no está en la comodidad del conductor sino en la del caballo: sin amortiguación, cada junta de dilatación de la autovía llega entera al animal.\n\nEl interior va completamente acolchado en los laterales, con dos barras de pecho ajustables con sistema antipánico y dos barras de cola. La separación interior es de aluminio, el suelo también, con goma encima. La puerta rampa mide 110 cm de largo.",
+    "bullets": [
+      "2 caballos · MMA 2.600 kg",
+      "2 ejes KNOTT de 1.300 kg reforzados",
+      "Ejes PULLMAN V2 con freno de inercia y amortiguación",
+      "Suelo de aluminio con goma · puerta rampa de 110 cm",
+      "2 barras de pecho antipánico y 2 barras de cola ajustables"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849580/remorqueb-ckmann/import/4a17c7348b9b1c2f5a2bc1c41f9d00a5.jpg",
+    "price": "11.736,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-humbaur-xanthos-aero",
+    "categoryId": "cat-dos-caballos",
+    "brand": "Humbaur",
+    "name": "Xanthos Aero",
+    "slug": "humbaur-xanthos-aero",
+    "shortDescription": "Dos plazas de gama alta con carrocería aerodinámica y suspensión regulable. MMA 2.700 kg, carga útil 1.810 kg.",
+    "description": "El Xanthos Aero es el remolque más cuidado del catálogo en materia de confort del animal. La carrocería aerodinámica baja el consumo del vehículo tractor de forma medible en autovía, y el interior está forrado en panel acolchado hasta la altura de la grupa.\n\nLleva suspensión de goma regulable en altura, lo que permite ajustar la horizontalidad del remolque al vehículo que lo arrastra —un detalle que evita que el caballo viaje cuesta arriba durante cuatro horas.\n\nIluminación LED interior y exterior, cámara trasera preinstalada y ventana de observación en el separador.",
+    "bullets": [
+      "2 caballos · MMA 2.700 kg",
+      "Carga útil 1.810 kg",
+      "Suspensión regulable en altura",
+      "Interior acolchado integral",
+      "Cámara trasera preinstalada"
+    ],
+    "image": "/images/remolques/humbaur-xanthos-aero.svg",
+    "price": "16.900,00 €",
+    "rating": 4.9
+  },
+  {
+    "id": "p-ifor-williams-hb-511",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Ifor Williams",
+    "name": "HB 511",
+    "slug": "ifor-williams-hb-511",
+    "shortDescription": "Tres plazas de doble eje con rampa y compartimento de guarnicionería. MMA 3.500 kg, carga útil 2.180 kg.",
+    "description": "El HB 511 es el tres plazas de referencia para clubes. Doble eje con suspensión de goma independiente, freno con retroceso automático y chasis galvanizado en caliente.\n\nDelante lleva un compartimento de guarnicionería separado, con barra para sillas y estantería: deja de viajar el material suelto entre las patas de los caballos, que es de donde salen la mayoría de los sustos.\n\nRampa completa reforzada, con laterales de altura total.",
+    "bullets": [
+      "3 caballos · MMA 3.500 kg",
+      "Carga útil 2.180 kg",
+      "Doble eje con suspensión independiente",
+      "Guarnicionería separada",
+      "Carnet B+E obligatorio"
+    ],
+    "image": "/images/remolques/ifor-williams-hb-511.svg",
+    "price": "21.900,00 €",
+    "rating": 4.8
+  },
+  {
+    "id": "p-cl-minimax",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Minimax",
+    "slug": "cheval-liberte-minimax",
+    "shortDescription": "Tres plazas homologado a 3.000 kg con dos ejes KNOTT de 1.500 kg. Guadarnés de serie, ventanas laterales y trampilla de ventilación en el techo.",
+    "description": "El Minimax es la entrada a las tres plazas, y su interés está en que llega a 3.000 kg de MMA sin la longitud de un cuatro caballos. Para un club pequeño o un criador que mueve tres animales, es el formato que cabe en un patio normal.\n\nLos dos ejes KNOTT de 1.500 kg reforzados son los que permiten esa homologación. Reparten el peso entre ellos en vez de cargarlo sobre la bola, que es lo que hace estable un remolque largo.\n\nLleva de serie un compartimento para guadarnés de buen tamaño y ventanas laterales para que los animales saquen la cabeza con el remolque parado. La trampilla del techo ventila mientras se conduce. La puerta rampa mide 110 cm.",
+    "bullets": [
+      "3 caballos · MMA 3.000 kg",
+      "2 ejes KNOTT de 1.500 kg reforzados",
+      "Compartimento para guadarnés de serie",
+      "Ventanas laterales y trampilla de ventilación en el techo",
+      "Puerta rampa de 110 cm · requiere carnet B+E"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849300/remorqueb-ckmann/import/6cdd31cd851c4e523d554d67d9f7ce43.jpg",
+    "price": "17.544,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-humbaur-notos",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Humbaur",
+    "name": "Notos",
+    "slug": "humbaur-notos",
+    "shortDescription": "Tres plazas de poliéster sobre doble eje. MMA 3.500 kg, carga útil 2.050 kg.",
+    "description": "El Notos resuelve el traslado de tres caballos sin subir al precio de la gama de aluminio. Caja de poliéster sobre chasis galvanizado, doble eje y freno de inercia con retroceso automático.\n\nLa ventilación es amplia: cuatro aireadores laterales y dos claraboyas practicables. Con tres animales dentro, la renovación de aire deja de ser un detalle y pasa a ser la especificación que más importa.\n\nPuerta de servicio delantera y ventana de observación.",
+    "bullets": [
+      "3 caballos · MMA 3.500 kg",
+      "Carga útil 2.050 kg",
+      "Cuatro aireadores y dos claraboyas",
+      "Doble eje con freno de retroceso",
+      "Carnet B+E obligatorio"
+    ],
+    "image": "/images/remolques/humbaur-notos.svg",
+    "price": "19.750,00 €",
+    "rating": 4.5
+  },
+  {
+    "id": "p-fautras-oblic-x3",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Fautras",
+    "name": "Oblic X3",
+    "slug": "fautras-oblic-x3",
+    "shortDescription": "Tres plazas de carga oblicua en Vollpoly monocasco. MMA 3.500 kg, carga útil 2.240 kg.",
+    "description": "Fautras construye la caja en Vollpoly monocasco: una sola pieza de poliéster estructural, sin bastidor interior. No hay juntas donde filtre el agua ni perfiles donde se acumule la humedad.\n\nLa carga oblicua coloca a los tres caballos en diagonal. Reparte mejor el peso sobre los ejes y permite que el conjunto sea sensiblemente más corto que un tres plazas de carga recta equivalente.\n\nEl acceso es por rampa lateral, lo que evita que los animales tengan que retroceder para salir.",
+    "bullets": [
+      "3 caballos · MMA 3.500 kg",
+      "Carga útil 2.240 kg",
+      "Vollpoly monocasco sin juntas",
+      "Carga oblicua con rampa lateral",
+      "Carnet B+E obligatorio"
+    ],
+    "image": "/images/remolques/fautras-oblic-x3.svg",
+    "price": "24.850,00 €",
+    "rating": 4.9
+  },
+  {
+    "id": "p-cl-optimax",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Cheval Liberté",
+    "name": "Optimax",
+    "slug": "cheval-liberte-optimax",
+    "shortDescription": "Cuatro plazas homologado a 3.500 kg con dos ejes KNOTT de 1.800 kg. Guadarnés de grandes dimensiones y ventilación en techo y laterales.",
+    "description": "El Optimax es el tope de la gama Van de Cheval Liberté: cuatro plazas homologadas a 3.500 kg, que es el máximo que admite un remolque de un solo enganche antes de entrar en categoría de vehículo pesado.\n\nLos dos ejes KNOTT de 1.800 kg reforzados son los que sostienen esa cifra. Con cuatro caballos a bordo, el reparto de peso entre ejes deja de ser una cuestión de confort y pasa a ser de seguridad: es lo que impide que el conjunto haga tijera en una frenada de emergencia.\n\nEl compartimento de guadarnés es de grandes dimensiones, dimensionado para el material de cuatro monturas. Ventanas laterales para que los caballos saquen la cabeza en parado, y trampilla de ventilación en el techo para la marcha.",
+    "bullets": [
+      "4 caballos · MMA 3.500 kg",
+      "2 ejes KNOTT de 1.800 kg reforzados",
+      "Compartimento para guadarnés de grandes dimensiones",
+      "Ventanas laterales y trampilla de ventilación en el techo",
+      "Requiere carnet B+E"
+    ],
+    "image": "https://res.cloudinary.com/fvvnfdxm/image/upload/f_auto,q_auto/v1790849580/remorqueb-ckmann/import/bff96aabb744e6da05479cbd4a404402.jpg",
+    "price": "18.149,00 €",
+    "rating": null
+  },
+  {
+    "id": "p-fautras-provan-4",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Fautras",
+    "name": "Provan 4",
+    "slug": "fautras-provan-4",
+    "shortDescription": "Cuatro plazas de carga oblicua con zona de descanso. MMA 3.500 kg, carga útil 2.310 kg.",
+    "description": "El Provan 4 mete cuatro caballos en poco más de seis metros gracias a la carga oblicua. Es el tope de gama del catálogo y el remolque que compran los transportistas profesionales y las cuadras de competición.\n\nCaja Vollpoly monocasco, doble eje con suspensión hidráulica, freno con retroceso automático y ventilación forzada eléctrica alimentada por batería propia con toma de carga.\n\nDelante, una zona separada con banco, armario y toma de 12 V para el mozo que viaja con los animales en trayectos largos.",
+    "bullets": [
+      "4 caballos · MMA 3.500 kg",
+      "Carga útil 2.310 kg",
+      "Carga oblicua en 6,2 m",
+      "Ventilación forzada con batería propia",
+      "Zona de descanso separada"
+    ],
+    "image": "/images/remolques/fautras-provan-4.svg",
+    "price": "33.900,00 €",
+    "rating": 5
+  },
+  {
+    "id": "p-sirius-s900",
+    "categoryId": "cat-tres-cuatro-caballos",
+    "brand": "Sirius",
+    "name": "S900",
+    "slug": "sirius-s900",
+    "shortDescription": "Tres plazas de doble eje con rampa completa. MMA 3.000 kg, carga útil 1.960 kg.",
+    "description": "El S900 es la opción de acceso a las tres plazas. Doble eje, rampa completa y separadores acolchados, sobre chasis galvanizado.\n\nNo tiene guarnicionería separada ni ventilación forzada: es un remolque de traslado, pensado para recorridos de club y distancias medias, no para gira de competición.\n\nA cambio, es varios miles de euros más barato que cualquier otro tres plazas del catálogo.",
+    "bullets": [
+      "3 caballos · MMA 3.000 kg",
+      "Carga útil 1.960 kg",
+      "Doble eje sobre chasis galvanizado",
+      "Rampa completa acolchada",
+      "Carnet B+E obligatorio"
+    ],
+    "image": "/images/remolques/sirius-s900.svg",
+    "price": "16.480,00 €",
+    "rating": 4.3
+  },
+  {
+    "id": "p-fautras-oblic-x2-seminuevo",
+    "categoryId": "cat-ocasion-dos-caballos",
+    "brand": "Fautras",
+    "name": "Oblic X2 — seminuevo de exposición",
+    "slug": "fautras-oblic-x2-seminuevo",
+    "shortDescription": "Unidad de feria con 340 km. Vollpoly monocasco, carga oblicua. MMA 2.700 kg, carga útil 1.780 kg.",
+    "description": "Unidad expuesta en la feria de Sevilla y devuelta a fábrica. 340 km de carretera, ningún caballo transportado.\n\nRevisada íntegramente en nuestro taller: suelo comprobado tabla por tabla, ejes y frenos desmontados y medidos, instalación eléctrica probada con vehículo enganchado y estanqueidad del techo verificada con manguera. El informe de revisión acompaña al remolque.\n\nITV pasada y matriculado. Garantía escrita de dos años en las mismas condiciones que una unidad nueva.",
+    "bullets": [
+      "2 caballos · MMA 2.700 kg",
+      "Carga útil 1.780 kg",
+      "340 km · unidad de exposición",
+      "Revisado en taller con informe",
+      "Garantía de dos años"
+    ],
+    "image": "/images/remolques/fautras-oblic-x2.svg",
+    "price": "14.200,00 €",
+    "rating": 4.8
+  },
+  {
+    "id": "p-sirius-s700-seminuevo",
+    "categoryId": "cat-ocasion-dos-caballos",
+    "brand": "Sirius",
+    "name": "S700 — seminuevo de pruebas",
+    "slug": "sirius-s700-seminuevo",
+    "shortDescription": "Unidad de pruebas oficiales de fábrica. Dos plazas de poliéster. MMA 2.400 kg, carga útil 1.540 kg.",
+    "description": "Remolque utilizado en las pruebas oficiales de homologación del fabricante. Ha rodado en banco y en circuito cerrado, no en carretera abierta.\n\nSustituidos por protocolo los neumáticos y las gomas de suspensión, aunque estaban dentro de tolerancia. La instalación eléctrica y el freno se dejaron como salieron de fábrica tras comprobarse.\n\nMatriculado, con ITV pasada y garantía escrita de dos años.",
+    "bullets": [
+      "2 caballos · MMA 2.400 kg",
+      "Carga útil 1.540 kg",
+      "Unidad de pruebas de fábrica",
+      "Neumáticos y gomas nuevos",
+      "Garantía de dos años"
+    ],
+    "image": "/images/remolques/sirius-s700.svg",
+    "price": "6390,00 €",
+    "rating": 4.4
+  },
+  {
+    "id": "p-antirrobo-cabezal-candado",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Antirrobo de cabezal con candado integrado",
+    "slug": "antirrobo-cabezal-candado",
+    "shortDescription": "Bloqueo de cabezal de acero templado para enganches de 50 mm. Aprobado por aseguradoras.",
+    "description": "Bloqueo de cabezal en acero templado que envuelve por completo la copa del enganche. Impide acoplar el remolque a cualquier bola mientras está puesto.\n\nCandado integrado de cilindro europeo con tres llaves. Es el modelo que la mayoría de las aseguradoras españolas exige para cubrir el robo del remolque aparcado fuera de recinto cerrado.",
+    "bullets": [
+      "Acero templado",
+      "Para enganches de 50 mm",
+      "Candado de cilindro europeo",
+      "Tres llaves incluidas",
+      "Aceptado por aseguradoras"
+    ],
+    "image": "/images/remolques/acc-antirrobo.svg",
+    "price": "96,00 €",
+    "rating": 4.6
+  },
+  {
+    "id": "p-bola-enganche-homologada-50",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Bola de enganche homologada 50 mm",
+    "slug": "bola-enganche-homologada-50",
+    "shortDescription": "Bola de acero forjado con placa de 4 agujeros. Homologación europea, hasta 3.500 kg.",
+    "description": "Bola de acero forjado de 50 mm con placa de anclaje de cuatro agujeros, la medida estándar europea. Homologada para conjuntos de hasta 3.500 kg.\n\nSe entrega con tornillería de grado 10.9 y certificado de homologación, que es lo que le pedirán en la ITV si el enganche no venía de fábrica.",
+    "bullets": [
+      "Bola de 50 mm, acero forjado",
+      "Placa de 4 agujeros",
+      "Hasta 3.500 kg",
+      "Tornillería 10.9 incluida",
+      "Certificado de homologación"
+    ],
+    "image": "/images/remolques/acc-bola-enganche.svg",
+    "price": "64,90 €",
+    "rating": 4.6
+  },
+  {
+    "id": "p-cinchas-amarre-mosqueton",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Juego de dos cinchas de amarre con mosquetón",
+    "slug": "cinchas-amarre-mosqueton",
+    "shortDescription": "Cinchas de nylon con mosquetón de seguridad de apertura rápida. Longitud regulable de 60 a 110 cm.",
+    "description": "Par de cinchas de nylon de 40 mm con mosquetón de panic snap: se abren de un tirón incluso con tensión, que es exactamente lo que hace falta cuando un caballo se asusta dentro del remolque.\n\nLongitud regulable entre 60 y 110 cm. Se recomienda llevar siempre un juego de repuesto en el remolque.",
+    "bullets": [
+      "Nylon de 40 mm",
+      "Mosquetón de apertura bajo tensión",
+      "Regulable de 60 a 110 cm",
+      "Juego de dos unidades"
+    ],
+    "image": "/images/remolques/acc-cincha-seguridad.svg",
+    "price": "34,90 €",
+    "rating": 4.8
+  },
+  {
+    "id": "p-piloto-trasero-led-multifuncion",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Piloto trasero LED multifunción",
+    "slug": "piloto-trasero-led-multifuncion",
+    "shortDescription": "Piloto de cinco funciones con conector de bayoneta. Homologado E11, 12 V.",
+    "description": "Piloto trasero de LED con cinco funciones —posición, freno, intermitente, marcha atrás y antiniebla— en un solo bloque. Homologado E11 y estanco IP67.\n\nEl conector es de bayoneta, así que se cambia sin pelar cables ni empalmar en el arcén. Se vende por unidad; indique si necesita el lado izquierdo o el derecho.",
+    "bullets": [
+      "5 funciones en un bloque",
+      "LED, 12 V, homologado E11",
+      "Estanqueidad IP67",
+      "Conector de bayoneta",
+      "Precio por unidad"
+    ],
+    "image": "/images/remolques/acc-piloto-trasero.svg",
+    "price": "42,90 €",
+    "rating": 4.7
+  },
+  {
+    "id": "p-rueda-repuesto-195-50-r13",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Rueda de repuesto 195/50 R13 C",
+    "slug": "rueda-repuesto-195-50-r13",
+    "shortDescription": "Rueda completa montada y equilibrada, medida más común en remolques de dos plazas.",
+    "description": "Rueda completa —llanta y neumático montado y equilibrado— en la medida 195/50 R13 C, que es la que calzan la mayoría de los remolques de dos caballos del mercado.\n\nÍndice de carga reforzado para uso en remolque. Compruebe la medida en el flanco de sus neumáticos actuales antes de pedir; si no coincide, escríbanos y buscamos la equivalencia.",
+    "bullets": [
+      "195/50 R13 C reforzado",
+      "Montada y equilibrada",
+      "Llanta de 4 tornillos",
+      "Uso específico en remolque"
+    ],
+    "image": "/images/remolques/acc-rueda-repuesto.svg",
+    "price": "119,00 €",
+    "rating": 4.5
+  },
+  {
+    "id": "p-rueda-jockey-automatica-48",
+    "categoryId": "cat-accesorios",
+    "brand": "Remolque Caballos",
+    "name": "Rueda jockey automática 48 mm",
+    "slug": "rueda-jockey-automatica-48",
+    "shortDescription": "Rueda de apoyo con recogida automática y abrazadera. Carga estática 300 kg.",
+    "description": "Rueda jockey de 48 mm de diámetro de tubo, con mecanismo de recogida automática: al enganchar, la rueda sube sola y queda bloqueada.\n\nCarga estática admisible de 300 kg, suficiente para el peso sobre la bola de un remolque de dos caballos cargado. Se entrega con la abrazadera de sujeción.",
+    "bullets": [
+      "Tubo de 48 mm",
+      "Recogida automática",
+      "Carga estática 300 kg",
+      "Abrazadera incluida"
+    ],
+    "image": "/images/remolques/acc-rueda-jockey.svg",
+    "price": "78,50 €",
+    "rating": 4.4
+  }
+]
