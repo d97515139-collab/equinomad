@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 import { remoteImagePatterns } from "./src/lib/remoteImagePatterns";
+import { noindexHeaders } from "./src/config/indexing";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
@@ -36,6 +37,11 @@ const nextConfig: NextConfig = {
     // Le catalogue maison vit sur Cloudinary ; l'occasion reprend aussi les
     // photos réelles des places de marché partenaires.
     remotePatterns: [...remoteImagePatterns],
+  },
+
+  async headers() {
+    // Site de démonstration : SITE_NOINDEX=1 le ferme aux moteurs de recherche.
+    return noindexHeaders();
   },
 
   async redirects() {
