@@ -14,6 +14,7 @@ import {
 } from "@/lib/cart";
 import type { CartLine } from "@/lib/cart";
 import { cartLineKey } from "@/lib/variantPricing";
+import { withBrand } from "@/lib/brandName";
 
 // Le panier stocké dans le navigateur peut dater : au premier affichage on
 // redemande au serveur les prix et les stocks réels, puis on réécrit le
@@ -147,7 +148,7 @@ export function CartView() {
                 {line.image && (
                   <Image
                     src={line.image}
-                    alt={`${line.brand} ${line.name}`}
+                    alt={withBrand(line.brand, line.name)}
                     fill
                     sizes="80px"
                     className="object-cover"
@@ -156,9 +157,11 @@ export function CartView() {
               </Link>
 
               <div className="min-w-0 flex-1">
-                <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
-                  {line.brand}
-                </p>
+                {line.brand.trim() ? (
+                  <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
+                    {line.brand}
+                  </p>
+                ) : null}
                 <Link
                   href={line.path}
                   className="block text-sm font-semibold text-foreground hover:text-primary"
@@ -216,7 +219,7 @@ export function CartView() {
                   <button
                     type="button"
                     onClick={() => remove(line.productId, line.variantId)}
-                    aria-label={t("removeLabel", { name: `${line.brand} ${line.name}` })}
+                    aria-label={t("removeLabel", { name: withBrand(line.brand, line.name) })}
                     className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary"
                   >
                     <Trash2 className="h-3.5 w-3.5" aria-hidden />

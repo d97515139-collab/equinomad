@@ -16,6 +16,7 @@ import {
   isBankTransferConfigured,
 } from "@/server/bankTransfer";
 import { ORDER_STATUS_LABELS, PAYMENT_STATUS_LABELS } from "@/lib/orderStatus";
+import { withBrand } from "@/lib/brandName";
 
 type ConfirmationParams = Promise<{ locale: string; orderNumber: string }>;
 type ConfirmationSearch = Promise<{ token?: string; paiement?: string }>;
@@ -204,7 +205,7 @@ export default async function OrderConfirmationPage({
                         {item.image && (
                           <Image
                             src={item.image}
-                            alt={`${item.brand} ${item.name}`}
+                            alt={withBrand(item.brand, item.name)}
                             fill
                             sizes="56px"
                             className="object-cover"
@@ -212,9 +213,11 @@ export default async function OrderConfirmationPage({
                         )}
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
-                          {item.brand}
-                        </span>
+                        {item.brand.trim() ? (
+                          <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
+                            {item.brand}
+                          </span>
+                        ) : null}
                         {item.path ? (
                           <Link
                             href={item.path}

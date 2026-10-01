@@ -23,6 +23,7 @@ import { productLongText, productSectionsForLocale, productShortText } from "@/l
 import { formatRating } from "@/lib/formatRating";
 import { alternatesFor } from "@/lib/hreflang";
 import type { Locale } from "@/i18n/routing";
+import { withBrand } from "@/lib/brandName";
 
 type ProductPageParams = Promise<{
   locale: Locale;
@@ -73,7 +74,7 @@ export async function generateMetadata({ params }: { params: ProductPageParams }
   const t = await getTranslations({ locale, namespace: "product" });
 
   return {
-    title: t("metaTitle", { name: `${data.product.brand} ${data.product.name}` }),
+    title: t("metaTitle", { name: withBrand(data.product.brand, data.product.name) }),
     description: data.product.bullets.join(" · "),
     alternates: alternatesFor(`/${group}/${category}/${product}`, locale),
   };
@@ -145,9 +146,11 @@ export default async function ProductPage({ params }: { params: ProductPageParam
 
             <div className="flex flex-col gap-4">
               <div>
-                <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
-                  {productData.brand}
-                </p>
+                {productData.brand.trim() ? (
+                  <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
+                    {productData.brand}
+                  </p>
+                ) : null}
                 <h1 className="text-2xl font-black text-foreground sm:text-3xl">{productData.name}</h1>
                 {typeof productData.rating === "number" && (
                   <p className="mt-1 text-sm text-muted-foreground">

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Truck } from "lucide-react";
 import { formatCents } from "@/lib/cart";
 import type { CartLine, CartTotals } from "@/lib/cart";
+import { withBrand } from "@/lib/brandName";
 
 // Bloc récapitulatif du tunnel de commande.
 //
@@ -36,7 +37,7 @@ export function CheckoutSummary({
                 {line.image && (
                   <Image
                     src={line.image}
-                    alt={`${line.brand} ${line.name}`}
+                    alt={withBrand(line.brand, line.name)}
                     fill
                     sizes="48px"
                     className="object-cover"
@@ -44,9 +45,11 @@ export function CheckoutSummary({
                 )}
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
-                  {line.brand}
-                </span>
+                {line.brand.trim() ? (
+                  <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
+                    {line.brand}
+                  </span>
+                ) : null}
                 <span className="block truncate text-sm font-semibold text-foreground">
                   {line.name}
                 </span>

@@ -49,9 +49,11 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
-      <p className="eyebrow truncate text-[0.58rem] text-muted-foreground">
-        {product.brand}
-      </p>
+      {product.brand.trim() ? (
+        <p className="eyebrow truncate text-[0.58rem] text-muted-foreground">
+          {product.brand}
+        </p>
+      ) : null}
       <p className="mt-1 mb-1 line-clamp-2 font-heading text-sm leading-snug font-bold text-foreground transition-colors group-hover:text-primary">
         {product.name}
       </p>

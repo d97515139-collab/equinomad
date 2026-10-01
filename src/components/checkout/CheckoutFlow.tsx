@@ -567,9 +567,11 @@ export function CheckoutFlow({
                 {lines.map((line) => (
                   <li key={`${line.productId}::${line.variantId ?? ""}`} className="flex items-start justify-between gap-4 py-3">
                     <span className="min-w-0">
-                      <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
-                        {line.brand}
-                      </span>
+                      {line.brand.trim() ? (
+                        <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
+                          {line.brand}
+                        </span>
+                      ) : null}
                       <Link
                         href={line.path}
                         className="block text-sm font-semibold text-foreground hover:text-primary"

@@ -5,6 +5,7 @@ import { getActivePromotions, type ProductPromotion } from "@/server/promotions"
 import type { CategoryGuide, CategoryRecord, ProductGroup, ProductRecord } from "@/server/types";
 import type { Product } from "@/types/home";
 import { discountedVariantCents, minActivePriceCents, type VariantInput, type VariantView } from "@/lib/variantPricing";
+import { withBrand } from "@/lib/brandName";
 
 // L'interface publique ne change pas : les catégories restent adressées par
 // "groupe/slug" et les prix circulent en chaînes formatées ("349,00 €").
@@ -593,7 +594,7 @@ function toViewProduct(
     // Sans visuel propre, le produit reprend l'image de sa catégorie
     image: row.image || row.category.image,
     images: parseImages(row.images),
-    alt: `${row.brand} ${row.name}`,
+    alt: withBrand(row.brand, row.name),
     oldPrice: row.oldPriceCents === null ? undefined : formatPrice(row.oldPriceCents),
     price: formatPrice(row.priceCents),
     priceCents: row.priceCents,

@@ -76,7 +76,7 @@ export function CategoryProductBrowser({ products }: { products: Product[] }) {
   const brandOptions = useMemo(() => {
     const counts = new Map<string, number>();
     for (const product of products) {
-      counts.set(product.brand, (counts.get(product.brand) ?? 0) + 1);
+      if (product.brand.trim()) counts.set(product.brand, (counts.get(product.brand) ?? 0) + 1);
     }
     return Array.from(counts, ([brand, count]) => ({ brand, count })).sort((a, b) =>
       a.brand.localeCompare(b.brand),

@@ -64,9 +64,11 @@ export function WishlistView() {
             </Link>
 
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
-                {item.brand}
-              </p>
+              {item.brand.trim() ? (
+                <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
+                  {item.brand}
+                </p>
+              ) : null}
               <Link href={item.path} className="block font-bold text-foreground hover:text-primary">
                 {item.name}
               </Link>

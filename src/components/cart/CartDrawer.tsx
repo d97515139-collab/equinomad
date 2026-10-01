@@ -9,6 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { useCart } from "@/components/cart/CartProvider";
 import { formatCents, MAX_QUANTITY_PER_LINE } from "@/lib/cart";
 import { useDismissable } from "@/lib/useDismissable";
+import { withBrand } from "@/lib/brandName";
 
 // Panier latéral.
 //
@@ -122,7 +123,7 @@ export function CartDrawer({ paymentSlot }: { paymentSlot?: ReactNode }) {
                     {line.image && (
                       <Image
                         src={line.image}
-                        alt={`${line.brand} ${line.name}`}
+                        alt={withBrand(line.brand, line.name)}
                         fill
                         sizes="64px"
                         className="object-cover"
@@ -131,9 +132,11 @@ export function CartDrawer({ paymentSlot }: { paymentSlot?: ReactNode }) {
                   </Link>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
-                      {line.brand}
-                    </p>
+                    {line.brand.trim() ? (
+                      <p className="text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
+                        {line.brand}
+                      </p>
+                    ) : null}
                     <Link
                       href={line.path}
                       onClick={closeDrawer}
@@ -172,7 +175,7 @@ export function CartDrawer({ paymentSlot }: { paymentSlot?: ReactNode }) {
                       <button
                         type="button"
                         onClick={() => remove(line.productId, line.variantId)}
-                        aria-label={t("removeLabel", { name: `${line.brand} ${line.name}` })}
+                        aria-label={t("removeLabel", { name: withBrand(line.brand, line.name) })}
                         className="rounded-sm p-1.5 text-muted-foreground transition-colors hover:text-primary"
                       >
                         <Trash2 className="h-3.5 w-3.5" aria-hidden />

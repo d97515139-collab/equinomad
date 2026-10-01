@@ -17,6 +17,7 @@ import {
   PAYMENT_STATUS_BADGES,
   PAYMENT_STATUS_LABELS,
 } from "@/lib/orderStatus";
+import { withBrand } from "@/lib/brandName";
 
 type PageParams = Promise<{ locale: string; orderNumber: string }>;
 
@@ -117,7 +118,7 @@ export default async function AccountOrderDetailPage({ params }: { params: PageP
                     {item.image && (
                       <Image
                         src={item.image}
-                        alt={`${item.brand} ${item.name}`}
+                        alt={withBrand(item.brand, item.name)}
                         fill
                         sizes="56px"
                         className="object-cover"
@@ -125,9 +126,11 @@ export default async function AccountOrderDetailPage({ params }: { params: PageP
                     )}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
-                      {item.brand}
-                    </span>
+                    {item.brand.trim() ? (
+                      <span className="block text-[11px] font-bold tracking-wide text-muted-foreground uppercase">
+                        {item.brand}
+                      </span>
+                    ) : null}
                     {item.path ? (
                       <Link
                         href={item.path}

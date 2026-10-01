@@ -147,7 +147,7 @@ export async function ProductJsonLd({ product }: ProductJsonLdProps) {
     sku: row.sku,
     mpn: record.mpn,
     ...gtinProperties(record.gtin),
-    brand: { "@type": "Brand", name: row.brand },
+    ...(row.brand.trim() ? { brand: { "@type": "Brand", name: row.brand } } : {}),
     category: merchantProductType(row),
     url: record.link,
     offers: offer,
