@@ -1,6 +1,7 @@
 import createMiddleware from "next-intl/middleware";
-import { NextResponse, type NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
+import { acceptLanguageOverride, isCrawler } from "@/i18n/localeDetection";
 import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/adminAuth";
 import {
   attendUneReponseJson,
@@ -14,6 +15,28 @@ import { PAGE_MAINTENANCE } from "@/lib/maintenancePage";
 // de la session avec `node:crypto`, comme partout ailleurs dans le projet.
 
 const routageMultilingue = createMiddleware(routing);
+// Les robots d'indexation voient l'URL demandée, sans redirection de langue :
+// chaque version est explorée à son adresse, reliée aux autres par hreflang.
+const routageSansDetection = createMiddleware({ ...routing, localeDetection: false });
+
+/**
+ * Langue d'arrivée : quand le navigateur ne parle aucune langue du site, le
+ * pays fourni par Vercel prend le relais (voir src/i18n/localeDetection.ts).
+ */
+function routageDuVisiteur(request: NextRequest): NextResponse {
+  if (isCrawler(request.headers.get("user-agent"))) return routageSansDetection(request);
+
+  const langue = acceptLanguageOverride({
+    acceptLanguage: request.headers.get("accept-language"),
+    country: request.headers.get("x-vercel-ip-country"),
+    hasLocaleCookie: request.cookies.has("NEXT_LOCALE"),
+  });
+  if (!langue) return routageMultilingue(request);
+
+  const entetes = new Headers(request.headers);
+  entetes.set("accept-language", langue);
+  return routageMultilingue(new NextRequest(request, { headers: entetes }));
+}
 
 /**
  * Le back-office, les API, le flux Merchant et les trois routes de campagne
@@ -96,7 +119,7 @@ export default function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  return routageMultilingue(request);
+  return routageDuVisiteur(request);
 }
 
 export const config = {

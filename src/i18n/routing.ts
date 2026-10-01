@@ -10,11 +10,11 @@ export const routing = defineRouting({
   locales: ["es", "en", "fr", "de", "it"],
   defaultLocale: "es",
   localePrefix: "as-needed",
-  // Pas de redirection d'après la langue du navigateur : « / » sert toujours
-  // l'espagnol. Sinon un robot d'indexation anglophone serait renvoyé vers /en
-  // et la version espagnole, celle qui porte le référencement, ne serait plus
-  // explorée. Le changement de langue reste un choix explicite du visiteur.
-  localeDetection: false,
+  // Le visiteur arrive dans sa langue : cookie de son dernier choix, puis
+  // langue du navigateur, puis pays (src/i18n/localeDetection.ts). Les robots
+  // d'indexation en sont exclus dans src/proxy.ts : « / » leur sert toujours
+  // l'espagnol, la version qui porte le référencement.
+  localeDetection: true,
 });
 
 export type Locale = (typeof routing.locales)[number];
