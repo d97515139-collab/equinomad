@@ -14,6 +14,24 @@ export function hasLegacyIdentity(text: string): boolean {
 }
 
 /**
+ * Le script ne vise que ce qui vient de l'ancien client, jamais « tout ce qui
+ * existe » : relancé une fois la boutique en service, il ne doit toucher ni aux
+ * commandes Equinomad ni au compte administrateur en place.
+ */
+const LEGACY_ORDER_PREFIX = "RC-";
+
+/** Clé de la ligne Setting écrite dans la même transaction que le nettoyage. */
+export const REBRANDING_MARKER_KEY = "rebranding_equinomad";
+
+export function isLegacyOrderNumber(orderNumber: string): boolean {
+  return orderNumber.startsWith(LEGACY_ORDER_PREFIX);
+}
+
+export function pickLegacyAdmin<T extends { email: string }>(admins: readonly T[]): T | undefined {
+  return admins.find((admin) => hasLegacyIdentity(admin.email));
+}
+
+/**
  * Textes produit. L'ancien nom y joue deux rôles : la boutique (« En Remolque
  * Caballos, el … ») et, pour quelques occasions sans marque, le nom du produit
  * lui-même (« el Remolque Caballos para 2 caballos »). Le second rôle devient
@@ -45,6 +63,12 @@ const LEGAL_REPLACEMENTS: ReadonlyArray<readonly [string, string]> = [
   ["www.remolquecaballos.com", COMPANY.domain],
   ["remolquecaballos.com", COMPANY.domain],
   ["+34 612 553 303", COMPANY.phone],
+  // Valeurs d'exemple de l'ancien client : elles prennent le marqueur, que
+  // `npm run check:launch` repère ensuite dans les pages en base.
+  ["Nombre Apellidos (a completar)", COMPANY.managingDirector],
+  ["First name Last name (to be completed)", COMPANY.managingDirector],
+  ["Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Alemania", COMPANY.host],
+  ["Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany", COMPANY.host],
   ["Remolque Caballos", BRAND.name],
 ];
 

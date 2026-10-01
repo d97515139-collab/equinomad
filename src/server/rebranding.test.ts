@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { COMPANY } from "@/config/company";
 import {
   hasLegacyIdentity,
+  isLegacyOrderNumber,
+  pickLegacyAdmin,
   planStockRestoration,
   rebrandLegalText,
   rebrandProductText,
@@ -105,4 +107,31 @@ test("l'intitulé générique « Remolque caballos » des annonces devient « Re
   assert.equal(une, "En Equinomad, el Remolque para caballos SM PROVAN 2 plazas se presenta.");
   assert.equal(rebrandProductText(une), une);
   assert.equal(hasLegacyIdentity(une), false);
+});
+
+test("seules les commandes à l'ancien préfixe sont visées", () => {
+  assert.equal(isLegacyOrderNumber("RC-2026-014679"), true);
+  assert.equal(isLegacyOrderNumber("EQ-2026-014679"), false);
+});
+
+test("seul un administrateur à l'ancienne adresse est basculé", () => {
+  const ancien = { id: "a1", email: "contacto@remolquecaballos.com" };
+  const nouveau = { id: "a2", email: "d97515139@gmail.com" };
+  assert.equal(pickLegacyAdmin([nouveau, ancien])?.id, "a1");
+  assert.equal(pickLegacyAdmin([nouveau]), undefined);
+});
+
+test("le gérant et l'hébergeur d'exemple de l'ancien client deviennent les champs à compléter", () => {
+  const source = JSON.stringify({
+    es: "Administrador único y responsable de los contenidos: Nombre Apellidos (a completar).",
+    en: "Sole administrator responsible for the contents: First name Last name (to be completed).",
+    hostEs: "El sitio está alojado por Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Alemania",
+    hostEn: "The site is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany",
+  });
+  const sortie = rebrandLegalText(source);
+  assert.doesNotThrow(() => JSON.parse(sortie));
+  assert.doesNotMatch(sortie, /Hetzner|Nombre Apellidos|First name Last name/);
+  assert.ok(sortie.includes(`contenidos: ${COMPANY.managingDirector}.`));
+  assert.ok(sortie.includes(`hosted by ${COMPANY.host}`));
+  assert.equal(rebrandLegalText(sortie), sortie);
 });

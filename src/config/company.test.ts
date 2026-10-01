@@ -1,6 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { COMPANY, PENDING_MARK, companyWhatsappDigits, missingCompanyFields } from "./company";
+import {
+  COMPANY,
+  PENDING_MARK,
+  companyWhatsappDigits,
+  legalPagesWithPendingMark,
+  missingCompanyFields,
+} from "./company";
 
 test("les coordonnées inconnues portent le marqueur et sont listées", () => {
   assert.deepEqual(missingCompanyFields(), [
@@ -39,4 +45,12 @@ test("la surcharge NEXT_PUBLIC_WHATSAPP_NUMBER est réduite à ses chiffres", ()
     if (avant === undefined) delete process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
     else process.env.NEXT_PUBLIC_WHATSAPP_NUMBER = avant;
   }
+});
+
+test("les pages légales en base qui portent encore le marqueur sont listées", () => {
+  const pages = [
+    { locale: "es", slug: "mentions-legales", data: `{"body":"${PENDING_MARK}: CIF]"}` },
+    { locale: "en", slug: "faq", data: '{"body":"Equinomad"}' },
+  ];
+  assert.deepEqual(legalPagesWithPendingMark(pages), ["es/mentions-legales"]);
 });

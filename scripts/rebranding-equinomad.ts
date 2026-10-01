@@ -27,14 +27,42 @@ const PRODUCT_TEXT_FIELDS = [
 ] as const;
 type ProductTextField = (typeof PRODUCT_TEXT_FIELDS)[number];
 
+type Prisma = (typeof import("../src/server/prisma"))["prisma"];
+
 async function main(): Promise<void> {
   const { prisma } = await import("../src/server/prisma");
-  const { hashPassword, verifyPassword } = await import("../src/lib/password");
-  const { hasLegacyIdentity, planStockRestoration, rebrandLegalText, rebrandProductText } =
-    await import("../src/server/rebranding");
+  try {
+    await nettoyer(prisma);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+async function nettoyer(prisma: Prisma): Promise<void> {
+  const { hashPassword } = await import("../src/lib/password");
+  const {
+    REBRANDING_MARKER_KEY,
+    hasLegacyIdentity,
+    isLegacyOrderNumber,
+    pickLegacyAdmin,
+    planStockRestoration,
+    rebrandLegalText,
+    rebrandProductText,
+  } = await import("../src/server/rebranding");
+
+  // Le marqueur est écrit dans la transaction : une fois le nettoyage passé,
+  // une relance ne touche plus à rien, même si la boutique a reçu entre-temps
+  // des commandes, un IBAN ou un nouveau mot de passe administrateur.
+  const marqueur = await prisma.setting.findUnique({ where: { key: REBRANDING_MARKER_KEY } });
+  if (marqueur) {
+    console.log(`Rien à faire. Nettoyage déjà appliqué le ${marqueur.value}.`);
+    return;
+  }
 
   // ---- Lecture ----
-  const orders = await prisma.order.findMany({ select: { id: true, orderNumber: true } });
+  const orders = (await prisma.order.findMany({ select: { id: true, orderNumber: true } })).filter((o) =>
+    isLegacyOrderNumber(o.orderNumber),
+  );
   const orderIds = orders.map((o) => o.id);
   const [itemCount, eventCount] = await Promise.all([
     prisma.orderItem.count({ where: { orderId: { in: orderIds } } }),
@@ -76,15 +104,14 @@ async function main(): Promise<void> {
   const bank = bankRow ? (JSON.parse(bankRow.value) as Record<string, string>) : null;
   const bankNeedsReset = Boolean(bank && (bank.holder || bank.iban || bank.bic));
   const transfer = await prisma.paymentMethod.findUnique({ where: { key: "transferencia" } });
-  const transferNeedsDisable = Boolean(transfer?.enabled);
+  // Le virement reste ouvert sur l'IBAN de l'ancien client tant qu'on ne le
+  // désactive pas : les deux vont ensemble.
+  const transferNeedsDisable = bankNeedsReset && Boolean(transfer?.enabled);
 
   const admins = await prisma.adminUser.findMany();
   const password = process.env.ADMIN_PASSWORD ?? "";
-  const adminTarget = admins.find((a) => a.email === NEW_ADMIN_EMAIL) ?? admins.find((a) => hasLegacyIdentity(a.email));
-  const adminNeedsUpdate = Boolean(
-    adminTarget &&
-      (adminTarget.email !== NEW_ADMIN_EMAIL || !password || !verifyPassword(password, adminTarget.passwordHash)),
-  );
+  const adminTarget = pickLegacyAdmin(admins);
+  const adminNeedsUpdate = Boolean(adminTarget);
 
   // ---- Rapport ----
   console.log(APPLY ? "Mode écriture" : "Mode à blanc (ajouter --apply pour écrire)");
@@ -164,11 +191,11 @@ async function main(): Promise<void> {
           data: { email: NEW_ADMIN_EMAIL, name: "Administración Equinomad", passwordHash: hashPassword(password) },
         });
       }
+      await tx.setting.create({ data: { key: REBRANDING_MARKER_KEY, value: new Date().toISOString() } });
     },
     { timeout: 600_000, maxWait: 60_000 },
   );
   console.log("Écriture terminée.");
-  await prisma.$disconnect();
 }
 
 main().catch((erreur: unknown) => {

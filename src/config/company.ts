@@ -53,6 +53,17 @@ export function missingCompanyFields(
 }
 
 /**
+ * Pages légales stockées en base (LegalContent) qui portent encore le marqueur.
+ * Elles priment sur le corpus du code : compléter COMPANY ne les corrige pas,
+ * d'où leur contrôle séparé avant la mise en ligne.
+ */
+export function legalPagesWithPendingMark(
+  pages: readonly { locale: string; slug: string; data: string }[],
+): string[] {
+  return pages.filter((page) => page.data.includes(PENDING_MARK)).map((page) => `${page.locale}/${page.slug}`);
+}
+
+/**
  * Chiffres du numéro WhatsApp, prêts pour wa.me. La variable
  * NEXT_PUBLIC_WHATSAPP_NUMBER prime ; un numéro encore à compléter donne une
  * chaîne vide, et l'interface masque alors le lien au lieu d'ouvrir « wa.me/ ».

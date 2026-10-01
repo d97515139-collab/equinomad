@@ -1,4 +1,4 @@
-import { missingCompanyFields } from "../src/config/company";
+import { legalPagesWithPendingMark, missingCompanyFields } from "../src/config/company";
 
 /**
  * Contrôle avant mise en ligne : liste ce qui manque encore et se termine en
@@ -25,6 +25,10 @@ async function main(): Promise<void> {
   const ligne = await prisma.setting.findUnique({ where: { key: "bank_transfer" } });
   const virement = ligne ? (JSON.parse(ligne.value) as { iban?: string }) : {};
   if (!virement.iban?.trim()) manques.push("IBAN du virement non renseigné (back-office, Paiements)");
+  const pages = await prisma.legalContent.findMany({ select: { locale: true, slug: true, data: true } });
+  for (const page of legalPagesWithPendingMark(pages)) {
+    manques.push(`page légale ${page} : coordonnées encore à compléter dans la version en base (back-office)`);
+  }
   await prisma.$disconnect();
 
   if (manques.length === 0) {
