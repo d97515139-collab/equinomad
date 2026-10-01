@@ -3,13 +3,14 @@ import { CreditCard, Mail, MessageCircle, ShieldCheck, Truck } from "lucide-reac
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 import { COMPANY, isLegalLocale } from "@/content/legal";
+import { companyWhatsappDigits } from "@/config/company";
 
 /**
  * Le numéro publié est une ligne WhatsApp, pas un standard : le lien ouvre
  * donc wa.me et non `tel:`. Un `tel:` sur une ligne qui ne décroche pas
  * dépense le seul geste que le visiteur était prêt à faire.
  */
-const WHATSAPP_HREF = `https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`;
+const WHATSAPP_DIGITS = companyWhatsappDigits();
 import { getLegalFooterGroups } from "@/server/legalPages";
 
 export async function Footer() {
@@ -62,23 +63,27 @@ export async function Footer() {
                 {COMPANY.email}
               </Link>
             </p>
-            <p className="flex items-center gap-2">
-              <MessageCircle className="h-4 w-4" />
-              {/* Adresse externe : hors routage multilingue. Nouvel onglet et
-                  `noopener`, wa.me passant la main au navigateur ou à
-                  l’application. */}
-              <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="messwert hover:underline"
-              >
-                {COMPANY.phone}
-              </a>
-            </p>
-            {/* La ligne ne prend pas d’appel : le dire ici évite l’appel sans
-                déception qui va avec, et le message qui n’est jamais écrit. */}
-            <p className="mt-1 text-xs text-white/55">{t("whatsappOnly")}</p>
+            {WHATSAPP_DIGITS ? (
+              <>
+                <p className="flex items-center gap-2">
+                  <MessageCircle className="h-4 w-4" />
+                  {/* Adresse externe : hors routage multilingue. Nouvel onglet et
+                      `noopener`, wa.me passant la main au navigateur ou à
+                      l’application. */}
+                  <a
+                    href={`https://wa.me/${WHATSAPP_DIGITS}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="messwert hover:underline"
+                  >
+                    {COMPANY.phone}
+                  </a>
+                </p>
+                {/* La ligne ne prend pas d’appel : le dire ici évite l’appel sans
+                    déception qui va avec, et le message qui n’est jamais écrit. */}
+                <p className="mt-1 text-xs text-white/55">{t("whatsappOnly")}</p>
+              </>
+            ) : null}
             <p className="mt-4 text-xs leading-relaxed text-white/55">{t("oeffnung")}</p>
           </div>
 

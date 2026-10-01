@@ -20,7 +20,7 @@ import type { LegalFooterGroup, LegalLocale, LegalPageMap, LegalSlug } from "./t
  * la facture PDF. Elle ne dépend pas de la base : ces mentions engagent la
  * société et ne sont pas modifiables depuis le back-office.
  */
-export { COMPANY } from "./es";
+export { COMPANY } from "@/config/company";
 
 export type {
   LegalFooterGroup,

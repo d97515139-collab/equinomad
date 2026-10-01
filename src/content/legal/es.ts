@@ -1,5 +1,5 @@
 /**
- * Contenu légal et informatif en ESPAGNOL — Remolque Caballos.
+ * Contenu légal et informatif en ESPAGNOL — Equinomad.
  *
  * ATTENTION : les données d'entreprise sont des PLACEHOLDERS (CIF, Registro
  * Mercantil, capital, adresse, téléphone, assureur). Voir docs/LEGAL.md pour la
@@ -20,81 +20,18 @@
  */
 
 import type { LegalPageMap } from "./types";
+import { BRAND } from "@/config/brand";
+import { COMPANY } from "@/config/company";
 
 /** Date de dernière révision rédactionnelle du corpus espagnol. */
 const UPDATED_AT = "2026-08-09";
-
-/**
- * Coordonnées de l'entreprise.
- * Exportées : la facture PDF y puise les mentions obligatoires, et deux jeux de
- * coordonnées qui divergeraient seraient pires qu'un seul faux.
- */
-export const COMPANY = {
-  name: "EQUIVAN REMOLQUES, S.L.",
-  /** Forme sociale espagnole. */
-  legalForm: "Sociedad de Responsabilidad Limitada (S.L.)",
-  /**
-   * Adresse du siège, reprise telle quelle dans les dix pages légales, sur la
-   * facture et dans l’adresse de retour. Composée en casse normale plutôt
-   * qu’en capitales : le reste du corpus l’est, et une adresse tout en
-   * capitales se lit moins vite au moment où le client la recopie.
-   */
-  street: "Ctra. Petra - Santa Margalida, km 3",
-  /** Le code postal ouvre la ligne, comme le veut l’usage espagnol. */
-  city: "07520 Petra (Illes Balears)",
-  country: "España",
-  email: "contacto@remolquecaballos.com",
-  /**
-   * Ligne WhatsApp de la maison, et seul numéro publié. Elle ne reçoit pas
-   * d’appel : tout le corpus dit « escríbanos por WhatsApp » et jamais
-   * « llame », et le pied de page ouvre wa.me plutôt qu’un `tel:`. Annoncer
-   * un numéro qui sonne dans le vide coûte plus qu’il ne rapporte — l’acheteur
-   * qui appelle et n’obtient rien ne réessaie pas par écrit.
-   *
-   * L’art. 10 de la LSSI-CE demande un moyen de communication « directa y
-   * efectiva », pas un téléphone : WhatsApp et le courriel y répondent l’un
-   * comme l’autre.
-   *
-   * Le champ garde son nom `phone` : le renommer toucherait les deux corpus
-   * juridiques, la facture et la bulle de contact pour un gain nul.
-   */
-  phone: "+34 612 553 303",
-  /** Administrador único — responsable éditorial au sens de la LSSI-CE. */
-  managingDirector: "Nombre Apellidos (a completar)",
-  /**
-   * Inscription au Registro Mercantil, exigée par l'art. 10 de la LSSI-CE.
-   *
-   * Toujours une valeur d'exemple, comme le CIF et le capital : seuls les
-   * chiffres manquent. Le ressort, lui, suit le siège — Palma de Mallorca
-   * pour les Illes Balears, et non plus Séville. Laisser « Sevilla » sous une
-   * adresse de Petra aurait donné deux mentions légales qui se contredisent,
-   * ce qui se remarque plus vite qu'un tome à zéro.
-   */
-  register: "Registro Mercantil de Palma de Mallorca, tomo 0000, folio 000, hoja PM-000000",
-  /**
-   * Les deux champs ci-dessous gardent leurs noms français hérités du gabarit :
-   * les renommer toucherait quatre-vingts appels répartis dans les deux corpus
-   * juridiques. Correspondance :
-   *   siren -> CIF (número de identificación fiscal)
-   *   siret -> code d'établissement du siège
-   */
-  siren: "B-00000000",
-  siret: "B-00000000-0001",
-  /** Capital social, mention obligatoire. À COMPLÉTER. */
-  capital: "a completar",
-  /** Numéro de TVA intracommunautaire espagnol. */
-  vatId: "ESB00000000",
-  domain: "www.remolquecaballos.com",
-  /** Hébergeur, à nommer au titre de l'article 10 de la LSSI-CE. */
-  host: "Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Alemania — +49 9831 505-0",
-} as const;
 
 /** Adresse de retour (identique au siège dans ce modèle). */
 const RETURN_ADDRESS = `${COMPANY.name}, departamento de devoluciones, ${COMPANY.street}, ${COMPANY.city}, ${COMPANY.country}`;
 
 /** Avertissement placé en tête de chaque page juridique. */
 const DISCLAIMER =
-  "Aviso: este texto es un modelo redactado para la tienda en línea Remolque Caballos. Antes de publicarlo deben completarse el CIF, los datos del Registro Mercantil, el capital social, el nombre del administrador, el teléfono y la aseguradora, y el conjunto debe ser revisado por un abogado. Solo con esa revisión es utilizable tal cual.";
+  `Aviso: este texto es un modelo redactado para la tienda en línea ${BRAND.name}. Antes de publicarlo deben completarse el CIF, los datos del Registro Mercantil, el capital social, el nombre del administrador, el teléfono y la aseguradora, y el conjunto debe ser revisado por un abogado. Solo con esa revisión es utilizable tal cual.`;
 
 /** Assemble le chapeau : avertissement puis texte d'introduction. */
 function intro(lead: string): string {
@@ -162,7 +99,7 @@ export const esLegalPages: LegalPageMap = {
     slug: "cgv",
     title: "Condiciones generales de venta",
     intro: intro(
-      "Estas condiciones rigen las ventas realizadas a distancia a consumidores a través de www.remolquecaballos.com, conforme al Real Decreto Legislativo 1/2007 (TRLGDCU).",
+      `Estas condiciones rigen las ventas realizadas a distancia a consumidores a través de ${COMPANY.domain}, conforme al Real Decreto Legislativo 1/2007 (TRLGDCU).`,
     ),
     sections: [
       {

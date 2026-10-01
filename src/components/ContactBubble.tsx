@@ -1,5 +1,6 @@
 import { getLocale } from "next-intl/server";
 import { COMPANY } from "@/content/legal";
+import { companyWhatsappDigits } from "@/config/company";
 import { ContactBubbleLauncher, type ContactBubbleLabels } from "@/components/ContactBubbleLauncher";
 
 /**
@@ -15,8 +16,7 @@ import { ContactBubbleLauncher, type ContactBubbleLabels } from "@/components/Co
  * `SmartsuppChat` : quelques chaînes ne justifient pas d'élargir le
  * dictionnaire de traductions.
  */
-const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") || COMPANY.phone.replace(/\D/g, "");
+const WHATSAPP_NUMBER = companyWhatsappDigits();
 
 const LIBELLES: Record<"es" | "en", ContactBubbleLabels & { prefill: string; sujet: string }> = {
   es: {

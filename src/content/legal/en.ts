@@ -1,5 +1,5 @@
 /**
- * Legal and informational content in ENGLISH — Remolque Caballos.
+ * Legal and informational content in ENGLISH — Equinomad.
  *
  * Mirror of src/content/legal/fr.ts. The French version is authoritative: the
  * shop sells in France under French law, and this translation exists so that a
@@ -13,7 +13,8 @@
  */
 
 import type { LegalPageMap } from "./types";
-import { COMPANY } from "./es";
+import { BRAND } from "@/config/brand";
+import { COMPANY } from "@/config/company";
 
 /** Date of the last editorial revision of the English corpus. */
 const UPDATED_AT = "2026-07-30";
@@ -23,7 +24,7 @@ const RETURN_ADDRESS = `${COMPANY.name}, returns department, ${COMPANY.street}, 
 
 /** Notice placed at the top of every legal page. */
 const DISCLAIMER =
-  "Notice: this text is a carefully drafted template for the Remolque Caballos online shop. The company identity, address, registration and VAT number are those on the public register. Still to be filled in before publication: share capital, the president's name, the phone number, the insurer and the consumer ombudsman. Have the text reviewed by a lawyer afterwards — only then is it fit for use. This English version is a translation for information; the French text is the binding one.";
+  `Notice: this text is a carefully drafted template for the ${BRAND.name} online shop. The company identity, address, registration and VAT number are those on the public register. Still to be filled in before publication: share capital, the president's name, the phone number, the insurer and the consumer ombudsman. Have the text reviewed by a lawyer afterwards — only then is it fit for use. This English version is a translation for information; the French text is the binding one.`;
 
 /** Builds the lead paragraph: notice followed by the introduction. */
 function intro(lead: string): string {
@@ -117,7 +118,7 @@ export const enLegalPages: LegalPageMap = {
     slug: "cgv",
     title: "Terms and conditions of sale",
     intro: intro(
-      "These terms govern sales concluded on the Remolque Caballos online shop. They form the single framework of the commercial relationship within the meaning of article L441-1 of the French Commercial Code.",
+      `These terms govern sales concluded on the ${BRAND.name} online shop. They form the single framework of the commercial relationship within the meaning of article L441-1 of the French Commercial Code.`,
     ),
     updatedAt: UPDATED_AT,
     sections: [
@@ -197,7 +198,7 @@ export const enLegalPages: LegalPageMap = {
       },
       {
         heading: "Data protection contact",
-        body: "For any question about your data, write to privacidad@remolquecaballos.com or by post to the registered office marked “Data protection”. Appointing a data protection officer is not mandatory for a business of this size; this address remains the single point of contact.",
+        body: `For any question about your data, write to ${COMPANY.email} or by post to the registered office marked “Data protection”. Appointing a data protection officer is not mandatory for a business of this size; this address remains the single point of contact.`,
       },
       {
         heading: "Data processed when you order",
@@ -558,7 +559,7 @@ export const enLegalPages: LegalPageMap = {
   /* ------------------------------------------------------------------ */
   "a-propos": {
     slug: "a-propos",
-    title: "About Remolque Caballos",
+    title: `About ${BRAND.name}`,
     updatedAt: UPDATED_AT,
     sections: [
       {
@@ -627,7 +628,7 @@ export const enLegalPages: LegalPageMap = {
       },
       {
         heading: "Data protection",
-        body: "Requests to access, rectify or erase your data go to privacidad@remolquecaballos.com or by post to the registered office marked “Data protection”. We reply within the one-month period laid down by the GDPR.",
+        body: `Requests to access, rectify or erase your data go to ${COMPANY.email} or by post to the registered office marked “Data protection”. We reply within the one-month period laid down by the GDPR.`,
       },
       {
         heading: "Press and partnerships",
