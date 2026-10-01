@@ -1,5 +1,5 @@
 {
-  "name": "remorqueb-ckmann",
+  "name": "equinomad",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -16,6 +16,7 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
+    "check:launch": "tsx scripts/check-launch.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

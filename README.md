@@ -1,11 +1,10 @@
-# remorqueb-ckmann
+# Equinomad
 
-Copie indépendante de la boutique Remolque Caballos, destinée à un nouveau
-client. Le catalogue et le fonctionnement existants sont conservés. La marque,
-le design, les coordonnées et le marché cible seront adaptés dans une étape
-suivante.
+Boutique en ligne Equinomad : remorques et vans pour chevaux, vendus et livrés
+depuis l'Espagne vers huit pays européens. Le découpage du chantier (identité,
+socle multi-pays, langues, design, pages légales) est décrit dans `TARGET.md`.
 
-- Dépôt : https://github.com/d97515139-collab/remorqueb-ckmann
+- Dépôt : https://github.com/d97515139-collab/equinomad
 - Next.js 16, React 19, TypeScript, Tailwind CSS v4, Prisma 7 / PostgreSQL.
 - Base Neon et compte Cloudinary propres à ce projet.
 - Historique Git neuf, sans reprendre les commits du dépôt source.
@@ -55,12 +54,9 @@ dépend du compte authentifié auprès de GitHub.
 
 ## Avant la mise en ligne
 
-Renseigner le nouveau domaine, l'identité de l'entreprise, les coordonnées,
-la messagerie SMTP, l'administrateur, les moyens de paiement et les éventuels
-outils de suivi. Les contenus et réglages métier copiés correspondent encore
-au client d'origine. Les 9 commandes existantes ont été conservées dans la
-copie intégrale ; leur éventuelle suppression relève de la préparation du
-nouveau client.
+`npm run check:launch` liste ce qui manque encore : coordonnées de la société
+(`src/config/company.ts`), messagerie SMTP et IBAN du virement. Il se termine
+en erreur tant qu'il reste un point à régler.
 
 Voir [le compte rendu du clonage](docs/CLONAGE.md). Les autres documents de
 recherche et de déploiement proviennent du projet source et doivent être relus

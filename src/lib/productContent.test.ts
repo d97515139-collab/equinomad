@@ -356,7 +356,7 @@ test("buildOccasionCopy sans marque ne produit ni marque vide ni ancien nom", ()
     bullets: ["Capacidad 2 caballos", "Matrícula roja"],
   });
   const tout = JSON.stringify(entry);
-  assert.doesNotMatch(tout, /Remolque Caballos/);
+  assert.doesNotMatch(tout, /Remolque\s+Caballos/i);
   assert.doesNotMatch(tout, /de marca\s*[,.]|by\s*[,.]|von\s*[,.]/);
   assert.match(entry.shortDescription, /Equinomad/);
 });
