@@ -7,13 +7,23 @@ Git et la base du projet source n'ont pas été modifiés par cette opération.
 ## Base de données
 
 - Sauvegarde cohérente PostgreSQL 17, obtenue dans une transaction en lecture seule.
-- Restauration vers la base Neon PostgreSQL 18 initialement vide, en une transaction.
+- Restauration vers une base Neon PostgreSQL 18 initialement vide, en une transaction.
 - 26 tables et 456 enregistrements copiés.
 - Empreintes SHA-256 identiques pour toutes les tables avant l'adaptation des images.
 - 366 colonnes, 72 index et 47 contraintes structurelles identiques.
 - Les contraintes NOT NULL sont comparées via la nullabilité des colonnes,
   car PostgreSQL 18 les enregistre aussi dans son catalogue de contraintes.
-- Les 12 migrations Prisma sont présentes ; le schéma est à jour.
+- Prisma : schéma à jour, aucune migration en attente.
+
+### Région
+
+Une première restauration avait été faite dans une base Neon en région
+`us-east-2`. Pour un site destiné au marché espagnol, la base a été recréée en
+**`eu-central-1` (Francfort)** : même sauvegarde, même substitution des liens
+d'images, puis comparaison stricte avec la base `us-east-2`. Les 26 tables ont
+des empreintes identiques, et le schéma aussi (colonnes, 362 contraintes,
+72 index). C'est la base `eu-central-1` qu'utilise le projet ; la base
+`us-east-2` n'est plus référencée et peut être supprimée.
 
 Le transfert inclut notamment 323 produits, 6 catégories, 3 groupes,
 18 sections de guide, 8 sections produit, 19 contenus légaux, 9 commandes,
@@ -55,10 +65,15 @@ Les tables vides ont également été restaurées. Aucune commande n'a été sup
 - ESLint : réussi.
 - Prisma : schéma à jour.
 - Compilation de production et vérification TypeScript : réussies.
-- Génération statique (1 804 pages) : chaque page interroge la base. La base
-  Neon est en région `us-east-2` (≈ 230 ms par requête depuis l'Europe) : la
-  génération en est fortement ralentie. Une base Neon en région européenne
-  (`eu-central-1`) est recommandée pour un site destiné au marché espagnol.
+- Serveur branché sur la base `eu-central-1` : accueil, `/en`, `/ocasion`,
+  fiche produit et connexion au back-office répondent normalement ; les pages
+  ne contiennent que des images du nouveau compte Cloudinary.
+- Génération statique (1 804 pages) : non menée à terme sur le poste de
+  clonage. Chaque page interroge la base ; avec environ 190 ms par requête
+  depuis ce poste, et une mémoire saturée par quatre processus de build, la
+  génération dépasse l'heure. Sur un hébergement européen, la latence vers
+  `eu-central-1` est de quelques millisecondes : c'est là que le build complet
+  doit être validé.
 
 Les rapports détaillés, journaux et la sauvegarde intégrale restent localement
 sous `.migration/`, hors dépôt. Ce dossier contient des informations privées.
