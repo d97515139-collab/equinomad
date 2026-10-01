@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 
 /**
@@ -46,4 +46,11 @@ test("aucune trace de l'ancienne identité dans les fichiers livrés", () => {
     );
 
   assert.deepEqual(fautes, [], `Ancienne identité trouvée :\n${fautes.join("\n")}`);
+});
+
+test("le logo de l'ancien client n'est plus livré ni régénérable", () => {
+  // Une image échappe au balayage textuel ci-dessus : on vérifie les fichiers eux-mêmes.
+  for (const fichier of ["public/marca/logo-origen.png", "scripts/preparer-logo.mjs"]) {
+    assert.equal(existsSync(path.join(RACINE, fichier)), false, fichier);
+  }
 });
