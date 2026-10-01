@@ -94,3 +94,15 @@ test("une annulation qui cite une commande supprimée bloque au lieu de fausser 
   );
   assert.deepEqual(plan.unmatched, ["m2"]);
 });
+
+test("l'intitulé générique « Remolque caballos » des annonces devient « Remolque para caballos »", () => {
+  assert.equal(
+    rebrandProductText("Remolque caballos Ifor Williams HB506"),
+    "Remolque para caballos Ifor Williams HB506",
+  );
+  const phrase = "En Remolque Caballos, el Remolque caballos SM PROVAN 2 plazas se presenta.";
+  const une = rebrandProductText(phrase);
+  assert.equal(une, "En Equinomad, el Remolque para caballos SM PROVAN 2 plazas se presenta.");
+  assert.equal(rebrandProductText(une), une);
+  assert.equal(hasLegacyIdentity(une), false);
+});

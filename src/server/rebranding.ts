@@ -18,13 +18,18 @@ export function hasLegacyIdentity(text: string): boolean {
  * Caballos, el … ») et, pour quelques occasions sans marque, le nom du produit
  * lui-même (« el Remolque Caballos para 2 caballos »). Le second rôle devient
  * un nom générique, le premier devient Equinomad.
+ *
+ * S'y ajoutent les intitulés d'annonces importées, « Remolque caballos Ifor
+ * Williams … » : le c minuscule en fait un nom commun, mais le visiteur y lit
+ * l'ancienne marque. Ils prennent la tournure correcte « Remolque para caballos ».
  */
 export function rebrandProductText(text: string): string {
   return text
     .replaceAll("Remolque Caballos para ", "Remolque para ")
     .replaceAll("Remolque Caballos - ", "Remolque para caballos - ")
     .replaceAll("Remolque Caballos Furgo", "Remolque para caballos Furgo")
-    .replaceAll("Remolque Caballos", BRAND.name);
+    .replaceAll("Remolque Caballos", BRAND.name)
+    .replaceAll("Remolque caballos ", "Remolque para caballos ");
 }
 
 /** Remplacements des pages légales, des plus longs aux plus courts. */
