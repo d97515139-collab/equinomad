@@ -7,8 +7,9 @@ import { RichText } from "@/components/RichText";
 import { findLegalPage } from "@/server/legalPages";
 import { paragraphsOf, stripMarks } from "@/lib/richText";
 import type { LegalPage, LegalSection, LegalSlug } from "@/content/legal/types";
+import { publicSiteUrl } from "@/config/brand";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://remolquecaballos.com";
+const SITE_URL = publicSiteUrl();
 
 function formatDate(iso: string, locale: string): string {
   return new Date(iso).toLocaleDateString(locale === "en" ? "en-GB" : "es-ES", {

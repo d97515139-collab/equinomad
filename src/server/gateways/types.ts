@@ -27,7 +27,7 @@ export interface GatewayOrderContext {
   currency: string;
   email: string;
   locale: "es" | "en";
-  /** Libellé lisible, ex. « Commande RC-2026-000123 ». */
+  /** Libellé lisible, ex. « Commande EQ-2026-000123 ». */
   description: string;
   /** URL de retour après paiement réussi (page de confirmation). */
   successUrl: string;
@@ -92,7 +92,7 @@ export interface GatewayKeyField {
  */
 export interface GatewayConnectionCheck {
   ok: boolean;
-  /** Phrase de synthèse, ex. « Compte Remolque Caballos — France, EUR ». */
+  /** Phrase de synthèse, ex. « Compte Equinomad — Espagne, EUR ». */
   summary: string;
   /** Ce qui manque ou ne colle pas ; vide quand tout est bon. */
   issues: string[];

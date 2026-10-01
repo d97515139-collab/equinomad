@@ -36,12 +36,12 @@ describe("readSquareEvent", () => {
         id: "pay_1",
         order_id: "sq_order_1",
         status: "COMPLETED",
-        reference_id: "RC-2026-000123",
+        reference_id: "EQ-2026-000123",
       }),
     );
 
     assert.equal(result?.paymentStatus, "bezahlt");
-    assert.equal(result?.payment.reference_id, "RC-2026-000123");
+    assert.equal(result?.payment.reference_id, "EQ-2026-000123");
     assert.equal(result?.payment.id, "pay_1");
   });
 

@@ -4,10 +4,10 @@
  * Variables d'environnement :
  *   SMTP_HOST       serveur d'envoi, ex. "smtp.hostinger.com"
  *   SMTP_PORT       465 (SSL implicite) ou 587 (STARTTLS)
- *   SMTP_USER       adresse complète du compte, ex. "contacto@remolquecaballos.com"
+ *   SMTP_USER       adresse complète du compte, ex. "info@equinomad.com"
  *   SMTP_PASSWORD   mot de passe de cette boîte
  *   MAIL_FROM       adresse expéditrice (défaut : SMTP_USER)
- *   MAIL_FROM_NAME  nom affiché (facultatif, défaut « Remolque Caballos »)
+ *   MAIL_FROM_NAME  nom affiché (facultatif, défaut : le nom de la marque)
  *
  * Tant que la configuration est incomplète, `isMailConfigured()` renvoie false :
  * en développement le code de connexion est alors affiché dans la console au
@@ -18,8 +18,9 @@
  * en indésirable — quand le serveur ne le refuse pas d'emblée.
  */
 import nodemailer, { type Transporter } from "nodemailer";
+import { BRAND } from "@/config/brand";
 
-const DEFAULT_FROM_NAME = "Remolque Caballos";
+const DEFAULT_FROM_NAME = BRAND.name;
 
 /** Fichier joint au message, transmis tel quel à nodemailer. */
 export interface MailAttachment {

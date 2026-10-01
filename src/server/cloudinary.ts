@@ -13,9 +13,10 @@
  */
 import { v2 as cloudinary, type UploadApiOptions, type UploadApiResponse } from "cloudinary";
 import { slugify } from "@/lib/slugify";
+import { BRAND } from "@/config/brand";
 
 /** Dossier Cloudinary qui reçoit les visuels produits. */
-export const CLOUDINARY_PRODUCT_FOLDER = "remorqueb-ckmann/productos";
+export const CLOUDINARY_PRODUCT_FOLDER = BRAND.cloudinaryFolder;
 
 /**
  * Largeur (et hauteur) maximale conservée à l'upload. 1600 px suffisent

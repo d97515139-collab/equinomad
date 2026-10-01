@@ -1,4 +1,5 @@
 import { cartLineKey } from "@/lib/variantPricing";
+import { BRAND } from "@/config/brand";
 
 // Panier de la boutique.
 //
@@ -11,7 +12,7 @@ import { cartLineKey } from "@/lib/variantPricing";
 // fonctions de calcul, jamais le magasin (protégé par un test sur `window`).
 
 /** Clé localStorage, versionnée pour pouvoir invalider un ancien format. */
-export const CART_STORAGE_KEY = "equivan.cart.v1";
+export const CART_STORAGE_KEY = BRAND.cartStorageKey;
 
 /**
  * Taux d'IVA appliqué, en points de pourcentage.

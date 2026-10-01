@@ -38,6 +38,7 @@ import type {
   GatewayWebhookResult,
   PaymentGateway,
 } from "./types";
+import { BRAND } from "@/config/brand";
 
 const CLIENT_ID = "paypal_client_id";
 const SECRET = "paypal_secret";
@@ -185,7 +186,7 @@ export const paypalGateway: PaymentGateway = {
         payment_source: {
           paypal: {
             experience_context: {
-              brand_name: "Remolque Caballos",
+              brand_name: BRAND.name,
               locale: order.locale === "en" ? "en-GB" : "es-ES",
               // L'adresse de livraison est déjà saisie dans le tunnel.
               shipping_preference: "NO_SHIPPING",

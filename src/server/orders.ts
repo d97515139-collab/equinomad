@@ -15,6 +15,7 @@ import type { CartLine, ShippingMethodKey } from "@/lib/cart";
 import { discountedVariantCents } from "@/lib/variantPricing";
 import { isOrderStatus, isPaymentStatus } from "@/lib/orderStatus";
 import type { OrderStatus, PaymentStatus } from "@/lib/orderStatus";
+import { orderNumberPrefix } from "@/lib/orderNumber";
 
 // Commandes de la boutique.
 //
@@ -326,13 +327,13 @@ export async function countOpenOrders(): Promise<number> {
 const ORDER_NUMBER_BASE = 14_678;
 
 /**
- * Numéro lisible « RC-AAAA-NNNNNN », séquentiel par année civile.
+ * Numéro lisible « EQ-AAAA-NNNNNN », séquentiel par année civile.
  * L'unicité réelle est garantie par la contrainte en base ; la boucle d'appel
  * réessaie en cas de collision entre deux commandes simultanées.
  */
 async function nextOrderNumber(): Promise<string> {
   const year = new Date().getFullYear();
-  const prefix = `RC-${year}-`;
+  const prefix = orderNumberPrefix(year);
   const last = await prisma.order.findFirst({
     where: { orderNumber: { startsWith: prefix } },
     orderBy: { orderNumber: "desc" },

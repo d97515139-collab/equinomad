@@ -22,7 +22,7 @@ process.env.NEXT_PUBLIC_SITE_URL = SITE;
 function order(overrides: Partial<OrderRecord> = {}): OrderRecord {
   return {
     id: "ord_42",
-    orderNumber: "RC-2026-000042",
+    orderNumber: "EQ-2026-000042",
     accessToken: "9f2c1ab34de5",
     locale: "es",
     email: "anne.exemple@example.fr",
@@ -89,9 +89,9 @@ describe("Confirmation à l'acheteur", () => {
   it("récapitule le numéro, les articles et les montants", () => {
     const mail = buildOrderConfirmationEmail(order());
 
-    assert.match(mail.subject, /RC-2026-000042/);
+    assert.match(mail.subject, /EQ-2026-000042/);
     for (const part of [mail.html, mail.text]) {
-      assert.match(part, /RC-2026-000042/);
+      assert.match(part, /EQ-2026-000042/);
       assert.match(part, /Hêtre 33 cm/);
       // Total, sous-total et port : le décompte exigé par l'article L221-13 du
       // Code de la consommation, au format français. La TVA a été retirée du
@@ -106,7 +106,7 @@ describe("Confirmation à l'acheteur", () => {
 
   it("porte le lien de suivi avec son jeton", () => {
     const mail = buildOrderConfirmationEmail(order());
-    const expected = `${SITE}/confirmation/RC-2026-000042?token=9f2c1ab34de5`;
+    const expected = `${SITE}/confirmation/EQ-2026-000042?token=9f2c1ab34de5`;
     assert.ok(mail.html.includes(expected), "lien de suivi absent du HTML");
     assert.ok(mail.text.includes(expected), "lien de suivi absent du texte");
   });
@@ -121,7 +121,7 @@ describe("Confirmation à l'acheteur", () => {
     assert.match(en.subject, /Order confirmation/);
     assert.match(en.html, /lang="en"/);
     assert.match(en.html, /Dear Ms Exemple/);
-    assert.ok(en.html.includes(`${SITE}/en/confirmation/RC-2026-000042`));
+    assert.ok(en.html.includes(`${SITE}/en/confirmation/EQ-2026-000042`));
   });
 
   it("ne présume rien du prénom sans civilité renseignée", () => {
@@ -180,7 +180,7 @@ describe("Confirmation à l'acheteur", () => {
 describe("Notification au vendeur", () => {
   it("annonce le numéro et le montant dès l'objet", () => {
     const mail = buildOrderNotificationEmail(order());
-    assert.match(mail.subject, /Nuevo pedido RC-2026-000042/);
+    assert.match(mail.subject, /Nuevo pedido EQ-2026-000042/);
     assert.match(mail.subject, /903,95 €/);
   });
 

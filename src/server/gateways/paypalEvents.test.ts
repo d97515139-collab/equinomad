@@ -30,27 +30,27 @@ describe("paypalOrderNumber", () => {
   it("lit custom_id à la racine, comme sur un événement de capture", () => {
     const event = {
       event_type: "PAYMENT.CAPTURE.COMPLETED",
-      resource: { id: "cap_1", custom_id: "RC-2026-000123" },
+      resource: { id: "cap_1", custom_id: "EQ-2026-000123" },
     };
-    assert.equal(paypalOrderNumber(event), "RC-2026-000123");
+    assert.equal(paypalOrderNumber(event), "EQ-2026-000123");
   });
 
   it("lit purchase_units, comme sur un événement de commande approuvée", () => {
     const event = {
       event_type: "CHECKOUT.ORDER.APPROVED",
-      resource: { id: "5O1", purchase_units: [{ custom_id: "RC-2026-000456" }] },
+      resource: { id: "5O1", purchase_units: [{ custom_id: "EQ-2026-000456" }] },
     };
-    assert.equal(paypalOrderNumber(event), "RC-2026-000456");
+    assert.equal(paypalOrderNumber(event), "EQ-2026-000456");
   });
 
   it("retombe sur invoice_id quand custom_id manque", () => {
     assert.equal(
-      paypalOrderNumber({ resource: { id: "cap_1", invoice_id: "RC-2026-000789" } }),
-      "RC-2026-000789",
+      paypalOrderNumber({ resource: { id: "cap_1", invoice_id: "EQ-2026-000789" } }),
+      "EQ-2026-000789",
     );
     assert.equal(
-      paypalOrderNumber({ resource: { purchase_units: [{ invoice_id: "RC-2026-000999" }] } }),
-      "RC-2026-000999",
+      paypalOrderNumber({ resource: { purchase_units: [{ invoice_id: "EQ-2026-000999" }] } }),
+      "EQ-2026-000999",
     );
   });
 

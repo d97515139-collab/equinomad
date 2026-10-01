@@ -12,7 +12,7 @@
  *
  * Exemple de tâche planifiée (Coolify, cron système) :
  *   * * * * * curl -fsS -X POST -H "Authorization: Bearer $CRON_SECRET" \
- *       https://remolquecaballos.com/api/cron/campaigns > /dev/null
+ *       https://equinomad.com/api/cron/campaigns > /dev/null
  */
 
 import { createHash, timingSafeEqual } from "node:crypto";

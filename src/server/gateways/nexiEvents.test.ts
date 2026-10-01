@@ -36,7 +36,7 @@ describe("readNexiNotification", () => {
       JSON.stringify({
         securityToken: "tok_abc",
         operation: {
-          orderId: "RC-2026-000123",
+          orderId: "EQ-2026-000123",
           operationId: "op_1",
           operationType: "CAPTURE",
           operationResult: "EXECUTED",
@@ -44,13 +44,13 @@ describe("readNexiNotification", () => {
       }),
     );
 
-    assert.equal(read?.orderNumber, "RC-2026-000123");
+    assert.equal(read?.orderNumber, "EQ-2026-000123");
     assert.equal(read?.securityToken, "tok_abc");
     assert.equal(read?.notification.operation?.operationId, "op_1");
   });
 
   it("refuse une notification sans jeton — rien ne pourrait l'authentifier", () => {
-    const body = JSON.stringify({ operation: { orderId: "RC-2026-000123" } });
+    const body = JSON.stringify({ operation: { orderId: "EQ-2026-000123" } });
     assert.equal(readNexiNotification(body), null);
   });
 

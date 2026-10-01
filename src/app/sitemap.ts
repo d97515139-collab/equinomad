@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getCategoryPages } from "@/server/store";
 import { routing } from "@/i18n/routing";
+import { publicSiteUrl } from "@/config/brand";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://remolquecaballos.com";
+const SITE_URL = publicSiteUrl();
 
 /** Le français vit à la racine, l'anglais sous /en — voir src/i18n/routing.ts. */
 function urlFor(path: string, locale: string): string {
