@@ -534,7 +534,7 @@
   {
     "id": "p-antirrobo-cabezal-candado",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Antirrobo de cabezal con candado integrado",
     "slug": "antirrobo-cabezal-candado",
     "shortDescription": "Bloqueo de cabezal de acero templado para enganches de 50 mm. Aprobado por aseguradoras.",
@@ -553,7 +553,7 @@
   {
     "id": "p-bola-enganche-homologada-50",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Bola de enganche homologada 50 mm",
     "slug": "bola-enganche-homologada-50",
     "shortDescription": "Bola de acero forjado con placa de 4 agujeros. Homologación europea, hasta 3.500 kg.",
@@ -572,7 +572,7 @@
   {
     "id": "p-cinchas-amarre-mosqueton",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Juego de dos cinchas de amarre con mosquetón",
     "slug": "cinchas-amarre-mosqueton",
     "shortDescription": "Cinchas de nylon con mosquetón de seguridad de apertura rápida. Longitud regulable de 60 a 110 cm.",
@@ -590,7 +590,7 @@
   {
     "id": "p-piloto-trasero-led-multifuncion",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Piloto trasero LED multifunción",
     "slug": "piloto-trasero-led-multifuncion",
     "shortDescription": "Piloto de cinco funciones con conector de bayoneta. Homologado E11, 12 V.",
@@ -609,7 +609,7 @@
   {
     "id": "p-rueda-repuesto-195-50-r13",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Rueda de repuesto 195/50 R13 C",
     "slug": "rueda-repuesto-195-50-r13",
     "shortDescription": "Rueda completa montada y equilibrada, medida más común en remolques de dos plazas.",
@@ -627,7 +627,7 @@
   {
     "id": "p-rueda-jockey-automatica-48",
     "categoryId": "cat-accesorios",
-    "brand": "Remolque Caballos",
+    "brand": "",
     "name": "Rueda jockey automática 48 mm",
     "slug": "rueda-jockey-automatica-48",
     "shortDescription": "Rueda de apoyo con recogida automática y abrazadera. Carga estática 300 kg.",

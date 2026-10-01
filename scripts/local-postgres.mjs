@@ -121,9 +121,9 @@ garantirRuntimeWindows(
 // échoue à réserver la socket et s'arrête aussitôt, ce que la bibliothèque
 // rapporte comme un rejet vide, sans aucun message.
 const PORT = 5434;
-const UTILISATEUR = "equivan";
-const MOT_DE_PASSE = "equivan";
-const BASE = "equivan";
+const UTILISATEUR = "equinomad";
+const MOT_DE_PASSE = "equinomad";
+const BASE = "equinomad";
 
 // `embedded-postgres` laisse parfois échapper un rejet sans valeur : Node
 // affiche alors « undefined » et rien d'autre. On rattrape pour au moins dire

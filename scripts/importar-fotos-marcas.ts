@@ -28,6 +28,7 @@ import sharp from "sharp";
 
 import { prisma } from "../src/server/prisma";
 import { isCloudinaryConfigured, uploadImage } from "../src/server/cloudinary";
+import { BRAND } from "../src/config/brand";
 import { FOTOS } from "./data/remolques/fotos";
 
 const FORZAR = process.argv.includes("--forzar");
@@ -50,7 +51,7 @@ function carpetaDe(marca: string, slug: string): string {
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-  return `remolquecaballos/productos/${marcaSlug}/${slug}`;
+  return `${BRAND.cloudinaryFolder}/${marcaSlug}/${slug}`;
 }
 
 async function traerFoto(url: string): Promise<Buffer | null> {

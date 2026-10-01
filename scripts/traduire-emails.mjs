@@ -63,8 +63,8 @@ const ORDER = [
   ['    preheader: fr\n      ? `Commande ${order.orderNumber} — ${formatCents(order.totalCents)}`',
    '    preheader: es\n      ? `Pedido ${order.orderNumber} — ${formatCents(order.totalCents)}`'],
   ['    action: { label: fr ? "Voir ma commande" : "View order", url: orderUrl },', '    action: { label: es ? "Ver mi pedido" : "View order", url: orderUrl },'],
-  ['    footer: fr\n      ? "Remolque Caballos — message automatique relatif à votre commande."',
-   '    footer: es\n      ? "Remolque Caballos — mensaje automático relativo a su pedido."'],
+  ['    footer: fr\n      ? "Equinomad — message automatique relatif à votre commande."',
+   '    footer: es\n      ? "Equinomad — mensaje automático relativo a su pedido."'],
 
   ['        fr\n          ? `Merci de confirmer votre commande en effectuant un virement de ${formatCents(order.totalCents)} sur le compte ci-dessous, en indiquant le numéro de commande en référence.`',
    '        es\n          ? `Confirme su pedido transfiriendo ${formatCents(order.totalCents)} a la cuenta indicada abajo, poniendo el número de pedido como concepto.`'],
@@ -159,8 +159,8 @@ const CUENTA = [
 
   // Bienvenue
   ['const heading = fr ? "Votre compte client est créé" : "Your customer account is ready";', 'const heading = es ? "Su cuenta de cliente está lista" : "Your customer account is ready";'],
-  ['  const paragraphs = fr\n    ? [\n        `Bonjour ${name},`,\n        "votre compte client Remolque Caballos a été créé. Vous pouvez dès maintenant vous connecter, consulter vos commandes et gérer vos adresses.",\n      ]',
-   '  const paragraphs = es\n    ? [\n        `Hola, ${name}:`,\n        "su cuenta de cliente de Remolque Caballos ya está creada. Puede entrar ahora mismo para consultar sus pedidos y gestionar sus direcciones.",\n      ]'],
+  ['  const paragraphs = fr\n    ? [\n        `Bonjour ${name},`,\n        "votre compte client Equinomad a été créé. Vous pouvez dès maintenant vous connecter, consulter vos commandes et gérer vos adresses.",\n      ]',
+   '  const paragraphs = es\n    ? [\n        `Hola, ${name}:`,\n        "su cuenta de cliente de Equinomad ya está creada. Puede entrar ahora mismo para consultar sus pedidos y gestionar sus direcciones.",\n      ]'],
   ['  const footnote = fr\n    ? "Le compte est facultatif : vous pouvez à tout moment commander en tant qu\'invité. Vous pouvez également supprimer vous-même votre compte et toutes les données qu\'il contient."',
    '  const footnote = es\n    ? "La cuenta es opcional: puede comprar como invitado cuando quiera. También puede eliminar usted mismo la cuenta y todos los datos que contiene."'],
   ['    action: { label: fr ? "Accéder à mon compte" : "Go to my account", url },', '    action: { label: es ? "Ir a mi cuenta" : "Go to my account", url },'],

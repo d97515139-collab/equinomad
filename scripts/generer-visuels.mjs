@@ -1,5 +1,5 @@
 /**
- * Génère les visuels du catalogue Remolque Caballos : des vues de profil dessinées, pas
+ * Génère les visuels du catalogue Equinomad : des vues de profil dessinées, pas
  * des photographies.
  *
  *   node scripts/generer-visuels.mjs

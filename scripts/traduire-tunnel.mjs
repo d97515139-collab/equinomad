@@ -34,7 +34,7 @@ const MENSAJES = path.join(RACINE, "src", "messages");
 
 const ES = {
   recherche: {
-    metaTitle: "Resultados de «{query}» | Remolque Caballos",
+    metaTitle: "Resultados de «{query}» | Equinomad",
     breadcrumb: "Resultados de búsqueda",
     titre: "Resultados de «{query}»",
     resultats:
@@ -72,7 +72,7 @@ const ES = {
   },
 
   checkout: {
-    metaTitle: "Tramitar pedido | Remolque Caballos",
+    metaTitle: "Tramitar pedido | Equinomad",
     title: "Tramitar pedido",
     backToCart: "Volver a la cesta",
     emptyTitle: "Su cesta está vacía",
@@ -184,7 +184,7 @@ const ES = {
       invalid_quantity: "Elija una cantidad entre 1 y 20 por artículo.",
     },
     confirmation: {
-      metaTitle: "Confirmación del pedido {orderNumber} | Remolque Caballos",
+      metaTitle: "Confirmación del pedido {orderNumber} | Equinomad",
       title: "Gracias por su pedido",
       subtitle: "Hemos recibido su pedido correctamente.",
       orderNumber: "Número de pedido",
@@ -237,10 +237,10 @@ const ES = {
         "Su pedido está registrado, pero todavía no hemos recibido la confirmación del pago. Lo prepararemos en cuanto se confirme.",
       interruptedTitle: "Pago interrumpido",
       interruptedText:
-        "Su pedido está registrado, pero el pago no llegó a completarse: no se le ha cobrado nada. Escríbanos a contacto@remolquecaballos.com indicando su número de pedido para abonarlo.",
+        "Su pedido está registrado, pero el pago no llegó a completarse: no se le ha cobrado nada. Escríbanos a info@equinomad.com indicando su número de pedido para abonarlo.",
       failedTitle: "El pago no se ha completado",
       failedText:
-        "Su pedido está registrado, pero el pago fue rechazado y no se le ha cobrado nada. Escríbanos a contacto@remolquecaballos.com indicando su número de pedido para elegir otra forma de pago.",
+        "Su pedido está registrado, pero el pago fue rechazado y no se le ha cobrado nada. Escríbanos a info@equinomad.com indicando su número de pedido para elegir otra forma de pago.",
     },
   },
 
@@ -465,7 +465,7 @@ const ES = {
 
 const EN = {
   recherche: {
-    metaTitle: "Results for “{query}” | Remolque Caballos",
+    metaTitle: "Results for “{query}” | Equinomad",
     vide: "Type something to search: a make, a number of stalls or a reference.",
   },
 
@@ -502,9 +502,9 @@ const EN = {
       withdrawalText:
         "You have fourteen calendar days from the day you, or a third party you name, take physical possession of the goods to withdraw from this contract without giving a reason (article 71 of Royal Legislative Decree 1/2007). The full text and the model withdrawal form are on the dedicated page.",
       interruptedText:
-        "Your order has been placed, but the payment was not completed and nothing has been charged. Contact us at contacto@remolquecaballos.com with your order number to settle it.",
+        "Your order has been placed, but the payment was not completed and nothing has been charged. Contact us at info@equinomad.com with your order number to settle it.",
       failedText:
-        "Your order has been placed, but the payment was declined and nothing has been charged. Contact us at contacto@remolquecaballos.com with your order number to choose another payment method.",
+        "Your order has been placed, but the payment was declined and nothing has been charged. Contact us at info@equinomad.com with your order number to choose another payment method.",
     },
   },
 

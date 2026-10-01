@@ -27,7 +27,7 @@ function validInput(overrides: Partial<LegalPageInput> = {}): LegalPageInput {
       {
         heading: "Éditeur du site",
         body: "Cette boutique en ligne est éditée par :",
-        list: ["Remolque Caballos SAS", "12 rue de la Scierie"],
+        list: ["Equinomad, S.L.", "12 rue de la Scierie"],
       },
     ],
     updatedAt: "2026-07-28",
@@ -41,7 +41,7 @@ describe("normalizeLegalPage — contenu accepté", () => {
     assert.ok(result.ok);
     assert.equal(result.page.slug, "mentions-legales");
     assert.equal(result.page.title, "Mentions légales");
-    assert.deepEqual(result.page.sections[0].list, ["Remolque Caballos SAS", "12 rue de la Scierie"]);
+    assert.deepEqual(result.page.sections[0].list, ["Equinomad, S.L.", "12 rue de la Scierie"]);
   });
 
   it("omet le chapeau quand il est vide plutôt que d'afficher un encadré vide", () => {

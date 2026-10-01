@@ -1,5 +1,5 @@
 /**
- * Applique aux fichiers de messages la langue et le métier d'Remolque Caballos.
+ * Applique aux fichiers de messages la langue et le métier d'Equinomad.
  *
  *   node scripts/traduire-vitrine.mjs
  *
@@ -44,7 +44,7 @@ const OBSOLETOS = [
 const ES = {
   common: {
     searchPlaceholder: "Remolque 2 caballos, Cheval Liberté, bola de enganche…",
-    shopName: "Remolque Caballos",
+    shopName: "Equinomad",
     groupNames: {
       remolques: "Remolques para caballos",
       accesorios: "Accesorios y recambios",
@@ -69,8 +69,8 @@ const ES = {
   },
 
   header: {
-    homeAriaLabel: "Remolque Caballos — página de inicio",
-    logoAlt: "Remolque Caballos",
+    homeAriaLabel: "Equinomad — página de inicio",
+    logoAlt: "Equinomad",
     search: "Buscar",
     lieferzusage: "Entrega concertada en su domicilio",
     beratung: "Asesoramiento y pedidos",
@@ -80,7 +80,7 @@ const ES = {
   },
 
   home: {
-    metaTitle: "Remolque Caballos | Remolques para caballos, matriculados y entregados en su domicilio",
+    metaTitle: "Equinomad | Remolques para caballos, matriculados y entregados en su domicilio",
     metaDescription:
       "Remolques y vans para 1, 2, 3 y 4 caballos de Cheval Liberté, Böckmann, Ifor Williams, Humbaur y Fautras. Homologados, matriculados, con ITV pasada y garantía de dos años.",
     bestsellerEyebrow: "Los más pedidos",
@@ -89,16 +89,16 @@ const ES = {
   },
 
   group: {
-    metaTitle: "{label} | Remolque Caballos",
+    metaTitle: "{label} | Equinomad",
     metaDescription:
-      "Todas las categorías de {label} en Remolque Caballos: remolques homologados, precios claros y entrega concertada en su domicilio.",
+      "Todas las categorías de {label} en Equinomad: remolques homologados, precios claros y entrega concertada en su domicilio.",
     intro: "Todas las categorías de {label} de un vistazo.",
     productCount:
       "{count, plural, =0 {Ningún modelo por ahora} one {# modelo} other {# modelos}}",
   },
 
   category: {
-    metaTitle: "{label} | Remolque Caballos",
+    metaTitle: "{label} | Equinomad",
     productsCount: "<b>{filtered}</b> modelos de {total}",
     sortBy: "Ordenar por",
     sortRelevance: "Relevancia",
@@ -125,7 +125,7 @@ const ES = {
       from600: "10.000 € – 20.000 €",
       over1000: "Más de 20.000 €",
     },
-    guideTitle: "{label} en Remolque Caballos",
+    guideTitle: "{label} en Equinomad",
     guideDiscover: "Ver {label}",
     guideAdvice: "Pedir asesoramiento",
   },
@@ -139,7 +139,7 @@ const ES = {
     ratingOf: "{rating} sobre 5",
     reviewCount: "{count, plural, one {# opinión} other {# opiniones}}",
     paymentTitle: "Formas de pago seguras",
-    metaTitle: "{name} | Remolque Caballos",
+    metaTitle: "{name} | Equinomad",
     onRequest: "Bajo pedido",
     originalPrice: "Precio anterior",
     vatNote: "IVA incluido. Gastos de entrega aparte.",
@@ -171,8 +171,8 @@ const ES = {
   },
 
   footer: {
-    logoAlt: "Remolque Caballos",
-    homeAriaLabel: "Remolque Caballos — página de inicio",
+    logoAlt: "Equinomad",
+    homeAriaLabel: "Equinomad — página de inicio",
     deliveryTitle: "Entrega estándar gratuita (5 a 10 días laborables)",
     deliveryDetail: "Entrega prioritaria: 180 € (48 a 72 horas)",
     warrantyTitle: "Matriculación e ITV incluidas",
@@ -195,7 +195,7 @@ const ES = {
     linkPrivacy: "Privacidad",
     linkTerms: "Condiciones de venta",
     linkCookies: "Preferencias de cookies",
-    copyright: "© {year} Remolque Caballos.",
+    copyright: "© {year} Equinomad.",
     oeffnung: "De lunes a viernes 9–18 h · Sábados 9–13 h",
   },
 
@@ -250,7 +250,7 @@ const ES = {
 
   cart: {
     title: "Cesta",
-    metaTitle: "Cesta | Remolque Caballos",
+    metaTitle: "Cesta | Equinomad",
     addToCart: "Añadir a la cesta",
     buyNow: "Comprar ahora",
     added: "Añadido",
@@ -499,7 +499,7 @@ const ES = {
 const EN = {
   common: {
     searchPlaceholder: "Two-horse trailer, Cheval Liberté, tow ball…",
-    shopName: "Remolque Caballos",
+    shopName: "Equinomad",
     groupNames: {
       remolques: "Horse trailers",
       accesorios: "Accessories & spares",
@@ -524,8 +524,8 @@ const EN = {
   },
 
   header: {
-    homeAriaLabel: "Remolque Caballos — home page",
-    logoAlt: "Remolque Caballos",
+    homeAriaLabel: "Equinomad — home page",
+    logoAlt: "Equinomad",
     search: "Search",
     lieferzusage: "Scheduled delivery to your door",
     beratung: "Advice & orders",
@@ -535,7 +535,7 @@ const EN = {
   },
 
   home: {
-    metaTitle: "Remolque Caballos | Horse trailers, registered and delivered to your door",
+    metaTitle: "Equinomad | Horse trailers, registered and delivered to your door",
     metaDescription:
       "Trailers and vans for 1, 2, 3 and 4 horses from Cheval Liberté, Böckmann, Ifor Williams, Humbaur and Fautras. Type-approved, registered, tested and covered by a two-year warranty.",
     bestsellerEyebrow: "Most ordered",
@@ -544,15 +544,15 @@ const EN = {
   },
 
   group: {
-    metaTitle: "{label} | Remolque Caballos",
+    metaTitle: "{label} | Equinomad",
     metaDescription:
-      "Every {label} category at Remolque Caballos: type-approved trailers, clear pricing and scheduled delivery to your door.",
+      "Every {label} category at Equinomad: type-approved trailers, clear pricing and scheduled delivery to your door.",
     intro: "Every {label} category at a glance.",
     productCount: "{count, plural, =0 {No models yet} one {# model} other {# models}}",
   },
 
   category: {
-    metaTitle: "{label} | Remolque Caballos",
+    metaTitle: "{label} | Equinomad",
     productsCount: "<b>{filtered}</b> of {total} models",
     sortBy: "Sort by",
     sortRelevance: "Relevance",
@@ -578,7 +578,7 @@ const EN = {
       from600: "€10,000 – €20,000",
       over1000: "Over €20,000",
     },
-    guideTitle: "{label} at Remolque Caballos",
+    guideTitle: "{label} at Equinomad",
     guideDiscover: "Browse {label}",
     guideAdvice: "Ask for advice",
   },
@@ -592,7 +592,7 @@ const EN = {
     ratingOf: "{rating} out of 5",
     reviewCount: "{count, plural, one {# review} other {# reviews}}",
     paymentTitle: "Secure payment methods",
-    metaTitle: "{name} | Remolque Caballos",
+    metaTitle: "{name} | Equinomad",
     onRequest: "To order",
     originalPrice: "Was",
     vatNote: "VAT included. Delivery charged separately.",
@@ -624,8 +624,8 @@ const EN = {
   },
 
   footer: {
-    logoAlt: "Remolque Caballos",
-    homeAriaLabel: "Remolque Caballos — home page",
+    logoAlt: "Equinomad",
+    homeAriaLabel: "Equinomad — home page",
     deliveryTitle: "Free standard delivery (5 to 10 working days)",
     deliveryDetail: "Priority delivery: €180 (48 to 72 hours)",
     warrantyTitle: "Registration and roadworthiness test included",
@@ -648,7 +648,7 @@ const EN = {
     linkPrivacy: "Privacy",
     linkTerms: "Terms of sale",
     linkCookies: "Cookie preferences",
-    copyright: "© {year} Remolque Caballos.",
+    copyright: "© {year} Equinomad.",
     oeffnung: "Monday to Friday 9am–6pm · Saturday 9am–1pm",
   },
 
@@ -660,7 +660,7 @@ const EN = {
   },
 
   cart: {
-    metaTitle: "Basket | Remolque Caballos",
+    metaTitle: "Basket | Equinomad",
     emptyText: "Browse the trailers and accessories, and drop what interests you here.",
     shippingRule:
       "Standard delivery included (5 to 10 working days), priority delivery €180.00 (48 to 72 hours). You choose the delivery method at checkout.",

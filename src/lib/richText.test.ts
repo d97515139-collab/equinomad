@@ -95,9 +95,9 @@ describe("parseRichText — liens", () => {
   });
 
   it("accepte https, mailto et tel", () => {
-    assert.ok(isSafeHref("https://remolquecaballos.com"));
+    assert.ok(isSafeHref("https://equinomad.com"));
     assert.ok(isSafeHref("http://example.org/pfad"));
-    assert.ok(isSafeHref("mailto:contacto@remolquecaballos.com"));
+    assert.ok(isSafeHref("mailto:info@equinomad.com"));
     assert.ok(isSafeHref("tel:+4930123456"));
   });
 

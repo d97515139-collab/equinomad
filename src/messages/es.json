@@ -10,7 +10,7 @@
     "language": "Idioma",
     "home": "Inicio",
     "breadcrumb": "Ruta de navegación",
-    "shopName": "Remolque Caballos",
+    "shopName": "Equinomad",
     "groupNames": {
       "bois-de-chauffage": "Bois de chauffage",
       "equipement": "Poêles",
@@ -33,8 +33,8 @@
     "from": "desde"
   },
   "header": {
-    "homeAriaLabel": "Remolque Caballos — página de inicio",
-    "logoAlt": "Remolque Caballos",
+    "homeAriaLabel": "Equinomad — página de inicio",
+    "logoAlt": "Equinomad",
     "search": "Buscar",
     "lieferzusage": "Entrega concertada en su domicilio",
     "beratung": "Asesoramiento y pedidos",
@@ -55,20 +55,20 @@
     "garantia": "2 años de garantía, también en las unidades de ocasión"
   },
   "home": {
-    "metaTitle": "Remolque Caballos | Remolques para caballos, matriculados y entregados en su domicilio",
+    "metaTitle": "Equinomad | Remolques para caballos, matriculados y entregados en su domicilio",
     "metaDescription": "Remolques y vans para 1, 2, 3 y 4 caballos de Cheval Liberté, Böckmann, Ifor Williams, Humbaur y Fautras. Homologados, matriculados, con ITV pasada y garantía de dos años.",
     "bestsellerEyebrow": "Los más pedidos",
     "bestseller": "Lo que sale esta semana",
     "bestsellerCta": "Ver todo el catálogo"
   },
   "group": {
-    "metaTitle": "{label} | Remolque Caballos",
-    "metaDescription": "Todas las categorías de {label} en Remolque Caballos: remolques homologados, precios claros y entrega concertada en su domicilio.",
+    "metaTitle": "{label} | Equinomad",
+    "metaDescription": "Todas las categorías de {label} en Equinomad: remolques homologados, precios claros y entrega concertada en su domicilio.",
     "intro": "Todas las categorías de {label} de un vistazo.",
     "productCount": "{count, plural, =0 {Ningún modelo por ahora} one {# modelo} other {# modelos}}"
   },
   "category": {
-    "metaTitle": "{label} | Remolque Caballos",
+    "metaTitle": "{label} | Equinomad",
     "productsCount": "<b>{filtered}</b> modelos de {total}",
     "sortBy": "Ordenar por",
     "sortRelevance": "Relevancia",
@@ -94,7 +94,7 @@
       "de12000a20000": "12.000 € – 20.000 €",
       "mas20000": "Más de 20.000 €"
     },
-    "guideTitle": "{label} en Remolque Caballos",
+    "guideTitle": "{label} en Equinomad",
     "guideDiscover": "Ver {label}",
     "guideAdvice": "Pedir asesoramiento"
   },
@@ -132,7 +132,7 @@
     "ratingOf": "{rating} sobre 5",
     "reviewCount": "{count, plural, one {# opinión} other {# opiniones}}",
     "paymentTitle": "Formas de pago seguras",
-    "metaTitle": "{name} | Remolque Caballos",
+    "metaTitle": "{name} | Equinomad",
     "onRequest": "Bajo pedido",
     "originalPrice": "Precio anterior",
     "vatNote": "IVA incluido. Gastos de entrega aparte.",
@@ -192,8 +192,8 @@
     }
   },
   "footer": {
-    "logoAlt": "Remolque Caballos",
-    "homeAriaLabel": "Remolque Caballos — página de inicio",
+    "logoAlt": "Equinomad",
+    "homeAriaLabel": "Equinomad — página de inicio",
     "whatsappOnly": "Solo WhatsApp — esta línea no atiende llamadas.",
     "deliveryTitle": "Entrega estándar gratuita (5 a 10 días laborables)",
     "deliveryDetail": "Entrega prioritaria: 180 € (48 a 72 horas)",
@@ -221,7 +221,7 @@
   },
   "cart": {
     "title": "Cesta",
-    "metaTitle": "Cesta | Remolque Caballos",
+    "metaTitle": "Cesta | Equinomad",
     "addToCart": "Añadir a la cesta",
     "buyNow": "Comprar ahora",
     "added": "Añadido",
@@ -265,7 +265,7 @@
     "campaignFreeShipping": "Entrega incluida gracias a su oferta"
   },
   "checkout": {
-    "metaTitle": "Tramitar pedido | Remolque Caballos",
+    "metaTitle": "Tramitar pedido | Equinomad",
     "title": "Tramitar pedido",
     "backToCart": "Volver a la cesta",
     "emptyTitle": "Su cesta está vacía",
@@ -369,7 +369,7 @@
       "invalid_quantity": "Elija una cantidad entre 1 y 20 por artículo."
     },
     "confirmation": {
-      "metaTitle": "Confirmación del pedido {orderNumber} | Remolque Caballos",
+      "metaTitle": "Confirmación del pedido {orderNumber} | Equinomad",
       "title": "Gracias por su pedido",
       "subtitle": "Hemos recibido su pedido correctamente.",
       "orderNumber": "Número de pedido",
@@ -410,9 +410,9 @@
       "pendingTitle": "Pedido registrado, pago pendiente de confirmar",
       "pendingText": "Su pedido está registrado, pero todavía no hemos recibido la confirmación del pago. Lo prepararemos en cuanto se confirme.",
       "interruptedTitle": "Pago interrumpido",
-      "interruptedText": "Su pedido está registrado, pero el pago no llegó a completarse: no se le ha cobrado nada. Escríbanos a contacto@remolquecaballos.com indicando su número de pedido para abonarlo.",
+      "interruptedText": "Su pedido está registrado, pero el pago no llegó a completarse: no se le ha cobrado nada. Escríbanos a info@equinomad.com indicando su número de pedido para abonarlo.",
       "failedTitle": "El pago no se ha completado",
-      "failedText": "Su pedido está registrado, pero el pago fue rechazado y no se le ha cobrado nada. Escríbanos a contacto@remolquecaballos.com indicando su número de pedido para elegir otra forma de pago."
+      "failedText": "Su pedido está registrado, pero el pago fue rechazado y no se le ha cobrado nada. Escríbanos a info@equinomad.com indicando su número de pedido para elegir otra forma de pago."
     }
   },
   "wishlist": {
@@ -627,7 +627,7 @@
     "legalNote": "Los precios promocionales indicados son válidos hasta el {date} y se aplican automáticamente en la cesta. Después vuelve a aplicarse el precio habitual. Precios sin gastos de entrega."
   },
   "recherche": {
-    "metaTitle": "Resultados de «{query}» | Remolque Caballos",
+    "metaTitle": "Resultados de «{query}» | Equinomad",
     "breadcrumb": "Resultados de búsqueda",
     "titre": "Resultados de «{query}»",
     "resultats": "{count, plural, =0 {Ningún resultado} one {# resultado} other {# resultados}}",

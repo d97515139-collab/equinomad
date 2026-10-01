@@ -9,6 +9,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { prisma } from "../src/server/prisma";
 import { isCloudinaryConfigured, uploadImage } from "../src/server/cloudinary";
+import { BRAND } from "../src/config/brand";
 
 const FORZAR = process.argv.includes("--forzar");
 const MAX_IMAGES = 6;
@@ -75,7 +76,7 @@ async function main(): Promise<void> {
           const buffer = await readFile(path.join(process.cwd(), "public", localImage));
           const result = await uploadImage(buffer, {
             filename: `${product.slug}-${imageIndex + 1}.jpg`,
-            folder: `remolquecaballos/productos/ehorses/${product.slug}`,
+            folder: `${BRAND.cloudinaryFolder}/ehorses/${product.slug}`,
           });
           uploaded.push(result.url);
         } catch (error) {
@@ -113,7 +114,7 @@ async function main(): Promise<void> {
         if (cloudinaryEnabled) {
           const result = await uploadImage(buffer, {
             filename: `${product.slug}-${imageIndex + 1}.jpg`,
-            folder: `remolquecaballos/productos/ehorses/${product.slug}`,
+            folder: `${BRAND.cloudinaryFolder}/ehorses/${product.slug}`,
           });
           uploaded.push(result.url);
         } else {

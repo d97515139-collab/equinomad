@@ -10,7 +10,7 @@
     "language": "Language",
     "home": "Home",
     "breadcrumb": "Breadcrumb",
-    "shopName": "Remolque Caballos",
+    "shopName": "Equinomad",
     "groupNames": {
       "bois-de-chauffage": "Firewood",
       "equipement": "Stoves",
@@ -33,8 +33,8 @@
     "from": "from"
   },
   "header": {
-    "homeAriaLabel": "Remolque Caballos — home page",
-    "logoAlt": "Remolque Caballos",
+    "homeAriaLabel": "Equinomad — home page",
+    "logoAlt": "Equinomad",
     "search": "Search",
     "lieferzusage": "Scheduled delivery to your door",
     "beratung": "Advice & orders",
@@ -55,20 +55,20 @@
     "garantia": "Two-year warranty, nearly-new units included"
   },
   "home": {
-    "metaTitle": "Remolque Caballos | Horse trailers, registered and delivered to your door",
+    "metaTitle": "Equinomad | Horse trailers, registered and delivered to your door",
     "metaDescription": "Trailers and vans for 1, 2, 3 and 4 horses from Cheval Liberté, Böckmann, Ifor Williams, Humbaur and Fautras. Type-approved, registered, tested and covered by a two-year warranty.",
     "bestsellerEyebrow": "Most ordered",
     "bestseller": "Moving this week",
     "bestsellerCta": "See the full catalogue"
   },
   "group": {
-    "metaTitle": "{label} | Remolque Caballos",
-    "metaDescription": "Every {label} category at Remolque Caballos: type-approved trailers, clear pricing and scheduled delivery to your door.",
+    "metaTitle": "{label} | Equinomad",
+    "metaDescription": "Every {label} category at Equinomad: type-approved trailers, clear pricing and scheduled delivery to your door.",
     "intro": "Every {label} category at a glance.",
     "productCount": "{count, plural, =0 {No models yet} one {# model} other {# models}}"
   },
   "category": {
-    "metaTitle": "{label} | Remolque Caballos",
+    "metaTitle": "{label} | Equinomad",
     "productsCount": "<b>{filtered}</b> of {total} models",
     "sortBy": "Sort by",
     "sortRelevance": "Relevance",
@@ -94,7 +94,7 @@
       "de12000a20000": "€12,000 – €20,000",
       "mas20000": "Over €20,000"
     },
-    "guideTitle": "{label} at Remolque Caballos",
+    "guideTitle": "{label} at Equinomad",
     "guideDiscover": "Browse {label}",
     "guideAdvice": "Ask for advice"
   },
@@ -132,7 +132,7 @@
     "ratingOf": "{rating} out of 5",
     "reviewCount": "{count, plural, one {# review} other {# reviews}}",
     "paymentTitle": "Secure payment methods",
-    "metaTitle": "{name} | Remolque Caballos",
+    "metaTitle": "{name} | Equinomad",
     "onRequest": "To order",
     "originalPrice": "Was",
     "vatNote": "VAT included. Delivery charged separately.",
@@ -192,8 +192,8 @@
     }
   },
   "footer": {
-    "logoAlt": "Remolque Caballos",
-    "homeAriaLabel": "Remolque Caballos — home page",
+    "logoAlt": "Equinomad",
+    "homeAriaLabel": "Equinomad — home page",
     "whatsappOnly": "WhatsApp only — this line does not take calls.",
     "deliveryTitle": "Free standard delivery (5 to 10 working days)",
     "deliveryDetail": "Priority delivery: €180 (48 to 72 hours)",
@@ -221,7 +221,7 @@
   },
   "cart": {
     "title": "Cart",
-    "metaTitle": "Basket | Remolque Caballos",
+    "metaTitle": "Basket | Equinomad",
     "addToCart": "Add to cart",
     "buyNow": "Buy now",
     "added": "Added",
@@ -265,7 +265,7 @@
     "campaignFreeShipping": "Free delivery through your offer"
   },
   "checkout": {
-    "metaTitle": "Checkout | Remolque Caballos",
+    "metaTitle": "Checkout | Equinomad",
     "title": "Checkout",
     "backToCart": "Back to cart",
     "emptyTitle": "Your cart is empty",
@@ -369,7 +369,7 @@
       "invalid_quantity": "Please choose a quantity between 1 and 20 per item."
     },
     "confirmation": {
-      "metaTitle": "Order confirmation {orderNumber} | Remolque Caballos",
+      "metaTitle": "Order confirmation {orderNumber} | Equinomad",
       "title": "Thank you for your order",
       "subtitle": "We have received your order.",
       "orderNumber": "Order number",
@@ -410,9 +410,9 @@
       "pendingTitle": "Order placed, payment to be confirmed",
       "pendingText": "Your order has been placed, but we have not yet received confirmation of payment. It will be prepared as soon as the payment is confirmed.",
       "interruptedTitle": "Payment interrupted",
-      "interruptedText": "Your order has been placed, but the payment was not completed and nothing has been charged. Contact us at contacto@remolquecaballos.com with your order number to settle it.",
+      "interruptedText": "Your order has been placed, but the payment was not completed and nothing has been charged. Contact us at info@equinomad.com with your order number to settle it.",
       "failedTitle": "The payment did not go through",
-      "failedText": "Your order has been placed, but the payment was declined and nothing has been charged. Contact us at contacto@remolquecaballos.com with your order number to choose another payment method."
+      "failedText": "Your order has been placed, but the payment was declined and nothing has been charged. Contact us at info@equinomad.com with your order number to choose another payment method."
     }
   },
   "wishlist": {
@@ -627,7 +627,7 @@
     "legalNote": "The promotional prices shown are valid until {date} and are applied automatically in the cart. After that, the regular price applies again. Prices exclude delivery costs."
   },
   "recherche": {
-    "metaTitle": "Results for “{query}” | Remolque Caballos",
+    "metaTitle": "Results for “{query}” | Equinomad",
     "breadcrumb": "Search results",
     "titre": "Results for “{query}”",
     "resultats": "{count, plural, =0 {No results} one {# result} other {# results}}",
