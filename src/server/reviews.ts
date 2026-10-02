@@ -159,6 +159,12 @@ export async function deleteReview(id: string): Promise<boolean> {
 }
 
 /** Contrôle d'existence léger utilisé par la route publique de dépôt d'avis. */
+/** Nom affiché d'un produit (« Marque Modèle »), pour les alertes. */
+export async function productLabel(productId: string): Promise<string> {
+  const row = await prisma.product.findUnique({ where: { id: productId }, select: { brand: true, name: true } });
+  return row ? [row.brand, row.name].filter((part) => part.trim()).join(" ") : productId;
+}
+
 export async function productExists(productId: string): Promise<boolean> {
   const row = await prisma.product.findUnique({ where: { id: productId }, select: { id: true } });
   return row !== null;

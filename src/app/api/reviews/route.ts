@@ -1,5 +1,8 @@
-import { NextResponse } from "next/server";
-import { createReview, productExists } from "@/server/reviews";
+import { NextResponse, after } from "next/server";
+import { sendTelegram } from "@/server/telegram";
+import { newReviewMessage } from "@/server/telegramMessages";
+import { publicSiteUrl } from "@/config/brand";
+import { createReview, productExists, productLabel } from "@/server/reviews";
 
 // Anti-spam volontairement minimaliste : au plus trois avis par produit et par
 // fenêtre de dix minutes. Le compteur vit en mémoire du processus, comme
@@ -132,6 +135,14 @@ export async function POST(request: Request) {
     body,
   });
   registerSubmission(productId);
+  after(async () =>
+    sendTelegram(
+      newReviewMessage(
+        { productName: await productLabel(productId), rating, authorName, city, title, body },
+        publicSiteUrl(),
+      ),
+    ),
+  );
 
   // L'enregistrement n'est volontairement pas renvoyé : il n'est pas publié et
   // contient l'adresse e-mail de l'auteur.

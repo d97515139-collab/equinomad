@@ -17,6 +17,7 @@
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "check:launch": "tsx scripts/check-launch.ts",
+    "telegram": "tsx scripts/telegram.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

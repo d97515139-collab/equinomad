@@ -321,7 +321,8 @@ export function parseSignUpPayload(payload: unknown): AccountResult<SignUpInput>
  * d'un compte existant est prévenu par e-mail qu'une inscription a été tentée
  * avec son adresse ; personne d'autre n'apprend quoi que ce soit.
  */
-export async function registerCustomer(input: SignUpInput): Promise<void> {
+/** Rend true si un compte a été créé, false si l'adresse était déjà connue. */
+export async function registerCustomer(input: SignUpInput): Promise<boolean> {
   const existing = await prisma.customer.findUnique({
     where: { email: input.email },
     select: { id: true, firstName: true, locale: true },
@@ -336,7 +337,7 @@ export async function registerCustomer(input: SignUpInput): Promise<void> {
       }),
       "inscription sur une adresse déjà utilisée",
     );
-    return;
+    return false;
   }
 
   await prisma.customer.create({
@@ -356,6 +357,7 @@ export async function registerCustomer(input: SignUpInput): Promise<void> {
     buildWelcomeEmail({ locale: input.locale, firstName: input.firstName }),
     "création de compte",
   );
+  return true;
 }
 
 // ---- Connexion ----

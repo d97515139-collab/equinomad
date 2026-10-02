@@ -1,4 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
+import { sendTelegram } from "@/server/telegram";
+import { amountMismatchMessage, paymentMessage } from "@/server/telegramMessages";
+import { publicSiteUrl } from "@/config/brand";
 import { getGateway, isGatewayId } from "@/server/gateways";
 import {
   getOrderByNumber,
@@ -94,6 +97,7 @@ export async function POST(request: Request, { params }: { params: Params }) {
       // 200 volontaire : l'événement a bien été reçu et traité. Répondre 400
       // ferait rejouer indéfiniment une notification que le prestataire, lui, a
       // émise correctement.
+      after(() => sendTelegram(amountMismatchMessage(order, attendu, recu, provider, publicSiteUrl())));
       return NextResponse.json({ received: true, amountMismatch: true });
     }
   }
@@ -107,6 +111,8 @@ export async function POST(request: Request, { params }: { params: Params }) {
       `webhook:${provider}`,
       result.reference ? `Réf. prestataire : ${result.reference}` : undefined,
     );
+    const statut = result.paymentStatus;
+    after(() => sendTelegram(paymentMessage(order, statut, provider, publicSiteUrl())));
   }
 
   return NextResponse.json({ received: true });

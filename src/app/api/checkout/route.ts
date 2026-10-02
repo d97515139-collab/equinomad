@@ -10,6 +10,9 @@ import type { CheckoutErrorCode, OrderRecord } from "@/server/orders";
 import { getCurrentCustomer } from "@/server/customerSession";
 import { resolveCampaignContext } from "@/server/campaignContext";
 import { sendOrderEmails } from "@/server/orderNotifications";
+import { sendTelegram } from "@/server/telegram";
+import { newOrderMessage } from "@/server/telegramMessages";
+import { publicSiteUrl } from "@/config/brand";
 import { resolveGatewayForMethod } from "@/server/gateways";
 
 /**
@@ -192,6 +195,8 @@ export async function POST(request: Request) {
     // dans les journaux et dans l'historique de la commande, jamais une erreur
     // 500 sur une commande valable.
     after(() => sendOrderEmails(order));
+    // Alerte Telegram de l'exploitant, indépendante du SMTP.
+    after(() => sendTelegram(newOrderMessage(order, publicSiteUrl())));
 
     // Les stocks affichés dans la boutique ont changé.
     revalidatePath("/", "layout");

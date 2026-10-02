@@ -1,4 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
+import { sendTelegram } from "@/server/telegram";
+import { newCustomerMessage } from "@/server/telegramMessages";
 import { parseSignUpPayload, registerCustomer } from "@/server/customers";
 import { customerSignupRate } from "@/server/customerRate";
 import { accountErrorResponse } from "@/server/accountMessages";
@@ -34,7 +36,10 @@ export async function POST(request: Request) {
   customerSignupRate.register(parsed.value.email);
 
   try {
-    await registerCustomer(parsed.value);
+    const cree = await registerCustomer(parsed.value);
+    // L'alerte ne part que pour un compte réellement créé : la réponse au
+    // visiteur, elle, reste la même dans les deux cas.
+    if (cree) after(() => sendTelegram(newCustomerMessage(parsed.value)));
   } catch (error) {
     // Le détail reste côté serveur : il pourrait révéler l'état de la base.
     console.error("[konto] Inscription impossible :", error);
