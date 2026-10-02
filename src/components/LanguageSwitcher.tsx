@@ -37,6 +37,7 @@ export function LanguageSwitcher({ className, tone = "dark" }: LanguageSwitcherP
           onClick={() => switchTo(code)}
           aria-current={code === locale ? "true" : undefined}
           title={LOCALE_LABELS[code]}
+          aria-label={LOCALE_LABELS[code]}
           className={cn(
             "flex items-center gap-1 rounded-sm px-1.5 py-0.5 text-xs font-bold uppercase transition-colors",
             tone === "light"
@@ -49,7 +50,8 @@ export function LanguageSwitcher({ className, tone = "dark" }: LanguageSwitcherP
           )}
         >
           <Flag locale={code} />
-          {code}
+          {/* Sur mobile, les drapeaux seuls : avec les codes, la rangée déborde. */}
+          <span className="hidden sm:inline">{code}</span>
         </button>
       ))}
     </div>
