@@ -9,6 +9,7 @@ import { CheckoutFlow } from "@/components/checkout/CheckoutFlow";
 import { listEnabledPaymentMethods } from "@/server/payments";
 import { getCurrentCustomer } from "@/server/customerSession";
 import { routing } from "@/i18n/routing";
+import { paymentMethodLocalizer } from "@/server/paymentMethodTexts";
 
 type CheckoutPageParams = Promise<{ locale: string }>;
 
@@ -35,7 +36,7 @@ export default async function CheckoutPage({ params }: { params: CheckoutPagePar
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
-  const [t, common, cart, methods, customer] = await Promise.all([
+  const [t, common, cart, methodesBrutes, customer, localizer] = await Promise.all([
     getTranslations({ locale, namespace: "checkout" }),
     getTranslations({ locale, namespace: "common" }),
     getTranslations({ locale, namespace: "cart" }),
@@ -43,7 +44,10 @@ export default async function CheckoutPage({ params }: { params: CheckoutPagePar
     // Facultatif : sans compte connecté, le tunnel reste identique. La commande
     // en tant qu'invité n'est jamais conditionnée à une inscription.
     getCurrentCustomer(),
+    paymentMethodLocalizer(locale),
   ]);
+  // Libellés traduits pour fr, de, it et en ; l'espagnol garde ceux du back-office.
+  const methods = methodesBrutes.map((method) => localizer.method(method));
 
   return (
     <>

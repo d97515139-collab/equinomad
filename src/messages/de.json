@@ -823,9 +823,12 @@
         "q": "Was genau deckt die Garantie ab?",
         "a": "Zwei Jahre auf das gesamte Fahrzeug, einschließlich Chassis, Achse und Bremse, ohne das Kleingedruckte, das diese drei Teile als „normalen Verschleiß“ ausschließt. Es ist die spanische gesetzliche Gewährleistung, und wir kürzen sie nicht auf das nach der Norm zulässige Minimum. Bei Gebrauchtfahrzeugen gilt sie genauso."
       },
-      "financiacion": {
-        "q": "Kann ich den Kauf finanzieren?",
-        "a": "Ja, über 12, 24 oder 36 Monate, mit vorheriger Prüfung und unverbindlich. Die Bewilligung hängt vom Kreditinstitut ab, nicht von uns. Bei Beträgen über 3.000 € begrenzen viele Banken die Kartenzahlung: In diesem Fall ist die Überweisung meist der schnellste Weg."
+      "pago": {
+        "q": "Wie kann ich bezahlen?",
+        "intro": "Verfügbare Zahlungsarten: {moyens}.",
+        "et": "und",
+        "virement": "Bei Beträgen dieser Größenordnung ist die Banküberweisung der übliche Weg: Viele Banken begrenzen Kartenzahlungen oberhalb weniger tausend Euro.",
+        "financement": "Sie können den Kauf auch über 12, 24 oder 36 Monate finanzieren, vorbehaltlich der Zustimmung des Finanzierungspartners."
       }
     }
   },
@@ -842,5 +845,32 @@
     "merciTexte": "Vielen Dank. Wir antworten Ihnen in Kürze an die angegebene Adresse.",
     "erreur": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.",
     "tropDeMessages": "Sie haben mehrere Nachrichten kurz hintereinander gesendet. Bitte versuchen Sie es in einigen Minuten erneut."
+  },
+  "paymentMethods": {
+    "tarjeta": {
+      "label": "Kreditkarte",
+      "description": "Visa, Mastercard und American Express, mit 3-D-Secure-Verifizierung.",
+      "fee": "ohne Aufpreis"
+    },
+    "bizum": {
+      "label": "Bizum",
+      "description": "Sofortzahlung per Handy, bis zu dem von Ihrer Bank festgelegten Limit.",
+      "fee": "ohne Aufpreis"
+    },
+    "transferencia": {
+      "label": "Banküberweisung",
+      "description": "Wir bereiten Ihre Bestellung nach Zahlungseingang vor.",
+      "fee": "ohne Aufpreis"
+    },
+    "paypal": {
+      "label": "PayPal",
+      "description": "Mit PayPal-Konto oder als Gast.",
+      "fee": "ohne Aufpreis"
+    },
+    "financiacion": {
+      "label": "Finanzierung über 12, 24 oder 36 Monate",
+      "description": "Unverbindliche Prüfung, vorbehaltlich der Zustimmung des Finanzierungspartners.",
+      "fee": "effektiver Jahreszins je nach Laufzeit"
+    }
   }
 }

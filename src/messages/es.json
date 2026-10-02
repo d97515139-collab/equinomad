@@ -823,9 +823,12 @@
         "q": "Qué cubre exactamente la garantía?",
         "a": "Dos años sobre el conjunto del vehículo, incluidos chasis, eje y freno, sin la letra pequeña que excluye esas tres piezas como «desgaste normal». Es la garantía legal española, y no la recortamos al mínimo que permite la norma. En las unidades de ocasión rige exactamente igual."
       },
-      "financiacion": {
-        "q": "Puedo financiar la compra?",
-        "a": "Sí, en 12, 24 o 36 meses, con estudio previo y sin compromiso. La aprobación depende de la entidad financiera, no de nosotros. Para importes por encima de 3.000 € muchos bancos limitan el pago con tarjeta: en ese caso, la transferencia suele ser el camino más rápido."
+      "pago": {
+        "q": "¿Cómo puedo pagar?",
+        "intro": "Medios de pago disponibles: {moyens}.",
+        "et": "y",
+        "virement": "Para importes de esta cuantía, la transferencia bancaria es la vía más habitual: muchos bancos limitan el pago con tarjeta por encima de unos miles de euros.",
+        "financement": "También puede financiar la compra en 12, 24 o 36 meses, sujeto a la aprobación de la entidad financiera."
       }
     }
   },
@@ -842,5 +845,32 @@
     "merciTexte": "Gracias. Le responderemos muy pronto a la dirección indicada.",
     "erreur": "No se ha podido enviar el mensaje. Inténtelo de nuevo en unos instantes.",
     "tropDeMessages": "Ha enviado varios mensajes seguidos. Inténtelo de nuevo en unos minutos."
+  },
+  "paymentMethods": {
+    "tarjeta": {
+      "label": "Tarjeta bancaria",
+      "description": "Visa, Mastercard y American Express, con verificación 3-D Secure.",
+      "fee": "sin recargo"
+    },
+    "bizum": {
+      "label": "Bizum",
+      "description": "Pago inmediato desde el móvil, hasta el límite que fije su banco.",
+      "fee": "sin recargo"
+    },
+    "transferencia": {
+      "label": "Transferencia bancaria",
+      "description": "Preparamos el pedido al recibir el importe.",
+      "fee": "sin recargo"
+    },
+    "paypal": {
+      "label": "PayPal",
+      "description": "Con cuenta PayPal o como invitado.",
+      "fee": "sin recargo"
+    },
+    "financiacion": {
+      "label": "Financiación en 12, 24 o 36 meses",
+      "description": "Estudio sin compromiso, sujeto a aprobación de la entidad financiera.",
+      "fee": "TAE según plazo"
+    }
   }
 }

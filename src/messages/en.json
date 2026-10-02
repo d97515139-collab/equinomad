@@ -823,9 +823,12 @@
         "q": "What exactly does the warranty cover?",
         "a": "Two years on the whole vehicle, chassis, axle and brake included, without the small print that excludes those three as fair wear and tear. It is the Spanish statutory warranty, and we do not trim it to the legal minimum. Nearly-new units are covered on identical terms."
       },
-      "financiacion": {
-        "q": "Can I finance the purchase?",
-        "a": "Yes, over 12, 24 or 36 months, assessed in advance and without obligation. Approval rests with the finance house, not with us. Above €3,000 many Spanish banks cap card payments; a bank transfer is usually the quicker route in that case."
+      "pago": {
+        "q": "How can I pay?",
+        "intro": "Available payment methods: {moyens}.",
+        "et": "and",
+        "virement": "For amounts of this size, bank transfer is the usual route: many banks cap card payments above a few thousand euros.",
+        "financement": "You can also spread the purchase over 12, 24 or 36 months, subject to approval by the finance provider."
       }
     }
   },
@@ -842,5 +845,32 @@
     "merciTexte": "Thank you. We will reply shortly to the address you gave.",
     "erreur": "Your message could not be sent. Please try again in a moment.",
     "tropDeMessages": "You have sent several messages in a row. Please try again in a few minutes."
+  },
+  "paymentMethods": {
+    "tarjeta": {
+      "label": "Bank card",
+      "description": "Visa, Mastercard and American Express, with 3-D Secure verification.",
+      "fee": "no surcharge"
+    },
+    "bizum": {
+      "label": "Bizum",
+      "description": "Instant payment from your phone, up to the limit set by your bank.",
+      "fee": "no surcharge"
+    },
+    "transferencia": {
+      "label": "Bank transfer",
+      "description": "We prepare your order as soon as the payment is received.",
+      "fee": "no surcharge"
+    },
+    "paypal": {
+      "label": "PayPal",
+      "description": "With a PayPal account or as a guest.",
+      "fee": "no surcharge"
+    },
+    "financiacion": {
+      "label": "Financing over 12, 24 or 36 months",
+      "description": "No-obligation assessment, subject to approval by the finance provider.",
+      "fee": "APR depends on term"
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   Banknote,
   CreditCard,
@@ -15,6 +15,7 @@ import {
 import { listEnabledPaymentMethods } from "@/server/payments";
 import { brandMarksFor } from "@/components/PaymentIcons";
 import type { PaymentMethodRecord } from "@/server/types";
+import { paymentMethodLocalizer } from "@/server/paymentMethodTexts";
 
 // Correspondance explicite entre les noms lucide stockés en base et les
 // composants importés : pas d'import dynamique, tout est dans le bundle serveur.
@@ -69,6 +70,12 @@ interface PaymentMethodsBarProps {
   className?: string;
 }
 
+/** Moyens actifs du back-office, dans la langue du visiteur. */
+async function moyensActifsTraduits(): Promise<PaymentMethodRecord[]> {
+  const [methods, localizer] = await Promise.all([listEnabledPaymentMethods(), getLocale().then(paymentMethodLocalizer)]);
+  return methods.map((method) => localizer.method(method));
+}
+
 export async function PaymentMethodsBar({
   variant = "section",
   source = "catalogue",
@@ -87,7 +94,7 @@ export async function PaymentMethodsBar({
           enabled: true,
           position: index,
         }))
-      : await listEnabledPaymentMethods();
+      : await moyensActifsTraduits();
   if (methods.length === 0) return null;
 
   const freeLabel = t("free");

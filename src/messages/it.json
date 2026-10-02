@@ -823,9 +823,12 @@
         "q": "Che cosa copre esattamente la garanzia?",
         "a": "Due anni sull'intero veicolo, compresi telaio, asse e freno, senza le clausole in piccolo che escludono questi tre componenti come «usura normale». È la garanzia legale spagnola e non la riduciamo al minimo consentito dalla norma. Sugli esemplari usati vale esattamente allo stesso modo."
       },
-      "financiacion": {
-        "q": "Posso finanziare l'acquisto?",
-        "a": "Sì, in 12, 24 o 36 mesi, con valutazione preliminare e senza impegno. L'approvazione dipende dall'istituto finanziario, non da noi. Per importi superiori a 3.000 € molte banche limitano il pagamento con carta: in tal caso il bonifico è di solito la via più rapida."
+      "pago": {
+        "q": "Come posso pagare?",
+        "intro": "Metodi di pagamento disponibili: {moyens}.",
+        "et": "e",
+        "virement": "Per importi di questo ordine, il bonifico bancario è la via più comune: molte banche limitano i pagamenti con carta oltre qualche migliaio di euro.",
+        "financement": "Può anche finanziare l'acquisto in 12, 24 o 36 mesi, previa approvazione dell'ente finanziatore."
       }
     }
   },
@@ -842,5 +845,32 @@
     "merciTexte": "Grazie. Le risponderemo al più presto all'indirizzo indicato.",
     "erreur": "Non è stato possibile inviare il messaggio. Riprovi tra qualche istante.",
     "tropDeMessages": "Ha inviato diversi messaggi di seguito. Riprovi tra qualche minuto."
+  },
+  "paymentMethods": {
+    "tarjeta": {
+      "label": "Carta di pagamento",
+      "description": "Visa, Mastercard e American Express, con verifica 3-D Secure.",
+      "fee": "senza commissioni"
+    },
+    "bizum": {
+      "label": "Bizum",
+      "description": "Pagamento immediato dal cellulare, fino al limite fissato dalla sua banca.",
+      "fee": "senza commissioni"
+    },
+    "transferencia": {
+      "label": "Bonifico bancario",
+      "description": "Prepariamo l'ordine al ricevimento dell'importo.",
+      "fee": "senza commissioni"
+    },
+    "paypal": {
+      "label": "PayPal",
+      "description": "Con un conto PayPal o come ospite.",
+      "fee": "senza commissioni"
+    },
+    "financiacion": {
+      "label": "Finanziamento in 12, 24 o 36 mesi",
+      "description": "Valutazione senza impegno, soggetta all'approvazione dell'ente finanziatore.",
+      "fee": "TAEG in base alla durata"
+    }
   }
 }

@@ -19,6 +19,7 @@ import {
 } from "@/lib/orderStatus";
 import { withBrand } from "@/lib/brandName";
 import { intlLocale } from "@/i18n/intlLocale";
+import { paymentMethodLocalizer } from "@/server/paymentMethodTexts";
 
 type PageParams = Promise<{ locale: string; orderNumber: string }>;
 
@@ -57,6 +58,14 @@ export default async function AccountOrderDetailPage({ params }: { params: PageP
   // Une commande qui n'appartient pas au compte est traitée comme inexistante :
   // rien n'indique si le numéro est valide ailleurs.
   if (!order) notFound();
+
+  // Moyen de paiement dans la langue de la page (libellé et frais).
+  const moyen = (await paymentMethodLocalizer(locale)).method({
+    key: order.paymentMethodKey,
+    label: order.paymentMethodLabel,
+    description: "",
+    feeLabel: order.paymentMethodFee,
+  });
 
   const language = locale === "en" ? "en" : "es";
   const orderDate = new Intl.DateTimeFormat(intlLocale(locale), {
@@ -214,9 +223,9 @@ export default async function AccountOrderDetailPage({ params }: { params: PageP
             <h2 className="mb-3 text-sm font-black text-foreground">
               {checkout("confirmation.paymentTitle")}
             </h2>
-            <p className="text-sm font-semibold text-foreground">{order.paymentMethodLabel}</p>
-            {order.paymentMethodFee && (
-              <p className="text-xs text-muted-foreground">{order.paymentMethodFee}</p>
+            <p className="text-sm font-semibold text-foreground">{moyen.label}</p>
+            {moyen.feeLabel && (
+              <p className="text-xs text-muted-foreground">{moyen.feeLabel}</p>
             )}
             <p className="mt-3 text-xs text-muted-foreground">
               {checkout("confirmation.statusPayment")}:{" "}

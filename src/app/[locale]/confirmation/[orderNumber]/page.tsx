@@ -18,6 +18,7 @@ import {
 import { ORDER_STATUS_LABELS, PAYMENT_STATUS_LABELS } from "@/lib/orderStatus";
 import { withBrand } from "@/lib/brandName";
 import { intlLocale } from "@/i18n/intlLocale";
+import { paymentMethodLocalizer } from "@/server/paymentMethodTexts";
 
 type ConfirmationParams = Promise<{ locale: string; orderNumber: string }>;
 type ConfirmationSearch = Promise<{ token?: string; paiement?: string }>;
@@ -136,6 +137,14 @@ export default async function OrderConfirmationPage({
       </>
     );
   }
+
+  // Moyen de paiement dans la langue de la page (libellé et frais).
+  const moyen = (await paymentMethodLocalizer(locale)).method({
+    key: order.paymentMethodKey,
+    label: order.paymentMethodLabel,
+    description: "",
+    feeLabel: order.paymentMethodFee,
+  });
 
   const language = locale === "en" ? "en" : "es";
   const orderDate = new Intl.DateTimeFormat(intlLocale(locale), {
@@ -272,7 +281,7 @@ export default async function OrderConfirmationPage({
               </section>
 
               {/* Instructions de paiement selon le mode choisi */}
-              <PaymentInstructions order={order} />
+              <PaymentInstructions order={order} locale={locale} />
 
               {/* Droit de rétractation — information post-contractuelle (§ 312f BGB) */}
               <section className="rounded-sm border border-border bg-white p-5">
@@ -319,9 +328,9 @@ export default async function OrderConfirmationPage({
                 <h2 className="mb-3 text-sm font-black text-foreground">
                   {t("confirmation.paymentTitle")}
                 </h2>
-                <p className="text-sm font-semibold text-foreground">{order.paymentMethodLabel}</p>
-                {order.paymentMethodFee && (
-                  <p className="text-xs text-muted-foreground">{order.paymentMethodFee}</p>
+                <p className="text-sm font-semibold text-foreground">{moyen.label}</p>
+                {moyen.feeLabel && (
+                  <p className="text-xs text-muted-foreground">{moyen.feeLabel}</p>
                 )}
                 <p className="mt-3 text-xs text-muted-foreground">
                   {t("confirmation.statusPayment")}:{" "}
@@ -346,11 +355,10 @@ export default async function OrderConfirmationPage({
   );
 }
 
-async function PaymentInstructions({ order }: { order: OrderRecord }) {
-  const t = await getTranslations({
-    locale: order.locale === "en" ? "en" : "es",
-    namespace: "checkout",
-  });
+async function PaymentInstructions({ order, locale }: { order: OrderRecord; locale: string }) {
+  // Langue de la page, et non celle de la commande, limitée à es/en à sa création.
+  const t = await getTranslations({ locale, namespace: "checkout" });
+  const libelle = (await paymentMethodLocalizer(locale)).label(order.paymentMethodKey, order.paymentMethodLabel);
 
   const total = formatPrice(order.totalCents);
   const key = order.paymentMethodKey;
@@ -393,11 +401,11 @@ async function PaymentInstructions({ order }: { order: OrderRecord }) {
       {PROVIDER_KEYS.has(key) && (
         <>
           <p className="text-sm leading-relaxed text-foreground">
-            {t("confirmation.instructions.provider", { label: order.paymentMethodLabel })}
+            {t("confirmation.instructions.provider", { label: libelle })}
           </p>
           <p className="mt-3 flex items-start gap-2 rounded-sm bg-muted px-4 py-3 text-xs text-muted-foreground">
             <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-            <span>{t("confirmation.providerNotice", { label: order.paymentMethodLabel })}</span>
+            <span>{t("confirmation.providerNotice", { label: libelle })}</span>
           </p>
         </>
       )}

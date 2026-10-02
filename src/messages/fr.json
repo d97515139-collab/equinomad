@@ -823,9 +823,12 @@
         "q": "Que couvre exactement la garantie ?",
         "a": "Deux ans sur l'ensemble du véhicule, y compris le châssis, l'essieu et le frein, sans la clause en petits caractères qui exclut ces trois pièces au titre de l'« usure normale ». Il s'agit de la garantie légale espagnole, et nous ne la réduisons pas au minimum que permet la norme. Sur les unités d'occasion, elle s'applique exactement de la même façon."
       },
-      "financiacion": {
-        "q": "Puis-je financer mon achat ?",
-        "a": "Oui, sur 12, 24 ou 36 mois, avec étude préalable et sans engagement. L'acceptation dépend de l'établissement financier, pas de nous. Pour des montants supérieurs à 3.000 €, de nombreuses banques limitent le paiement par carte : dans ce cas, le virement est souvent le moyen le plus rapide."
+      "pago": {
+        "q": "Comment puis-je payer ?",
+        "intro": "Moyens de paiement disponibles : {moyens}.",
+        "et": "et",
+        "virement": "Pour des montants de cet ordre, le virement bancaire est la voie la plus courante : de nombreuses banques plafonnent le paiement par carte au-delà de quelques milliers d'euros.",
+        "financement": "Vous pouvez aussi financer l'achat sur 12, 24 ou 36 mois, sous réserve d'acceptation par l'organisme de financement."
       }
     }
   },
@@ -842,5 +845,32 @@
     "merciTexte": "Merci. Nous vous répondrons très vite à l'adresse indiquée.",
     "erreur": "Le message n'a pas pu être envoyé. Réessayez dans quelques instants.",
     "tropDeMessages": "Vous avez envoyé plusieurs messages d'affilée. Réessayez dans quelques minutes."
+  },
+  "paymentMethods": {
+    "tarjeta": {
+      "label": "Carte bancaire",
+      "description": "Visa, Mastercard et American Express, avec vérification 3-D Secure.",
+      "fee": "sans frais"
+    },
+    "bizum": {
+      "label": "Bizum",
+      "description": "Paiement immédiat depuis le mobile, dans la limite fixée par votre banque.",
+      "fee": "sans frais"
+    },
+    "transferencia": {
+      "label": "Virement bancaire",
+      "description": "Nous préparons la commande dès réception du montant.",
+      "fee": "sans frais"
+    },
+    "paypal": {
+      "label": "PayPal",
+      "description": "Avec un compte PayPal ou en tant qu'invité.",
+      "fee": "sans frais"
+    },
+    "financiacion": {
+      "label": "Financement sur 12, 24 ou 36 mois",
+      "description": "Étude sans engagement, sous réserve d'acceptation par l'organisme de financement.",
+      "fee": "TAEG selon la durée"
+    }
   }
 }
