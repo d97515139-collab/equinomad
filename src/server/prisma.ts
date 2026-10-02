@@ -1,5 +1,6 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { poolMax } from "@/server/dbPool";
 
 // La connexion dépend uniquement de DATABASE_URL :
 //   postgresql://user:pw@host/db?sslmode=require  -> PostgreSQL (Neon)
@@ -30,7 +31,7 @@ function createClient(): PrismaClient {
       // que gardée ouverte : Neon facture le temps de calcul, pas les
       // connexions, et le pooler préfère des sessions courtes.
       idleTimeoutMillis: 30_000,
-      max: 10,
+      max: poolMax(),
     }),
   });
 }
