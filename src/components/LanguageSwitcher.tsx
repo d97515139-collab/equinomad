@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { useTransition } from "react";
-import { Globe } from "lucide-react";
+import { Flag } from "@/components/Flag";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,6 @@ export function LanguageSwitcher({ className, tone = "dark" }: LanguageSwitcherP
 
   return (
     <div className={cn("flex items-center gap-1", className)} aria-busy={pending}>
-      <Globe className={cn("h-4 w-4 opacity-70", tone === "light" && "text-white")} aria-hidden />
       <span className="sr-only">Elegir idioma / Choose language</span>
       {routing.locales.map((code) => (
         <button
@@ -39,7 +38,7 @@ export function LanguageSwitcher({ className, tone = "dark" }: LanguageSwitcherP
           aria-current={code === locale ? "true" : undefined}
           title={LOCALE_LABELS[code]}
           className={cn(
-            "rounded-sm px-1.5 py-0.5 text-xs font-bold uppercase transition-colors",
+            "flex items-center gap-1 rounded-sm px-1.5 py-0.5 text-xs font-bold uppercase transition-colors",
             tone === "light"
               ? code === locale
                 ? "bg-white/15 text-white"
@@ -49,6 +48,7 @@ export function LanguageSwitcher({ className, tone = "dark" }: LanguageSwitcherP
                 : "text-muted-foreground hover:text-foreground",
           )}
         >
+          <Flag locale={code} />
           {code}
         </button>
       ))}
