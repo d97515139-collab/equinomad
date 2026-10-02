@@ -8,6 +8,7 @@ import { buildLegalMetadata, SectionBody, SectionList } from "@/components/legal
 import { JsonLd } from "@/components/seo/JsonLd";
 import { RichText } from "@/components/RichText";
 import { findLegalPage } from "@/server/legalPages";
+import { legalLocaleFor } from "@/content/legal";
 import { stripMarks } from "@/lib/richText";
 
 const SLUG = "faq" as const;
@@ -54,7 +55,7 @@ export default async function FaqPage({ params }: { params: PageParams }) {
           <div className="mx-auto max-w-screen-xl px-3 py-3">
             <Breadcrumb
               items={[
-                { label: locale === "en" ? "Home" : "Inicio", href: "/" },
+                { label: legalLocaleFor(locale) === "en" ? "Home" : "Inicio", href: "/" },
                 { label: page.title },
               ]}
             />

@@ -7,6 +7,7 @@ import { RichText } from "@/components/RichText";
 import { findLegalPage } from "@/server/legalPages";
 import { paragraphsOf, stripMarks } from "@/lib/richText";
 import type { LegalPage, LegalSection, LegalSlug } from "@/content/legal/types";
+import { legalLocaleFor } from "@/content/legal";
 import { publicSiteUrl } from "@/config/brand";
 import { BRAND } from "@/config/brand";
 
@@ -25,7 +26,9 @@ export async function buildLegalMetadata(slug: LegalSlug, locale: string): Promi
   const page = await findLegalPage(slug, locale);
   if (!page) return {};
 
-  const path = locale === "en" ? `/en/${slug}` : `/${slug}`;
+  // fr, de, it servent la version anglaise : la page canonique est donc /en/….
+  const legal = legalLocaleFor(locale);
+  const path = legal === "en" ? `/en/${slug}` : `/${slug}`;
   // La description est du texte nu : les marques de formatage n'ont rien à
   // faire dans un extrait de résultat de recherche.
   const first = stripMarks(page.intro ?? page.sections[0]?.body ?? "");
@@ -36,7 +39,7 @@ export async function buildLegalMetadata(slug: LegalSlug, locale: string): Promi
     alternates: {
       canonical: `${SITE_URL}${path}`,
       languages: {
-        fr: `${SITE_URL}/${slug}`,
+        es: `${SITE_URL}/${slug}`,
         en: `${SITE_URL}/en/${slug}`,
       },
     },
@@ -135,7 +138,9 @@ export async function LegalPageView({ slug, locale }: { slug: LegalSlug; locale:
   const page = await findLegalPage(slug, locale);
   if (!page) notFound();
 
-  const home = locale === "en" ? "Home" : "Inicio";
+  // Libellés dans la langue du texte affiché, pour ne pas mêler deux langues.
+  const legal = legalLocaleFor(locale);
+  const home = legal === "en" ? "Home" : "Inicio";
 
   return (
     <>
@@ -147,7 +152,7 @@ export async function LegalPageView({ slug, locale }: { slug: LegalSlug; locale:
           </div>
         </div>
 
-        <LegalPageArticle page={page} locale={locale} />
+        <LegalPageArticle page={page} locale={legal} />
       </main>
       <Footer />
     </>

@@ -83,6 +83,15 @@ export function isLegalLocale(value: string): value is LegalLocale {
 }
 
 /**
+ * Corpus juridique servi pour une langue de la boutique. Les langues sans
+ * corpus propre (fr, de, it) reçoivent la version anglaise, comme le reste de
+ * l'interface, en attendant les pages légales par pays.
+ */
+export function legalLocaleFor(locale: string): LegalLocale {
+  return isLegalLocale(locale) ? locale : "en";
+}
+
+/**
  * Construit le chemin d'une page : `/aviso-legal` en espagnol,
  * `/en/aviso-legal` en anglais.
  */

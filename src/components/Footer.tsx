@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { CreditCard, Mail, MessageCircle, ShieldCheck, Truck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
-import { COMPANY, isLegalLocale } from "@/content/legal";
+import { COMPANY, legalLocaleFor } from "@/content/legal";
 import { companyWhatsappDigits } from "@/config/company";
 
 /**
@@ -18,7 +18,7 @@ export async function Footer() {
   const locale = await getLocale();
   // Les libellés sont les titres des pages : renommer une page depuis
   // l'administration renomme aussi son lien ici.
-  const footerGroups = await getLegalFooterGroups(isLegalLocale(locale) ? locale : "es");
+  const footerGroups = await getLegalFooterGroups(legalLocaleFor(locale));
 
   return (
     <footer className="bg-footer text-footer-foreground">

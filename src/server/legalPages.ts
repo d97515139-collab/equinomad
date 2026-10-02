@@ -29,7 +29,7 @@ import {
   LEGAL_SLUGS,
   ORIGIN_PAGES,
   getLegalHref,
-  isLegalLocale,
+  legalLocaleFor,
   isLegalSlug,
 } from "@/content/legal";
 import type {
@@ -104,8 +104,9 @@ export const getLegalPageMap = cache(async (locale: LegalLocale): Promise<LegalP
  * puisse déclencher `notFound()`.
  */
 export async function findLegalPage(slug: string, locale: string): Promise<LegalPage | undefined> {
-  if (!isLegalSlug(slug) || !isLegalLocale(locale)) return undefined;
-  const pages = await getLegalPageMap(locale);
+  if (!isLegalSlug(slug)) return undefined;
+  // fr, de, it : version anglaise en attendant les pages légales par pays.
+  const pages = await getLegalPageMap(legalLocaleFor(locale));
   return pages[slug];
 }
 
