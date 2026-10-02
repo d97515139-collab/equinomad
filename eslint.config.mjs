@@ -18,6 +18,9 @@ const eslintConfig = defineConfig([
     ".tmp-*/**",
     ".playwright-mcp/**",
     ".migration/**",
+    // Copies de travail des agents et registres d'exécution : ni livrées ni relues.
+    ".claude/**",
+    ".superpowers/**",
     // Client Prisma généré : code machine, jamais relu à la main.
     "src/generated/**",
   ]),
