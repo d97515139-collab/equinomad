@@ -1,5 +1,15 @@
 import { getLocale } from "next-intl/server";
 import { SmartsuppLauncher } from "@/components/SmartsuppLauncher";
+import { hasLocale } from "next-intl";
+import { routing, type Locale } from "@/i18n/routing";
+
+const LIBELLE_CHAT: Record<Locale, string> = {
+  es: "Chatee con nosotros",
+  en: "Chat with us",
+  fr: "Discuter avec nous",
+  de: "Mit uns chatten",
+  it: "Chatti con noi",
+};
 
 /**
  * Chat en direct Smartsupp, en bas à droite de la boutique.
@@ -27,8 +37,8 @@ export async function SmartsuppChat() {
 
   const locale = await getLocale();
   // Le tableau de bord Smartsupp n'attend que le code court de la langue.
-  const language = locale === "en" ? "en" : "es";
-  const label = locale === "en" ? "Chat with us" : "Discuter avec nous";
+  const language = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const label = LIBELLE_CHAT[language];
 
   return <SmartsuppLauncher chatKey={key} language={language} label={label} />;
 }

@@ -15,6 +15,7 @@ import {
   PAYMENT_STATUS_BADGES,
   PAYMENT_STATUS_LABELS,
 } from "@/lib/orderStatus";
+import { intlLocale } from "@/i18n/intlLocale";
 
 type PageParams = Promise<{ locale: string }>;
 
@@ -36,7 +37,7 @@ export default async function AccountOrdersPage({ params }: { params: PageParams
 
   const orders = await listCustomerOrders(customer.id);
   const language = locale === "en" ? "en" : "es";
-  const dateFormatter = new Intl.DateTimeFormat(language === "en" ? "en-GB" : "es-ES", {
+  const dateFormatter = new Intl.DateTimeFormat(intlLocale(locale), {
     dateStyle: "medium",
   });
 

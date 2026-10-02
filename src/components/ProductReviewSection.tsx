@@ -3,13 +3,11 @@ import { Plus, Star } from "lucide-react";
 import { listReviews } from "@/server/reviews";
 import { ReviewForm } from "@/components/ReviewForm";
 import { formatRating } from "@/lib/formatRating";
+import { intlLocale } from "@/i18n/intlLocale";
 
-// Format de date par langue : « 5 janvier 2026 » en français,
-// « 5 January 2026 » en anglais britannique (le shop livre en Europe).
-const DATE_LOCALES: Record<string, string> = { fr: "es-ES", en: "en-GB" };
-
+// Format de date de la langue affichée : « 5 de enero de 2026 », « 5 janvier 2026 »…
 function dateFormatterFor(locale: string): Intl.DateTimeFormat {
-  return new Intl.DateTimeFormat(DATE_LOCALES[locale] ?? "es-ES", {
+  return new Intl.DateTimeFormat(intlLocale(locale), {
     day: "numeric",
     month: "long",
     year: "numeric",

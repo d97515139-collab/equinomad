@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { CampaignCountdown } from "@/components/CampaignCountdown";
 import { getCampaignLanding } from "@/server/campaignLanding";
 import { BRAND } from "@/config/brand";
+import { intlLocale } from "@/i18n/intlLocale";
 
 type PageParams = Promise<{ locale: string; slug: string }>;
 
@@ -39,7 +40,7 @@ export default async function CampaignLandingPage({ params }: { params: PagePara
   const t = await getTranslations("campaign");
   const common = await getTranslations("common");
 
-  const endsAtLabel = landing.endsAt.toLocaleDateString(locale === "en" ? "en-GB" : "es-ES", {
+  const endsAtLabel = landing.endsAt.toLocaleDateString(intlLocale(locale), {
     day: "numeric",
     month: "long",
     year: "numeric",

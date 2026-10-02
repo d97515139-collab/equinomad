@@ -10,6 +10,7 @@ import { requireCustomer } from "@/server/customerSession";
 import { listCustomerOrders } from "@/server/customers";
 import { formatPrice } from "@/server/store";
 import { ORDER_STATUS_LABELS, PAYMENT_STATUS_LABELS } from "@/lib/orderStatus";
+import { intlLocale } from "@/i18n/intlLocale";
 
 type PageParams = Promise<{ locale: string }>;
 
@@ -36,7 +37,7 @@ export default async function AccountDashboardPage({ params }: { params: PagePar
 
   const orders = await listCustomerOrders(customer.id, 3);
   const language = locale === "en" ? "en" : "es";
-  const dateFormatter = new Intl.DateTimeFormat(language === "en" ? "en-GB" : "es-ES", {
+  const dateFormatter = new Intl.DateTimeFormat(intlLocale(locale), {
     dateStyle: "long",
   });
 

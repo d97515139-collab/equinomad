@@ -17,6 +17,7 @@ import {
 } from "@/server/bankTransfer";
 import { ORDER_STATUS_LABELS, PAYMENT_STATUS_LABELS } from "@/lib/orderStatus";
 import { withBrand } from "@/lib/brandName";
+import { intlLocale } from "@/i18n/intlLocale";
 
 type ConfirmationParams = Promise<{ locale: string; orderNumber: string }>;
 type ConfirmationSearch = Promise<{ token?: string; paiement?: string }>;
@@ -137,7 +138,7 @@ export default async function OrderConfirmationPage({
   }
 
   const language = locale === "en" ? "en" : "es";
-  const orderDate = new Intl.DateTimeFormat(language === "en" ? "en-GB" : "es-ES", {
+  const orderDate = new Intl.DateTimeFormat(intlLocale(locale), {
     dateStyle: "long",
     timeStyle: "short",
   }).format(new Date(order.createdAt));

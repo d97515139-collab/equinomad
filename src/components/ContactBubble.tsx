@@ -2,6 +2,8 @@ import { getLocale } from "next-intl/server";
 import { COMPANY } from "@/content/legal";
 import { companyWhatsappDigits } from "@/config/company";
 import { ContactBubbleLauncher, type ContactBubbleLabels } from "@/components/ContactBubbleLauncher";
+import { hasLocale } from "next-intl";
+import { routing, type Locale } from "@/i18n/routing";
 
 /**
  * Bulle de contact flottante : WhatsApp et courrier électronique regroupés
@@ -18,7 +20,7 @@ import { ContactBubbleLauncher, type ContactBubbleLabels } from "@/components/Co
  */
 const WHATSAPP_NUMBER = companyWhatsappDigits();
 
-const LIBELLES: Record<"es" | "en", ContactBubbleLabels & { prefill: string; sujet: string }> = {
+const LIBELLES: Record<Locale, ContactBubbleLabels & { prefill: string; sujet: string }> = {
   es: {
     ouvrir: "Contactar",
     fermer: "Cerrar",
@@ -42,11 +44,41 @@ const LIBELLES: Record<"es" | "en", ContactBubbleLabels & { prefill: string; suj
     prefill: "Hello, I have a question about a trailer.",
     sujet: "Question about a trailer",
   },
+  fr: {
+    ouvrir: "Nous contacter",
+    fermer: "Fermer",
+    whatsapp: "Écrivez-nous sur WhatsApp",
+    email: "Envoyez-nous un e-mail",
+    invitacion: "Une question ? Écrivez-nous",
+    cerrarInvitacion: "Fermer le message",
+    prefill: "Bonjour, j'ai une question sur une remorque.",
+    sujet: "Question sur une remorque",
+  },
+  de: {
+    ouvrir: "Kontakt",
+    fermer: "Schließen",
+    whatsapp: "Schreiben Sie uns auf WhatsApp",
+    email: "Senden Sie uns eine E-Mail",
+    invitacion: "Haben Sie Fragen? Schreiben Sie uns",
+    cerrarInvitacion: "Nachricht schließen",
+    prefill: "Hallo, ich habe eine Frage zu einem Anhänger.",
+    sujet: "Frage zu einem Anhänger",
+  },
+  it: {
+    ouvrir: "Contattaci",
+    fermer: "Chiudi",
+    whatsapp: "Scriveteci su WhatsApp",
+    email: "Inviateci un'e-mail",
+    invitacion: "Ha qualche domanda? Ci scriva",
+    cerrarInvitacion: "Chiudi il messaggio",
+    prefill: "Buongiorno, ho una domanda su un rimorchio.",
+    sujet: "Domanda su un rimorchio",
+  },
 };
 
 export async function ContactBubble() {
   const locale = await getLocale();
-  const { prefill, sujet, ...labels } = LIBELLES[locale === "en" ? "en" : "es"];
+  const { prefill, sujet, ...labels } = LIBELLES[hasLocale(routing.locales, locale) ? locale : routing.defaultLocale];
 
   const whatsappHref = WHATSAPP_NUMBER
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefill)}`

@@ -18,6 +18,7 @@ import {
   PAYMENT_STATUS_LABELS,
 } from "@/lib/orderStatus";
 import { withBrand } from "@/lib/brandName";
+import { intlLocale } from "@/i18n/intlLocale";
 
 type PageParams = Promise<{ locale: string; orderNumber: string }>;
 
@@ -58,7 +59,7 @@ export default async function AccountOrderDetailPage({ params }: { params: PageP
   if (!order) notFound();
 
   const language = locale === "en" ? "en" : "es";
-  const orderDate = new Intl.DateTimeFormat(language === "en" ? "en-GB" : "es-ES", {
+  const orderDate = new Intl.DateTimeFormat(intlLocale(locale), {
     dateStyle: "long",
     timeStyle: "short",
   }).format(new Date(order.createdAt));
