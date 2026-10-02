@@ -44,7 +44,8 @@
     "catalogo": "Voir le catalogue",
     "finderLabel": "Quelle remorque recherchez-vous ?",
     "finderPlazas": "Places",
-    "finderPresupuesto": "Budget"
+    "finderPresupuesto": "Budget",
+    "finderVerPresupuesto": "Voir les remorques dans ce budget"
   },
   "indicadores": {
     "modelos": "{count} modèles au catalogue",
@@ -88,8 +89,8 @@
     "filterMinStars": "à partir de {rating} étoiles",
     "filterInStockOnly": "Uniquement ce qui est disponible maintenant",
     "priceRanges": {
-      "hasta500": "Jusqu'à 500 €",
-      "de500a8000": "500 € – 8.000 €",
+      "hasta5000": "Jusqu'à 5.000 €",
+      "de5000a8000": "5.000 € – 8.000 €",
       "de8000a12000": "8.000 € – 12.000 €",
       "de12000a20000": "12.000 € – 20.000 €",
       "mas20000": "Plus de 20.000 €"
@@ -631,7 +632,9 @@
     "breadcrumb": "Résultats de recherche",
     "titre": "Résultats pour « {query} »",
     "resultats": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}}",
-    "vide": "Saisissez un terme pour lancer la recherche : une marque, un nombre de places ou une référence."
+    "vide": "Saisissez un terme pour lancer la recherche : une marque, un nombre de places ou une référence.",
+    "seleccionTitulo": "Remorques selon votre recherche",
+    "seleccionNuevoOcasion": "Neuves et d'occasion"
   },
   "exitIntent": {
     "title": "Avant de partir…",

@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronDown, SlidersHorizontal } from "lucide-react";
 import { useRouter } from "@/i18n/navigation";
-import { PRICE_RANGES } from "@/components/CategoryFilters";
+import { PRICE_RANGES, selectionHref } from "@/lib/catalogSelection";
 import { cn } from "@/lib/utils";
 
 export interface FinderCategory {
@@ -21,11 +21,14 @@ export interface FinderCategory {
  * sur « remolque » ramène tout le catalogue. Deux questions fermées valent
  * mieux qu'un champ vide.
  *
- * L'ordre des questions n'est pas neutre : le nombre de places décide de la
- * longueur, du poids et donc du permis nécessaire — c'est le critère qui écarte
- * le plus de modèles. Le budget vient ensuite affiner. C'est aussi pourquoi le
- * choix des places déclenche la navigation : à ce stade la sélection est déjà
- * utile, alors que le budget seul ne dit pas vers quelle page aller.
+ * Les deux questions mènent à la même page de sélection (/recherche), qui
+ * réunit le neuf et l'occasion du moins cher au plus cher : un acheteur qui
+ * vient avec un budget ne fait pas la différence entre les deux rayons, et
+ * l'occasion porte l'essentiel des modèles abordables.
+ *
+ * Le choix des places navigue aussitôt, budget compris s'il est coché. Le
+ * budget seul se valide par son propre bouton, qui n'apparaît qu'une fois une
+ * tranche choisie : sans lui, cocher un budget ne produisait rien de visible.
  */
 export function CatalogFinder({ categories }: { categories: FinderCategory[] }) {
   const t = useTranslations("header");
@@ -64,12 +67,11 @@ export function CatalogFinder({ categories }: { categories: FinderCategory[] }) 
 
   if (categories.length === 0) return null;
 
-  const irA = (categoria: FinderCategory) => {
-    // Le budget voyage en paramètre d'adresse : la page de catégorie le lit au
-    // montage et coche la tranche correspondante dans ses propres filtres.
-    const destino = presupuesto ? `${categoria.href}?precio=${presupuesto}` : categoria.href;
+  // Le budget voyage en paramètre d'adresse : la page de sélection filtre sur
+  // lui et coche la tranche correspondante dans ses propres filtres.
+  const irA = (plazas?: string) => {
     setOpen(false);
-    router.push(destino);
+    router.push(selectionHref({ plazas, precio: presupuesto ?? undefined }));
   };
 
   return (
@@ -120,6 +122,15 @@ export function CatalogFinder({ categories }: { categories: FinderCategory[] }) 
               );
             })}
           </div>
+          {presupuesto && (
+            <button
+              type="button"
+              onClick={() => irA()}
+              className="mb-4 w-full rounded-sm bg-primary px-3 py-2 text-sm font-bold text-primary-foreground transition-[filter] hover:brightness-110"
+            >
+              {t("finderVerPresupuesto")}
+            </button>
+          )}
 
           <p className="mb-2 text-[0.7rem] font-bold uppercase tracking-wide text-muted-foreground">
             {t("finderPlazas")}
@@ -129,7 +140,7 @@ export function CatalogFinder({ categories }: { categories: FinderCategory[] }) 
               <button
                 key={categoria.slug}
                 type="button"
-                onClick={() => irA(categoria)}
+                onClick={() => irA(categoria.slug)}
                 className="rounded-sm border border-border px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
               >
                 {common(`categoryNames.${categoria.slug}`)}

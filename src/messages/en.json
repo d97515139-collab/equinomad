@@ -44,7 +44,8 @@
     "catalogo": "Browse the catalogue",
     "finderLabel": "Which trailer are you after?",
     "finderPlazas": "Horses",
-    "finderPresupuesto": "Budget"
+    "finderPresupuesto": "Budget",
+    "finderVerPresupuesto": "See trailers in this budget"
   },
   "indicadores": {
     "modelos": "{count} models in the catalogue",
@@ -88,8 +89,8 @@
     "filterMinStars": "{rating} stars and up",
     "filterInStockOnly": "In stock only",
     "priceRanges": {
-      "hasta500": "Up to €500",
-      "de500a8000": "€500 – €8,000",
+      "hasta5000": "Up to €5,000",
+      "de5000a8000": "€5,000 – €8,000",
       "de8000a12000": "€8,000 – €12,000",
       "de12000a20000": "€12,000 – €20,000",
       "mas20000": "Over €20,000"
@@ -631,7 +632,9 @@
     "breadcrumb": "Search results",
     "titre": "Results for “{query}”",
     "resultats": "{count, plural, =0 {No results} one {# result} other {# results}}",
-    "vide": "Type something to search: a make, a number of stalls or a reference."
+    "vide": "Type something to search: a make, a number of stalls or a reference.",
+    "seleccionTitulo": "Trailers matching your search",
+    "seleccionNuevoOcasion": "New and used"
   },
   "exitIntent": {
     "title": "Before you go…",

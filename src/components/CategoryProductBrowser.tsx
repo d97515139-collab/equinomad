@@ -4,10 +4,11 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
-import { CategoryFilters, PRICE_RANGES } from "@/components/CategoryFilters";
+import { CategoryFilters } from "@/components/CategoryFilters";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { parsePrice } from "@/lib/price";
+import { PRICE_RANGES, inPriceRange } from "@/lib/catalogSelection";
 import { useDismissable } from "@/lib/useDismissable";
 import type { Product } from "@/types/home";
 
@@ -93,10 +94,7 @@ export function CategoryProductBrowser({ products }: { products: Product[] }) {
 
     const filtered = products.filter((product) => {
       if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) return false;
-      if (activePriceRange) {
-        const price = parsePrice(product.price);
-        if (price < activePriceRange.min || price > activePriceRange.max) return false;
-      }
+      if (activePriceRange && !inPriceRange(parsePrice(product.price), activePriceRange)) return false;
       if (minRating !== null && (product.rating ?? 0) < minRating) return false;
       if (inStockOnly && product.inStock === false) return false;
       return true;

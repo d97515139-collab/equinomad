@@ -44,7 +44,8 @@
     "catalogo": "Ver el catálogo",
     "finderLabel": "Qué remolque busca?",
     "finderPlazas": "Plazas",
-    "finderPresupuesto": "Presupuesto"
+    "finderPresupuesto": "Presupuesto",
+    "finderVerPresupuesto": "Ver los remolques de este presupuesto"
   },
   "indicadores": {
     "modelos": "{count} modelos en catálogo",
@@ -88,8 +89,8 @@
     "filterMinStars": "a partir de {rating} estrellas",
     "filterInStockOnly": "Solo disponibles ahora",
     "priceRanges": {
-      "hasta500": "Hasta 500 €",
-      "de500a8000": "500 € – 8.000 €",
+      "hasta5000": "Hasta 5.000 €",
+      "de5000a8000": "5.000 € – 8.000 €",
       "de8000a12000": "8.000 € – 12.000 €",
       "de12000a20000": "12.000 € – 20.000 €",
       "mas20000": "Más de 20.000 €"
@@ -631,7 +632,9 @@
     "breadcrumb": "Resultados de búsqueda",
     "titre": "Resultados de «{query}»",
     "resultats": "{count, plural, =0 {Ningún resultado} one {# resultado} other {# resultados}}",
-    "vide": "Escriba algo para buscar: una marca, un número de plazas o una referencia."
+    "vide": "Escriba algo para buscar: una marca, un número de plazas o una referencia.",
+    "seleccionTitulo": "Remolques según su búsqueda",
+    "seleccionNuevoOcasion": "Nuevos y de ocasión"
   },
   "exitIntent": {
     "title": "Antes de irse…",

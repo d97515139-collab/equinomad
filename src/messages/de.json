@@ -44,7 +44,8 @@
     "catalogo": "Zum Katalog",
     "finderLabel": "Welchen Anhänger suchen Sie?",
     "finderPlazas": "Plätze",
-    "finderPresupuesto": "Budget"
+    "finderPresupuesto": "Budget",
+    "finderVerPresupuesto": "Anhänger in diesem Budget ansehen"
   },
   "indicadores": {
     "modelos": "{count} Modelle im Katalog",
@@ -88,8 +89,8 @@
     "filterMinStars": "ab {rating} Sternen",
     "filterInStockOnly": "Nur sofort verfügbar",
     "priceRanges": {
-      "hasta500": "Bis 500 €",
-      "de500a8000": "500 € – 8.000 €",
+      "hasta5000": "Bis 5.000 €",
+      "de5000a8000": "5.000 € – 8.000 €",
       "de8000a12000": "8.000 € – 12.000 €",
       "de12000a20000": "12.000 € – 20.000 €",
       "mas20000": "Über 20.000 €"
@@ -631,7 +632,9 @@
     "breadcrumb": "Suchergebnisse",
     "titre": "Ergebnisse für „{query}“",
     "resultats": "{count, plural, =0 {Keine Ergebnisse} one {# Ergebnis} other {# Ergebnisse}}",
-    "vide": "Geben Sie einen Suchbegriff ein: eine Marke, die Anzahl der Plätze oder eine Artikelnummer."
+    "vide": "Geben Sie einen Suchbegriff ein: eine Marke, die Anzahl der Plätze oder eine Artikelnummer.",
+    "seleccionTitulo": "Anhänger nach Ihrer Auswahl",
+    "seleccionNuevoOcasion": "Neu und gebraucht"
   },
   "exitIntent": {
     "title": "Bevor Sie gehen…",

@@ -3,32 +3,8 @@
 import { useLocale, useTranslations } from "next-intl";
 import { SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// L'identifiant "id" est stable et sert d'état ; seul le libellé est traduit,
-// via "category.priceRanges.<id>".
-export interface PriceRange {
-  id: string;
-  min: number;
-  max: number;
-}
-
-// Bornes calées sur le catalogue réel : de la sangle d'amarrage à 34 € au van
-// quatre places à 33 900 €. Elles ont longtemps porté celles de la boutique de
-// bois dont ce socle est issu — 0 à 100 €, puis 100 à 300 — pendant que les
-// libellés traduits annonçaient des milliers d'euros. Choisir « 5 000 – 10 000 »
-// filtrait donc entre 300 et 600 € et ne renvoyait jamais rien : un filtre
-// muet, qu'aucune relecture des traductions n'aurait démasqué puisque le
-// défaut vivait dans le code.
-//
-// Les tranches se touchent sans laisser de trou : tout produit tombe dans une
-// et une seule, quel que soit son prix.
-export const PRICE_RANGES: PriceRange[] = [
-  { id: "hasta500", min: 0, max: 500 },
-  { id: "de500a8000", min: 500, max: 8000 },
-  { id: "de8000a12000", min: 8000, max: 12000 },
-  { id: "de12000a20000", min: 12000, max: 20000 },
-  { id: "mas20000", min: 20000, max: Infinity },
-];
+// Tranches de budget partagées avec le sélecteur de l'en-tête et la page de sélection.
+import { PRICE_RANGES } from "@/lib/catalogSelection";
 
 export const RATING_THRESHOLDS = [4.5, 4, 3];
 

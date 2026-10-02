@@ -44,7 +44,8 @@
     "catalogo": "Vedi il catalogo",
     "finderLabel": "Che rimorchio cerca?",
     "finderPlazas": "Posti",
-    "finderPresupuesto": "Budget"
+    "finderPresupuesto": "Budget",
+    "finderVerPresupuesto": "Vedi i rimorchi in questo budget"
   },
   "indicadores": {
     "modelos": "{count} modelli a catalogo",
@@ -88,8 +89,8 @@
     "filterMinStars": "da {rating} stelle in su",
     "filterInStockOnly": "Solo disponibili ora",
     "priceRanges": {
-      "hasta500": "Fino a 500 €",
-      "de500a8000": "500 € – 8.000 €",
+      "hasta5000": "Fino a 5.000 €",
+      "de5000a8000": "5.000 € – 8.000 €",
       "de8000a12000": "8.000 € – 12.000 €",
       "de12000a20000": "12.000 € – 20.000 €",
       "mas20000": "Oltre 20.000 €"
@@ -631,7 +632,9 @@
     "breadcrumb": "Risultati di ricerca",
     "titre": "Risultati per «{query}»",
     "resultats": "{count, plural, =0 {Nessun risultato} one {# risultato} other {# risultati}}",
-    "vide": "Scriva qualcosa da cercare: un marchio, un numero di posti o un riferimento."
+    "vide": "Scriva qualcosa da cercare: un marchio, un numero di posti o un riferimento.",
+    "seleccionTitulo": "Rimorchi secondo la sua ricerca",
+    "seleccionNuevoOcasion": "Nuovi e usati"
   },
   "exitIntent": {
     "title": "Prima di andare via…",
