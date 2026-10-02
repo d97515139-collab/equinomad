@@ -7,8 +7,8 @@ import type { Product } from "@/types/home";
 // Traduction du catalogue, côté boutique uniquement.
 //
 // Principe : l'espagnol reste la base éditoriale du catalogue. L'anglais
-// couvre tout le catalogue comme premier niveau de repli, puis certaines
-// familles de produits d'occasion portent des colonnes dédiées en fr/de/it.
+// couvre tout le catalogue comme premier niveau de repli ; produits, catégories,
+// groupes et sections de guide portent aussi des colonnes fr/de/it.
 // Ce module charge les traductions puis les applique à des données déjà
 // préparées par le store, sans jamais laisser de champ vide en boutique.
 
@@ -68,16 +68,41 @@ const EMPTY: CatalogTranslations = {
 
 // ---- Fonctions pures ----
 
+/**
+ * Messages d'erreur du service de traduction automatique utilisé par l'ancien
+ * catalogue, enregistrés en base à la place de la traduction quand son quota
+ * gratuit était épuisé (« MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE
+ * TRANSLATIONS… »). Une telle valeur compte comme une traduction absente.
+ */
+const ERREUR_TRADUCTEUR = /MYMEMORY WARNING|QUERY LENGTH LIMIT EXCEEDED|INVALID LANGUAGE PAIR|PLEASE SELECT TWO DISTINCT LANGUAGES/i;
+
+function traductionUtilisable(value: string): boolean {
+  return value.trim().length > 0 && !ERREUR_TRADUCTEUR.test(value);
+}
+
 /** Renvoie la traduction si elle est renseignée, sinon le texte d'origine. */
 export function pickText(fallback: string, translated: string | null | undefined): string {
   const value = translated?.trim();
-  return value ? value : fallback;
+  return value && traductionUtilisable(value) ? value : fallback;
 }
 
 /** Même règle pour une liste : une liste vide vaut « pas de traduction ». */
 export function pickList(fallback: string[], translated: string[] | undefined): string[] {
-  const values = translated?.filter((entry) => entry.trim().length > 0) ?? [];
+  const values = translated?.filter(traductionUtilisable) ?? [];
   return values.length > 0 ? values : fallback;
+}
+
+/**
+ * Texte d'une langue parmi les colonnes traduites d'une ligne (catégorie,
+ * groupe, section de guide). Une colonne vide retombe sur l'anglais, qui
+ * couvre tout le catalogue ; `pickText` ramène ensuite à l'espagnol au besoin.
+ */
+export function pickLocale(
+  locale: Locale,
+  values: { en: string; fr: string; de: string; it: string },
+): string {
+  const own = locale === "fr" ? values.fr : locale === "de" ? values.de : locale === "it" ? values.it : values.en;
+  return own.trim() ? own : values.en;
 }
 
 /** Vrai dès qu'une locale connue autre que l'espagnol est demandée. */
@@ -205,17 +230,40 @@ export async function loadCatalogTranslations(locale: string): Promise<CatalogTr
   if (!needsTranslation(locale)) return EMPTY;
 
   const [groups, categories, products] = await Promise.all([
-    prisma.group.findMany({ select: { slug: true, labelEn: true } }),
+    prisma.group.findMany({
+      select: { slug: true, labelEn: true, labelFr: true, labelDe: true, labelIt: true },
+    }),
     prisma.category.findMany({
       select: {
         slug: true,
         labelEn: true,
+        labelFr: true,
+        labelDe: true,
+        labelIt: true,
         descriptionEn: true,
+        descriptionFr: true,
+        descriptionDe: true,
+        descriptionIt: true,
         guideIntroEn: true,
+        guideIntroFr: true,
+        guideIntroDe: true,
+        guideIntroIt: true,
         guideClosingEn: true,
+        guideClosingFr: true,
+        guideClosingDe: true,
+        guideClosingIt: true,
         group: { select: { slug: true } },
         guideSections: {
-          select: { headingEn: true, bodyEn: true },
+          select: {
+            headingEn: true,
+            headingFr: true,
+            headingDe: true,
+            headingIt: true,
+            bodyEn: true,
+            bodyFr: true,
+            bodyDe: true,
+            bodyIt: true,
+          },
           orderBy: { position: "asc" },
         },
       },
@@ -244,18 +292,38 @@ export async function loadCatalogTranslations(locale: string): Promise<CatalogTr
   ]);
 
   return {
-    groups: new Map(groups.map((group) => [group.slug, group.labelEn])),
+    groups: new Map(
+      groups.map((group) => [
+        group.slug,
+        pickLocale(locale, { en: group.labelEn, fr: group.labelFr, de: group.labelDe, it: group.labelIt }),
+      ]),
+    ),
     categories: new Map(
-      categories.map((category) => [
-        `${category.group.slug}/${category.slug}`,
+      categories.map((c) => [
+        `${c.group.slug}/${c.slug}`,
         {
-          label: category.labelEn,
-          description: category.descriptionEn,
-          guideIntro: category.guideIntroEn,
-          guideClosing: category.guideClosingEn,
-          sections: category.guideSections.map((section) => ({
-            heading: section.headingEn,
-            body: section.bodyEn,
+          label: pickLocale(locale, { en: c.labelEn, fr: c.labelFr, de: c.labelDe, it: c.labelIt }),
+          description: pickLocale(locale, {
+            en: c.descriptionEn,
+            fr: c.descriptionFr,
+            de: c.descriptionDe,
+            it: c.descriptionIt,
+          }),
+          guideIntro: pickLocale(locale, {
+            en: c.guideIntroEn,
+            fr: c.guideIntroFr,
+            de: c.guideIntroDe,
+            it: c.guideIntroIt,
+          }),
+          guideClosing: pickLocale(locale, {
+            en: c.guideClosingEn,
+            fr: c.guideClosingFr,
+            de: c.guideClosingDe,
+            it: c.guideClosingIt,
+          }),
+          sections: c.guideSections.map((s) => ({
+            heading: pickLocale(locale, { en: s.headingEn, fr: s.headingFr, de: s.headingDe, it: s.headingIt }),
+            body: pickLocale(locale, { en: s.bodyEn, fr: s.bodyFr, de: s.bodyDe, it: s.bodyIt }),
           })),
         },
       ]),

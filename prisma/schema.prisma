@@ -24,6 +24,9 @@ model Group {
   label      String
   // Traduction anglaise ; vide = repli sur le français
   labelEn    String     @default("")
+  labelFr    String     @default("")
+  labelDe    String     @default("")
+  labelIt    String     @default("")
   position   Int        @default(0)
   categories Category[]
 }
@@ -42,6 +45,18 @@ model Category {
   descriptionEn  String   @default("")
   guideIntroEn   String   @default("")
   guideClosingEn String   @default("")
+  labelFr        String   @default("")
+  labelDe        String   @default("")
+  labelIt        String   @default("")
+  descriptionFr  String   @default("")
+  descriptionDe  String   @default("")
+  descriptionIt  String   @default("")
+  guideIntroFr   String   @default("")
+  guideIntroDe   String   @default("")
+  guideIntroIt   String   @default("")
+  guideClosingFr String   @default("")
+  guideClosingDe String   @default("")
+  guideClosingIt String   @default("")
   position       Int      @default(0)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
@@ -61,6 +76,12 @@ model GuideSection {
   body       String
   headingEn  String @default("")
   bodyEn     String @default("")
+  headingFr  String @default("")
+  bodyFr     String @default("")
+  headingDe  String @default("")
+  bodyDe     String @default("")
+  headingIt  String @default("")
+  bodyIt     String @default("")
   position   Int    @default(0)
 
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
@@ -158,6 +179,12 @@ model ProductSection {
   body      String
   headingEn String @default("")
   bodyEn    String @default("")
+  headingFr String @default("")
+  bodyFr    String @default("")
+  headingDe String @default("")
+  bodyDe    String @default("")
+  headingIt String @default("")
+  bodyIt    String @default("")
   position  Int    @default(0)
 
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
@@ -373,11 +400,11 @@ model Order {
 }
 
 model OrderItem {
-  id        String  @id @default(cuid())
-  orderId   String
+  id           String  @id @default(cuid())
+  orderId      String
   // Le produit peut disparaître du catalogue ; la ligne de commande reste
   // lisible grâce aux libellés recopiés ci-dessous.
-  productId String?
+  productId    String?
   variantId    String?
   variantLabel String  @default("")
 
@@ -566,14 +593,14 @@ model Setting {
 // dans le layout de la boutique, hors duquel /admin se trouve déjà.
 
 model CodeSnippet {
-  id String @id @default(cuid())
+  id        String   @id @default(cuid())
   // Intitulé libre, pour s'y retrouver dans la liste : « Google Tag Manager »…
-  name String
+  name      String
   // head | bodyStart | bodyEnd
   placement String
   content   String
   // Un fragment naît désactivé : on le colle, on le relit, puis on l'allume.
-  enabled Boolean @default(false)
+  enabled   Boolean  @default(false)
   // Ordre d'insertion à emplacement égal. Il compte : un mode consentement doit
   // s'exécuter avant les balises qu'il gouverne.
   position  Int      @default(0)
@@ -599,7 +626,7 @@ model CodeSnippet {
 
 model LegalContent {
   // Identifiant d'URL de la page : "impressum", "agb", "faq"…
-  slug String
+  slug   String
   // "fr" ou "en" : chaque langue se réécrit indépendamment.
   locale String
 
