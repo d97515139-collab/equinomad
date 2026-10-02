@@ -25,6 +25,8 @@ const A_DESACTIVER: Readonly<Record<string, string>> = {
   "im-wallapop-1296213252": "remorque utilitaire, pas pour chevaux",
   "im-wallapop-1114487781": "remorque pour voiture, pas pour chevaux",
   "im-wallapop-1294553957": "annonce de location, pas une vente",
+  "im-wallapop-984309952": "van transformé en food truck, plus une remorque à chevaux",
+  "eh-eduard-remolque-para-coche-con-volquete-estructura-de-rejill-4857237": "remorque porte-voiture à benne, pas pour chevaux",
   "im-wallapop-1250426727": "prix non renseigné (0 €)",
   "im-wallapop-1292382507": "prix non renseigné (0 €)",
   "im-wallapop-892484384": "prix non renseigné (0 €)",
