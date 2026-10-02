@@ -107,6 +107,79 @@ export const FOOTER_GROUP_TITLES: Readonly<
   en: { service: "Service", legal: "Legal", company: "Company" },
 };
 
+/**
+ * Libellés du pied de page pour les langues sans corpus juridique propre.
+ * Les pages elles-mêmes s'affichent en anglais (legalLocaleFor) ; seule la
+ * navigation est traduite, pour que le pied de page reste dans la langue du
+ * reste de la boutique.
+ */
+const FOOTER_LABELS: Readonly<
+  Record<string, { groups: Record<LegalFooterGroup["id"], string>; pages: Record<LegalSlug, string> }>
+> = {
+  fr: {
+    groups: { service: "Service", legal: "Informations légales", company: "Entreprise" },
+    pages: {
+      "mentions-legales": "Mentions légales",
+      cgv: "Conditions générales de vente",
+      confidentialite: "Politique de confidentialité",
+      retractation: "Droit de rétractation",
+      livraison: "Livraison",
+      "moyens-de-paiement": "Moyens de paiement",
+      retours: "Retours et réclamations",
+      faq: "Questions fréquentes",
+      "a-propos": "Qui sommes-nous",
+      contact: "Contact",
+    },
+  },
+  de: {
+    groups: { service: "Service", legal: "Rechtliches", company: "Unternehmen" },
+    pages: {
+      "mentions-legales": "Impressum",
+      cgv: "Allgemeine Geschäftsbedingungen",
+      confidentialite: "Datenschutzerklärung",
+      retractation: "Widerrufsrecht",
+      livraison: "Versand und Lieferung",
+      "moyens-de-paiement": "Zahlungsarten",
+      retours: "Rücksendungen und Reklamationen",
+      faq: "Häufige Fragen",
+      "a-propos": "Über uns",
+      contact: "Kontakt",
+    },
+  },
+  it: {
+    groups: { service: "Servizio", legal: "Informazioni legali", company: "Azienda" },
+    pages: {
+      "mentions-legales": "Note legali",
+      cgv: "Condizioni generali di vendita",
+      confidentialite: "Informativa sulla privacy",
+      retractation: "Diritto di recesso",
+      livraison: "Spedizioni e consegne",
+      "moyens-de-paiement": "Metodi di pagamento",
+      retours: "Resi e reclami",
+      faq: "Domande frequenti",
+      "a-propos": "Chi siamo",
+      contact: "Contatti",
+    },
+  },
+};
+
+/**
+ * Traduit titres et libellés du pied de page pour fr, de et it. L'espagnol et
+ * l'anglais gardent les titres de leurs pages, renommables depuis le back-office.
+ */
+export function localizeFooterGroups(
+  groups: readonly LegalFooterGroup[],
+  locale: string,
+): readonly LegalFooterGroup[] {
+  const labels = FOOTER_LABELS[locale];
+  if (!labels) return groups;
+  return groups.map((group) => ({
+    ...group,
+    title: labels.groups[group.id],
+    links: group.links.map((link) => ({ ...link, label: labels.pages[link.slug] })),
+  }));
+}
+
 /** Ordre des colonnes du pied de page. */
 export const FOOTER_GROUP_IDS = ["service", "legal", "company"] as const;
 
