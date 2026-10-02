@@ -32,7 +32,7 @@ import { BANK_TRANSFER_METHOD_KEY, getBankTransferSettings } from "@/server/bank
 import type { OrderRecord } from "@/server/orders";
 
 /** Vrai uniquement en développement sans SMTP configuré. */
-function isMailDevFallback(): boolean {
+export function isMailDevFallback(): boolean {
   return process.env.NODE_ENV === "development" && !isMailConfigured();
 }
 
@@ -53,7 +53,7 @@ function isMailDevFallback(): boolean {
  *
  * Doublons et casse sont normalisés.
  */
-async function sellerRecipients(): Promise<string[]> {
+export async function sellerRecipients(): Promise<string[]> {
   const explicit = (process.env.ORDER_NOTIFICATION_EMAILS ?? "")
     .split(",")
     .map((entry) => entry.trim().toLowerCase())

@@ -828,5 +828,19 @@
         "a": "Sì, in 12, 24 o 36 mesi, con valutazione preliminare e senza impegno. L'approvazione dipende dall'istituto finanziario, non da noi. Per importi superiori a 3.000 € molte banche limitano il pagamento con carta: in tal caso il bonifico è di solito la via più rapida."
       }
     }
+  },
+  "contactForm": {
+    "titre": "Ci scriva",
+    "intro": "Le rispondiamo il prima possibile, di solito in giornata.",
+    "nom": "Nome",
+    "email": "E-mail",
+    "telephone": "Telefono (facoltativo)",
+    "message": "Il suo messaggio",
+    "envoyer": "Invia il messaggio",
+    "envoi": "Invio…",
+    "merciTitre": "Messaggio ricevuto",
+    "merciTexte": "Grazie. Le risponderemo al più presto all'indirizzo indicato.",
+    "erreur": "Non è stato possibile inviare il messaggio. Riprovi tra qualche istante.",
+    "tropDeMessages": "Ha inviato diversi messaggi di seguito. Riprovi tra qualche minuto."
   }
 }

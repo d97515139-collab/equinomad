@@ -828,5 +828,19 @@
         "a": "Yes, over 12, 24 or 36 months, assessed in advance and without obligation. Approval rests with the finance house, not with us. Above €3,000 many Spanish banks cap card payments; a bank transfer is usually the quicker route in that case."
       }
     }
+  },
+  "contactForm": {
+    "titre": "Write to us",
+    "intro": "We reply as soon as possible, usually the same day.",
+    "nom": "Name",
+    "email": "Email",
+    "telephone": "Phone (optional)",
+    "message": "Your message",
+    "envoyer": "Send message",
+    "envoi": "Sending…",
+    "merciTitre": "Message received",
+    "merciTexte": "Thank you. We will reply shortly to the address you gave.",
+    "erreur": "Your message could not be sent. Please try again in a moment.",
+    "tropDeMessages": "You have sent several messages in a row. Please try again in a few minutes."
   }
 }

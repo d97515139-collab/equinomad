@@ -828,5 +828,19 @@
         "a": "Sí, en 12, 24 o 36 meses, con estudio previo y sin compromiso. La aprobación depende de la entidad financiera, no de nosotros. Para importes por encima de 3.000 € muchos bancos limitan el pago con tarjeta: en ese caso, la transferencia suele ser el camino más rápido."
       }
     }
+  },
+  "contactForm": {
+    "titre": "Escríbanos",
+    "intro": "Le respondemos lo antes posible, normalmente en el día.",
+    "nom": "Nombre",
+    "email": "Correo electrónico",
+    "telephone": "Teléfono (opcional)",
+    "message": "Su mensaje",
+    "envoyer": "Enviar el mensaje",
+    "envoi": "Enviando…",
+    "merciTitre": "Mensaje recibido",
+    "merciTexte": "Gracias. Le responderemos muy pronto a la dirección indicada.",
+    "erreur": "No se ha podido enviar el mensaje. Inténtelo de nuevo en unos instantes.",
+    "tropDeMessages": "Ha enviado varios mensajes seguidos. Inténtelo de nuevo en unos minutos."
   }
 }

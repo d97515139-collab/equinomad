@@ -134,7 +134,16 @@ export function LegalPageArticle({ page, locale }: { page: LegalPage; locale: st
   );
 }
 
-export async function LegalPageView({ slug, locale }: { slug: LegalSlug; locale: string }) {
+export async function LegalPageView({
+  slug,
+  locale,
+  children,
+}: {
+  slug: LegalSlug;
+  locale: string;
+  /** Bloc affiché sous le texte (formulaire de la page Contact). */
+  children?: React.ReactNode;
+}) {
   const page = await findLegalPage(slug, locale);
   if (!page) notFound();
 
@@ -153,6 +162,7 @@ export async function LegalPageView({ slug, locale }: { slug: LegalSlug; locale:
         </div>
 
         <LegalPageArticle page={page} locale={legal} />
+        {children && <div className="mx-auto max-w-3xl px-3 pb-10">{children}</div>}
       </main>
       <Footer />
     </>

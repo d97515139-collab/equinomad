@@ -828,5 +828,19 @@
         "a": "Ja, über 12, 24 oder 36 Monate, mit vorheriger Prüfung und unverbindlich. Die Bewilligung hängt vom Kreditinstitut ab, nicht von uns. Bei Beträgen über 3.000 € begrenzen viele Banken die Kartenzahlung: In diesem Fall ist die Überweisung meist der schnellste Weg."
       }
     }
+  },
+  "contactForm": {
+    "titre": "Schreiben Sie uns",
+    "intro": "Wir antworten so schnell wie möglich, meist noch am selben Tag.",
+    "nom": "Name",
+    "email": "E-Mail",
+    "telephone": "Telefon (optional)",
+    "message": "Ihre Nachricht",
+    "envoyer": "Nachricht senden",
+    "envoi": "Wird gesendet…",
+    "merciTitre": "Nachricht erhalten",
+    "merciTexte": "Vielen Dank. Wir antworten Ihnen in Kürze an die angegebene Adresse.",
+    "erreur": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.",
+    "tropDeMessages": "Sie haben mehrere Nachrichten kurz hintereinander gesendet. Bitte versuchen Sie es in einigen Minuten erneut."
   }
 }

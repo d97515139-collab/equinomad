@@ -36,6 +36,8 @@ export interface MailMessage {
   text: string;
   /** Facture PDF de la confirmation de commande, le cas échéant. */
   attachments?: MailAttachment[];
+  /** Adresse de réponse ; par défaut celle de la boutique. */
+  replyTo?: string;
 }
 
 interface SmtpSettings {
@@ -116,8 +118,9 @@ export async function sendMail(message: MailMessage): Promise<void> {
     text: message.text,
     html: message.html,
     ...(message.attachments?.length ? { attachments: message.attachments } : {}),
-    // Les réponses arrivent dans la boîte de la boutique, pas dans le vide.
-    replyTo: settings.from,
+    // Les réponses arrivent dans la boîte de la boutique, pas dans le vide —
+    // sauf message de contact, où « Répondre » doit viser le visiteur.
+    replyTo: message.replyTo ?? settings.from,
   });
 }
 

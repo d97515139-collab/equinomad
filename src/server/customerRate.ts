@@ -67,6 +67,10 @@ const reset = createLimiter(3, 60 * 60 * 1000);
 /** Inscription : cinq envois par adresse et par heure, pour éviter le mailbombing. */
 const signup = createLimiter(5, 60 * 60 * 1000);
 
+/** Formulaire de contact : cinq messages par adresse IP toutes les dix minutes. */
+const contact = createLimiter(5, 10 * 60 * 1000);
+
+export const contactMessageRate = contact;
 export const customerLoginRate = login;
 export const customerResetRate = reset;
 export const customerSignupRate = signup;

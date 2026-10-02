@@ -828,5 +828,19 @@
         "a": "Oui, sur 12, 24 ou 36 mois, avec étude préalable et sans engagement. L'acceptation dépend de l'établissement financier, pas de nous. Pour des montants supérieurs à 3.000 €, de nombreuses banques limitent le paiement par carte : dans ce cas, le virement est souvent le moyen le plus rapide."
       }
     }
+  },
+  "contactForm": {
+    "titre": "Écrivez-nous",
+    "intro": "Nous vous répondons au plus vite, en général dans la journée.",
+    "nom": "Nom",
+    "email": "E-mail",
+    "telephone": "Téléphone (facultatif)",
+    "message": "Votre message",
+    "envoyer": "Envoyer le message",
+    "envoi": "Envoi…",
+    "merciTitre": "Message reçu",
+    "merciTexte": "Merci. Nous vous répondrons très vite à l'adresse indiquée.",
+    "erreur": "Le message n'a pas pu être envoyé. Réessayez dans quelques instants.",
+    "tropDeMessages": "Vous avez envoyé plusieurs messages d'affilée. Réessayez dans quelques minutes."
   }
 }
