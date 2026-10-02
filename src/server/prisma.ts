@@ -1,9 +1,11 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { attachDatabasePool } from "@vercel/functions";
+import pg from "pg";
 import { poolMax } from "@/server/dbPool";
 
 // La connexion dépend uniquement de DATABASE_URL :
-//   postgresql://user:pw@host/db?sslmode=require  -> PostgreSQL (Neon)
+//   postgresql://user:pw@hote:port/base  -> PostgreSQL auto-hébergé (compte equinomad)
 // Le schéma Prisma est figé sur le provider « postgresql » : changer de moteur
 // demanderait de le régénérer, pas seulement de changer cette variable.
 function createClient(): PrismaClient {
@@ -12,28 +14,35 @@ function createClient(): PrismaClient {
     throw new Error("DATABASE_URL est absente : la base ne peut pas être ouverte.");
   }
 
-  return new PrismaClient({
-    adapter: new PrismaPg({
-      connectionString: url,
-      // Neon met le calcul en veille après une période d'inactivité : le
-      // premier appel qui le réveille peut demander plusieurs secondes.
-      //
-      // Quarante-cinq secondes, et non quinze : en développement, la
-      // compilation Turbopack d'une route encore froide monopolise la boucle
-      // d'événements plusieurs dizaines de secondes. Les acquisitions de
-      // connexion déjà en attente expiraient pendant ce blocage — d'où des
-      // « timeout exceeded when trying to connect » au premier chargement de
-      // chaque page, alors que la base répondait en 115 ms et n'ouvrait que
-      // sept connexions sur cent. Le délai ne protège pas d'une base en
-      // panne : celle-ci refuse la connexion tout de suite, sans attendre.
-      connectionTimeoutMillis: 45_000,
-      // Une connexion inactive est rendue au bout de trente secondes plutôt
-      // que gardée ouverte : Neon facture le temps de calcul, pas les
-      // connexions, et le pooler préfère des sessions courtes.
-      idleTimeoutMillis: 30_000,
-      max: poolMax(),
-    }),
+  const pool = new pg.Pool({
+    connectionString: url,
+    // Neon met le calcul en veille après une période d'inactivité : le
+    // premier appel qui le réveille peut demander plusieurs secondes.
+    //
+    // Quarante-cinq secondes, et non quinze : en développement, la
+    // compilation Turbopack d'une route encore froide monopolise la boucle
+    // d'événements plusieurs dizaines de secondes. Les acquisitions de
+    // connexion déjà en attente expiraient pendant ce blocage — d'où des
+    // « timeout exceeded when trying to connect » au premier chargement de
+    // chaque page, alors que la base répondait en 115 ms et n'ouvrait que
+    // sept connexions sur cent. Le délai ne protège pas d'une base en
+    // panne : celle-ci refuse la connexion tout de suite, sans attendre.
+    connectionTimeoutMillis: 45_000,
+    // Une connexion inactive est rendue au bout de trente secondes plutôt
+    // que gardée ouverte : le compte de la boutique est limité en
+    // connexions sur un serveur partagé.
+    idleTimeoutMillis: 30_000,
+    max: poolMax(),
   });
+
+  // Sur Vercel, une instance mise en veille gèle aussi le minuteur qui devait
+  // fermer ses connexions inactives : elles restaient ouvertes des heures et
+  // épuisaient la limite du compte, jusqu'à faire échouer le build suivant
+  // (« too many connections for role »). attachDatabasePool garde l'instance
+  // éveillée le temps de les rendre. Sans effet hors de Vercel.
+  attachDatabasePool(pool);
+
+  return new PrismaClient({ adapter: new PrismaPg(pool) });
 }
 
 // En développement, le client survit au rechargement à chaud : sinon chaque
